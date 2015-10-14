@@ -1,10 +1,78 @@
 %!TEX root=../ast2016.tex
 
+\def \tablescalefactor {0.85}
+
+% Rotated column type
 \newcolumntype{R}[2]{%
     >{\adjustbox{minipage=6em,angle=#1,lap=\width-(#2)}\bgroup}%
     l%
     <{\egroup}%
 }
+% Shortcut for rotated column for headings
 \newcommand*\rot{\multicolumn{1}{R{60}{1.5em}}}
 
-\def \tablescalefactor {0.85}
+% Highlight outstanding issues
+\newcommand{\todo}[1]{{\color{red}$<$TODO: #1$>$}}
+\newcommand{\query}[1]{{\color{blue}$<$QUERY: #1$>$}}
+\newcommand{\answer}[1]{{\color{ForestGreen}$<$ANSWER: #1$>$}}
+
+% SQL commands
+\newcommand{\sql}[1]{\texttt{#1}\xspace}
+\newcommand{\SQL}[1]{\sql{#1}}
+% Table commands
+\newcommand{\INSERT}{\sql{INSERT}}
+\newcommand{\CREATE}{\sql{CREATE}}
+\newcommand{\CREATETABLE}{\sql{CREATE TABLE}}
+\newcommand{\DROP}{\sql{DROP}}
+\newcommand{\DROPTABLE}{\sql{DROP TABLE}}
+\newcommand{\DELETE}{\sql{DELETE}}
+\newcommand{\SELECT}{\sql{SELECT}}
+\newcommand{\WHERE}{\sql{WHERE}}
+\newcommand{\UPDATE}{\sql{UPDATE}}
+% Constraint commands
+\newcommand{\PRIMARYKEY}{\sql{PRIMARY KEY}}
+\newcommand{\PK}{\PRIMARYKEY}
+\newcommand{\FOREIGNKEY}{\sql{FOREIGN KEY}}
+\newcommand{\FK}{\FOREIGNKEY}
+\newcommand{\UNIQUE}{\sql{UNIQUE}}
+\newcommand{\NOTNULL}{\sql{NOT NULL}}
+\newcommand{\CHECK}{\sql{CHECK}}
+
+% Database name commands
+\newcommand{\postgrestext}{PostgreSQL\xspace}
+\newcommand{\postgres}{\postgrestext}
+\newcommand{\Postgres}{\postgrestext}
+\newcommand{\postgresql}{\postgrestext}
+\newcommand{\Postgresql}{\postgrestext}
+\newcommand{\PostgreSQL}{\postgrestext}
+\newcommand{\sqlitetext}{SQLite\xspace}
+\newcommand{\sqlite}{\sqlitetext}
+\newcommand{\Sqlite}{\sqlitetext}
+\newcommand{\SQLite}{\sqlitetext}
+\newcommand{\hypersqltext}{HyperSQL\xspace}
+\newcommand{\hypersql}{\hypersqltext}
+\newcommand{\Hypersql}{\hypersqltext}
+\newcommand{\HyperSQL}{\hypersqltext}
+
+% Extra name commands
+\newcommand{\schemaanalysttext}{SchemaAnalyst\xspace}
+\newcommand{\sa}{\schemaanalysttext}
+\newcommand{\SA}{\schemaanalysttext}
+\newcommand{\schemaanalyst}{\schemaanalysttext}
+\newcommand{\Schemaanalyst}{\schemaanalysttext}
+\newcommand{\SchemaAnalyst}{\schemaanalysttext}
+
+% Technique name commands
+\newcommand{\Original}{Original\xspace}
+\newcommand{\MinimalSchemata}{Minimal schemata\xspace}
+\newcommand{\MinimalMinimalSchemata}{Minimal\textsuperscript{+} schemata\xspace}
+\newcommand{\MinimalPlusSchemata}{Minimal\textsuperscript{+} schemata\xspace}
+\newcommand{\FullSchemata}{Full schemata\xspace}
+\newcommand{\JustInTimeSchemata}{Just-in-Time schemata\xspace}
+\newcommand{\UpFrontSchemata}{Up-Front schemata\xspace}
+\newcommand{\VirtualMutationAnalysis}{Virtual Mutation Analysis\xspace}
+\newcommand{\VMA}{\VirtualMutationAnalysis}
+
+% Search algorithm names
+\newcommand{\RandomPlus}{Random\textsuperscript{+}\xspace}
+\newcommand{\AVM}{AVM\xspace}
