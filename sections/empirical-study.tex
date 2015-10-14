@@ -62,5 +62,24 @@
 		\item 30 repeated trials
 		\item \query{We have data for all 7 techniques (\Original, \FullSchemata, \JustInTimeSchemata, \UpFrontSchemata, \MinimalSchemata, \MinimalPlusSchemata, \VirtualMutationAnalysis). Which do we want to include?} \\
 		\answer{\Original gives a good baseline. \MinimalSchemata was established as the best optimisation in the Mutation 2013 paper, however the current results show that for \SQLite, \JustInTimeSchemata is better. So, we should probably include \MinimalSchemata as a `best optimisation until now' and possibly \JustInTimeSchemata.}
-
+		\item Metrics -- time taken for mutation analysis, mutation score (as compared to \Original)
 	\end{itemize}
+
+	\begin{table}[ht]
+		\caption{\label{tbl:mean_time_mean_summary}
+		The proportion of mean times taken for mutation analysis compared to Original technique, summarised as a mean across all schemas.
+		}\vspace{1em}
+		\scriptsize
+		\centering
+		\scalebox{\tablescalefactor}{
+			\begin{tabular}{l|rrrrrr@{\hskip 0.5cm}r}
+				& \multicolumn{7}{c}{Technique} \\
+				DBMS & \rot{\Original} & \rot{\FullSchemata} & \rot{\UpFrontSchemata} & \rot{\JustInTimeSchemata} & \rot{\MinimalSchemata} & \rot{\MinimalPlusSchemata} & \rot{\VirtualMutationAnalysis} \\ 
+				\hline
+				HyperSQL & 1.000 & 1.151 & 0.627 & 0.808 & 0.689 & 0.644 & \cellcolor{LimeGreen!25}\textbf{\textcolor{OliveGreen}{0.319}} \\ 
+				Postgres & 1.000 & 0.918 & 0.598 & 0.653 & 0.333 & 0.308 & \cellcolor{LimeGreen!25}\textbf{\textcolor{OliveGreen}{0.010}} \\ 
+				SQLite & 1.000 & 1.542 & 1.313 & \cellcolor{LimeGreen!25}\textbf{\textcolor{OliveGreen}{0.556}} & 0.662 & 0.586 & 0.615 \\ 
+				\hline
+			\end{tabular}
+		}
+	\end{table}
