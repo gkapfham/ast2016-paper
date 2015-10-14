@@ -1,0 +1,10 @@
+%!TEX root=../ast2016.tex
+
+\newcolumntype{R}[2]{%
+    >{\adjustbox{minipage=6em,angle=#1,lap=\width-(#2)}\bgroup}%
+    l%
+    <{\egroup}%
+}
+\newcommand*\rot{\multicolumn{1}{R{60}{1.5em}}}
+
+\def \tablescalefactor {0.85}
