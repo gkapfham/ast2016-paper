@@ -3,82 +3,90 @@
 \section{Empirical Study}
 \label{sec:empirical-study}
 
-	\begin{table}[t!]
-		\caption{Schemas analysed in the empirical study} \label{tbl:study-schemas}
-		\scriptsize
-		\centering
-		\scalebox{\tablescalefactor}{
-			\begin{tabular}{l@{\hskip -5pt}rrrrrrrr}
-				{Schema}           & \rot{Tables} & \rot{Columns} & \rot{Checks} & \rot{Foreign Keys} & \rot{Not Nulls} & \rot{Primary Keys} & \rot{Uniques} & \rot{$\sum$Constraints} \\ \hline
-				ArtistSimilarity & 2 & 3 & 0 & 2 & 0 & 1 & 0 & 3 \\
-				ArtistTerm & 5 & 7 & 0 & 4 & 0 & 3 & 0 & 7 \\
-				BankAccount & 2 & 9 & 0 & 1 & 5 & 2 & 0 & 8 \\
-				BookTown & 22 & 67 & 2 & 0 & 15 & 11 & 0 & 28 \\
-				BrowserCookies & 2 & 13 & 2 & 1 & 4 & 2 & 1 & 10 \\
-				Cloc & 2 & 10 & 0 & 0 & 0 & 0 & 0 & 0 \\
-				CoffeeOrders & 5 & 20 & 0 & 4 & 10 & 5 & 0 & 19 \\
-				CustomerOrder & 7 & 32 & 1 & 7 & 27 & 7 & 0 & 42 \\
-				DellStore & 8 & 52 & 0 & 0 & 39 & 0 & 0 & 39 \\
-				Employee & 1 & 7 & 3 & 0 & 0 & 1 & 0 & 4 \\
-				Examination & 2 & 21 & 6 & 1 & 0 & 2 & 0 & 9 \\
-				Flights & 2 & 13 & 1 & 1 & 6 & 2 & 0 & 10 \\
-				FrenchTowns & 3 & 14 & 0 & 2 & 13 & 0 & 9 & 24 \\
-				Inventory & 1 & 4 & 0 & 0 & 0 & 1 & 1 & 2 \\
-				Iso3166 & 1 & 3 & 0 & 0 & 2 & 1 & 0 & 3 \\
-				iTrust & 42 & 309 & 8 & 1 & 88 & 37 & 0 & 134 \\
-				JWhoisServer & 6 & 49 & 0 & 0 & 44 & 6 & 0 & 50 \\
-				MozillaExtensions & 6 & 51 & 0 & 0 & 0 & 2 & 5 & 7 \\
-				MozillaPermissions & 1 & 8 & 0 & 0 & 0 & 1 & 0 & 1 \\
-				NistDML181 & 2 & 7 & 0 & 1 & 0 & 1 & 0 & 2 \\
-				NistDML182 & 2 & 32 & 0 & 1 & 0 & 1 & 0 & 2 \\
-				NistDML183 & 2 & 6 & 0 & 1 & 0 & 0 & 1 & 2 \\
-				NistWeather & 2 & 9 & 5 & 1 & 5 & 2 & 0 & 13 \\
-				NistXTS748 & 1 & 3 & 1 & 0 & 1 & 0 & 1 & 3 \\
-				NistXTS749 & 2 & 7 & 1 & 1 & 3 & 2 & 0 & 7 \\
-				Person & 1 & 5 & 1 & 0 & 5 & 1 & 0 & 7 \\
-				Products & 3 & 9 & 4 & 2 & 5 & 3 & 0 & 14 \\
-				RiskIt & 13 & 57 & 0 & 10 & 15 & 11 & 0 & 36 \\
-				StackOverflow & 4 & 43 & 0 & 0 & 5 & 0 & 0 & 5 \\
-				StudentResidence & 2 & 6 & 3 & 1 & 2 & 2 & 0 & 8 \\
-				UnixUsage & 8 & 32 & 0 & 7 & 10 & 7 & 0 & 24 \\
-				Usda & 10 & 67 & 0 & 0 & 31 & 0 & 0 & 31 \\
-				\hline
-				{Total} & 172 & 975 & 38 & 49 & 335 & 114 & 18 & 554 \\
-				\hline
+	\subsection{Experimental Setup}
 
-			\end{tabular}
-		}
-	\end{table}
+		\begin{table}[t!]
+			\caption{Schemas analysed in the empirical study} \label{tbl:study-schemas}
+			\scriptsize
+			\centering
+			\scalebox{\tablescalefactor}{
+				\begin{tabular}{l@{\hskip -5pt}rrrrrrrr}
+					{Schema}           & \rot{Tables} & \rot{Columns} & \rot{Checks} & \rot{Foreign Keys} & \rot{Not Nulls} & \rot{Primary Keys} & \rot{Uniques} & \rot{$\sum$Constraints} \\ \hline
+					ArtistSimilarity & 2 & 3 & 0 & 2 & 0 & 1 & 0 & 3 \\
+					ArtistTerm & 5 & 7 & 0 & 4 & 0 & 3 & 0 & 7 \\
+					BankAccount & 2 & 9 & 0 & 1 & 5 & 2 & 0 & 8 \\
+					BookTown & 22 & 67 & 2 & 0 & 15 & 11 & 0 & 28 \\
+					BrowserCookies & 2 & 13 & 2 & 1 & 4 & 2 & 1 & 10 \\
+					Cloc & 2 & 10 & 0 & 0 & 0 & 0 & 0 & 0 \\
+					CoffeeOrders & 5 & 20 & 0 & 4 & 10 & 5 & 0 & 19 \\
+					CustomerOrder & 7 & 32 & 1 & 7 & 27 & 7 & 0 & 42 \\
+					DellStore & 8 & 52 & 0 & 0 & 39 & 0 & 0 & 39 \\
+					Employee & 1 & 7 & 3 & 0 & 0 & 1 & 0 & 4 \\
+					Examination & 2 & 21 & 6 & 1 & 0 & 2 & 0 & 9 \\
+					Flights & 2 & 13 & 1 & 1 & 6 & 2 & 0 & 10 \\
+					FrenchTowns & 3 & 14 & 0 & 2 & 13 & 0 & 9 & 24 \\
+					Inventory & 1 & 4 & 0 & 0 & 0 & 1 & 1 & 2 \\
+					Iso3166 & 1 & 3 & 0 & 0 & 2 & 1 & 0 & 3 \\
+					iTrust & 42 & 309 & 8 & 1 & 88 & 37 & 0 & 134 \\
+					JWhoisServer & 6 & 49 & 0 & 0 & 44 & 6 & 0 & 50 \\
+					MozillaExtensions & 6 & 51 & 0 & 0 & 0 & 2 & 5 & 7 \\
+					MozillaPermissions & 1 & 8 & 0 & 0 & 0 & 1 & 0 & 1 \\
+					NistDML181 & 2 & 7 & 0 & 1 & 0 & 1 & 0 & 2 \\
+					NistDML182 & 2 & 32 & 0 & 1 & 0 & 1 & 0 & 2 \\
+					NistDML183 & 2 & 6 & 0 & 1 & 0 & 0 & 1 & 2 \\
+					NistWeather & 2 & 9 & 5 & 1 & 5 & 2 & 0 & 13 \\
+					NistXTS748 & 1 & 3 & 1 & 0 & 1 & 0 & 1 & 3 \\
+					NistXTS749 & 2 & 7 & 1 & 1 & 3 & 2 & 0 & 7 \\
+					Person & 1 & 5 & 1 & 0 & 5 & 1 & 0 & 7 \\
+					Products & 3 & 9 & 4 & 2 & 5 & 3 & 0 & 14 \\
+					RiskIt & 13 & 57 & 0 & 10 & 15 & 11 & 0 & 36 \\
+					StackOverflow & 4 & 43 & 0 & 0 & 5 & 0 & 0 & 5 \\
+					StudentResidence & 2 & 6 & 3 & 1 & 2 & 2 & 0 & 8 \\
+					UnixUsage & 8 & 32 & 0 & 7 & 10 & 7 & 0 & 24 \\
+					Usda & 10 & 67 & 0 & 0 & 31 & 0 & 0 & 31 \\
+					\hline
+					{Total} & 172 & 975 & 38 & 49 & 335 & 114 & 18 & 554 \\
+					\hline
 
-	\begin{itemize}
-		\item 32 schemas
+				\end{tabular}
+			}
+		\end{table}
+
 		\begin{itemize}
-			\item 1 to 42 tables
-			\item 3 to 309 columns
-			\item 0 to 134 constraints
-			\item Includes each of the types of constraint supported by \SchemaAnalyst (\PK, \FK, \NOTNULL, \UNIQUE and \CHECK constraints)
+			\item 32 schemas
+			\begin{itemize}
+				\item 1 to 42 tables
+				\item 3 to 309 columns
+				\item 0 to 134 constraints
+				\item Includes each of the types of constraint supported by \SchemaAnalyst (\PK, \FK, \NOTNULL, \UNIQUE and \CHECK constraints)
+			\end{itemize}
+			\item 3 DBMSs -- \Postgres, \HyperSQL (in-memory), \SQLite (in-memory)
+			\item 30 repeated trials
+			\item 2 techniques -- \Original and \VirtualMutationAnalysis
+			\item Metrics -- time taken for mutation analysis, mutation score (as compared to \Original)
 		\end{itemize}
-		\item 3 DBMSs -- \Postgres, \HyperSQL (in-memory), \SQLite (in-memory)
-		\item 30 repeated trials
-		\item 2 techniques -- \Original and \VirtualMutationAnalysis
-		\item Metrics -- time taken for mutation analysis, mutation score (as compared to \Original)
-	\end{itemize}
 
-	\begin{table}[ht]
-		\caption{\label{tbl:mean_time_mean_summary}
-		The proportion of mean times taken for mutation analysis compared to Original technique, summarised as a mean across all schemas.
-		}\vspace{1em}
-		\scriptsize
-		\centering
-		\scalebox{\tablescalefactor}{
-			\begin{tabular}{l|rrrrrr@{\hskip 0.5cm}r}
-				& \multicolumn{7}{c}{Technique} \\
-				DBMS & \rot{\Original} & \rot{\FullSchemata} & \rot{\UpFrontSchemata} & \rot{\JustInTimeSchemata} & \rot{\MinimalSchemata} & \rot{\MinimalPlusSchemata} & \rot{\VirtualMutationAnalysis} \\ 
-				\hline
-				HyperSQL & 1.000 & 1.151 & 0.627 & 0.808 & 0.689 & 0.644 & \cellcolor{LimeGreen!25}\textbf{\textcolor{OliveGreen}{0.319}} \\ 
-				Postgres & 1.000 & 0.918 & 0.598 & 0.653 & 0.333 & 0.308 & \cellcolor{LimeGreen!25}\textbf{\textcolor{OliveGreen}{0.010}} \\ 
-				SQLite & 1.000 & 1.542 & 1.313 & \cellcolor{LimeGreen!25}\textbf{\textcolor{OliveGreen}{0.556}} & 0.662 & 0.586 & 0.615 \\ 
-				\hline
-			\end{tabular}
-		}
-	\end{table}
+		\paper{Mutation2013}{To perform the experiments, we used the Java programming language to implement our approach in the SchemaAnalyst tool [3]. SchemaAnalyst was compiled with the JDK 7 compiler and executed with the Oracle Java 1.7 64-bit virtual machine for Linux. We executed the experiments on a \_\_\_\_\_\_ machine, \_\_\_\_\_\_ 64-bit kernel, with a \_\_\_\_\_\_ GHz CPU and \_\_\_\_\_\_ RAM. The specific DBMS versions were Postgres \_\_\_\_\_\_ and SQLite \_\_\_\_\_\_, used in \_\_\_\_\_\_ configurations.}\todo{Adjust this for execution via Iceberg.}
+
+	\subsection{Empirical Results}
+
+		\begin{table}[ht]
+			\caption{\label{tbl:mean_time_mean_summary}
+			The proportion of mean times taken for mutation analysis compared to Original technique, summarised as a mean across all schemas.
+			}\vspace{1em}
+			\scriptsize
+			\centering
+			\scalebox{\tablescalefactor}{
+				\begin{tabular}{l|rrrrrr@{\hskip 0.5cm}r}
+					& \multicolumn{7}{c}{Technique} \\
+					DBMS & \rot{\Original} & \rot{\FullSchemata} & \rot{\UpFrontSchemata} & \rot{\JustInTimeSchemata} & \rot{\MinimalSchemata} & \rot{\MinimalPlusSchemata} & \rot{\VirtualMutationAnalysis} \\ 
+					\hline
+					HyperSQL & 1.000 & 1.151 & 0.627 & 0.808 & 0.689 & 0.644 & \cellcolor{LimeGreen!25}\textbf{\textcolor{OliveGreen}{0.319}} \\ 
+					Postgres & 1.000 & 0.918 & 0.598 & 0.653 & 0.333 & 0.308 & \cellcolor{LimeGreen!25}\textbf{\textcolor{OliveGreen}{0.010}} \\ 
+					SQLite & 1.000 & 1.542 & 1.313 & \cellcolor{LimeGreen!25}\textbf{\textcolor{OliveGreen}{0.556}} & 0.662 & 0.586 & 0.615 \\ 
+					\hline
+				\end{tabular}
+			}
+		\end{table}
+
+	\subsection{Threats to Validity}
