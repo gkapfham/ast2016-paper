@@ -26,6 +26,28 @@
 
 	\subsection{Empirical Results}
 
+		\begin{table*}[t]
+			\caption{\label{tbl:time_saved_by_dbms_table}
+				Time saving summary.
+			}\vspace{1em}
+			\scriptsize
+			\centering
+			\scalebox{\tablescalefactor}{
+				\begin{tabular}{|l|r|r|r|r|r|r|r|r|}
+					\hline
+					\multirow{2}{*}{DBMS} & Proportion & \multicolumn{3}{c|}{Time taken (ms)} & \multicolumn{3}{c|}{Time taken (\%)} & \multirow{2}{*}{Total (ms)} \\ \cline{3-8}
+					& \multicolumn{1}{c|}{faster} & Mean & Max & Min & Mean & Max & Min & \\
+					\hline
+					HyperSQL & 1.00 & 12,499 & 358,707 & 0.97 & 0.69 & 0.97 & 0.23 & 399,968\\
+					\hline
+					Postgres & 1.00 & 872,356 & 24,932,544 & 0.87 & 0.99 & 1.00 & 0.87 & 27,915,395\\
+					\hline
+					SQLite & 0.84 & 20,174 & 614,607 & -30.07 & 0.40 & 1.00 & -0.50 & 645,575\\
+					\hline
+				\end{tabular}
+			}
+		\end{table*}
+
 		\subsubsection{Research questions}
 
 			\textbf{RQ1: }\emph{How does the time taken by Virtual mutation analysis compare to the Original technique, and how does this vary depending on the DBMS in use?}\\
@@ -37,23 +59,6 @@
 			\textbf{RQ3: }\emph{What effect does the number of mutants have on the efficiency of Virtual mutation analysis?}\\
 
 
-		\begin{table}[ht]
-			\caption{\label{tbl:mean_time_mean_summary}
-			The proportion of mean times taken for mutation analysis compared to Original technique, summarised as a mean across all schemas.
-			}\vspace{1em}
-			\scriptsize
-			\centering
-			\scalebox{\tablescalefactor}{
-				\begin{tabular}{l|rrrrrr@{\hskip 0.5cm}r}
-					& \multicolumn{7}{c}{Technique} \\
-					DBMS & \rot{\Original} & \rot{\FullSchemata} & \rot{\UpFrontSchemata} & \rot{\JustInTimeSchemata} & \rot{\MinimalSchemata} & \rot{\MinimalPlusSchemata} & \rot{\VirtualMutationAnalysis} \\ 
-					\hline
-					HyperSQL & 1.000 & 1.151 & 0.627 & 0.808 & 0.689 & 0.644 & \cellcolor{LimeGreen!25}\textbf{\textcolor{OliveGreen}{0.319}} \\ 
-					Postgres & 1.000 & 0.918 & 0.598 & 0.653 & 0.333 & 0.308 & \cellcolor{LimeGreen!25}\textbf{\textcolor{OliveGreen}{0.010}} \\ 
-					SQLite & 1.000 & 1.542 & 1.313 & \cellcolor{LimeGreen!25}\textbf{\textcolor{OliveGreen}{0.556}} & 0.662 & 0.586 & 0.615 \\ 
-					\hline
-				\end{tabular}
-			}
-		\end{table}
+		
 
 	\subsection{Threats to Validity}
