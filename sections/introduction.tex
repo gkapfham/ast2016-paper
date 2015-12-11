@@ -25,9 +25,27 @@
 % that would occur if the not like was not included
 
 % Reference:
-% http://data.stackexchange.com/stackoverflow/query/edit/407453
+% http://data.stackexchange.com/stackoverflow/query/407453/prevalence-of-sql-databases
 
 % GMK NOTE: Here are some data points about the prevalence of questions on StackExchange about NoSQL databases
+
+% select
+% Count(Id)
+% from Posts
+% where
+% (
+% Tags like '%nosql%'
+% or Tags like '%mongodb%'
+% or Tags like '%couchdb%'
+% or Tags like '%cassandra%'
+% or Tags like '%neo4j%'
+% or Tags like '%hbase%'
+% )
+
+% TOTAL = 84314 posts
+
+% Reference:
+% http://data.stackexchange.com/stackoverflow/query/407458/prevalence-of-nosql-databases
 
 \begin{itemize}
 
