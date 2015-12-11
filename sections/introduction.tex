@@ -3,8 +3,6 @@
 \section{Introduction}
 \label{sec:introduction}
 
-\begin{itemize}
-
 % GMK NOTE: Here are some data points about the prevalence of queries of StackExchange about SQL databases
 
 % select
@@ -23,9 +21,12 @@
 
 % TOTAL = 876022 posts
 
+% I have confirmed that screening out NoSQL using the above technique does work correctly and avoids the over-counting
+% that would occur if the not like was not included
+
 % GMK NOTE: Here are some data points about the prevalence of questions on StackExchange about NoSQL databases
 
-
+\begin{itemize}
 
   \item Relational databases form a key part of many different applications, finding use in a broad range of domains from highly popular internet browser applications (Chrome ref, Firefox ref) to making important contributions to political campaigns (Amazon ref), by providing a reliable way to store and retrieve data.
 
