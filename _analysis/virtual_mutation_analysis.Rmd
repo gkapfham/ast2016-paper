@@ -1,0 +1,18 @@
+---
+title: "Virtual Mutation Data Analysis for the AST 2016 Paper"
+output:
+  pdf_document:
+    highlight: pygments
+---
+
+This code will load in the virtual mutation package from a local directory. I was not able to get it to work with an
+installation from Bitbucket because of permission errors. You will need to change the path so that it is correct for
+your file system.
+
+```{r, echo=TRUE}
+options(scipen=10, width=200)
+mypath = "/home/gkapfham/working/research/source/analysis/databases/"
+devtools::install_local(paste(mypath, "virtualmutationanalysis", sep=""))
+```
+
+
