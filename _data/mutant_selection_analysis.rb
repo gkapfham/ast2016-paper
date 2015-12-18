@@ -46,24 +46,24 @@ def output(file, line)
   file.flush
 end
 
-#BankAccount
-#       BrowserCookies
-#       CoffeeOrders
-#       CustomerOrder
 schemas = 
 	%w(
-       Employee
-       Examination
-       Flights
-       Inventory
-       Iso3166
-       JWhoisServer
-       MozillaPermissions
-       NistWeather
-       NistXTS749
-       Person
-       Products
-       StudentResidence)
+	  BankAccount
+      BrowserCookies
+      CoffeeOrders
+      CustomerOrder
+      Employee
+      Examination
+      Flights
+      Inventory
+      Iso3166
+      JWhoisServer
+      MozillaPermissions
+      NistWeather
+      NistXTS749
+      Person
+      Products
+      StudentResidence)
 
 dbmses = %w(HyperSQL Postgres SQLite)
 
