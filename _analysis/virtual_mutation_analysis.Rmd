@@ -5,6 +5,8 @@ output:
     highlight: pygments
 ---
 
+# Installing the Virtual Mutation Package
+
 This code will load in the virtual mutation package from a local directory. I was not able to get it to work with an
 installation from Bitbucket because of permission errors. You will need to change the path so that it is correct for
 your file system.
@@ -15,4 +17,20 @@ mypath = "/home/gkapfham/working/research/source/analysis/databases/"
 devtools::install_local(paste(mypath, "virtualmutationanalysis", sep=""))
 ```
 
+# Loading the Data Set Comparing Time-Constrained Mutation and Virtual Mutation
+
+First, load in the libraries that are used along with the virtualmutationanalysis package.
+
+```{r, echo=TRUE}
+library(virtualmutationanalysis)
+library(plyr)
+library(dplyr)
+library(ggplot2)
+```
+
+```{r fig.height=20, fig.width=8, cache=TRUE}
+time_constrained_data = read_time_constrained_mutation_data()
+time_constrained_data_tidy = time_constrained_data %>% transform_time_constrained_data_for_scores()
+visualise_mutation_score_time_constrained(time_constrained_data_tidy)
+```
 
