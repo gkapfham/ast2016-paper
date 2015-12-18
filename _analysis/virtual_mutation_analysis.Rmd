@@ -39,4 +39,24 @@ time_constrained_data_tidy = time_constrained_data %>% transform_time_constraine
 visualise_mutation_score_time_constrained(time_constrained_data_tidy)
 ```
 
+Analysis of the results in this graph:
+
+- Much more variability for the time-constrained method than the virtual one
+- Greater variability in the Person schema is due to the fact that sometimes the score is zero, other times it is one
+
+Additional data points to support this analysis
+
+```{r, echo=TRUE, tidy=FALSE}
+time_constrained_data_tidy %>%
+  filter(schema %in% c("Person")) %>%
+  filter(dbms %in% c("Postgres")) %>%
+  filter(score_type %in% c("Time-Constrained")) %>%
+  print(n=100)
+time_constrained_data_tidy %>%
+  filter(schema %in% c("BankAccount")) %>%
+  filter(dbms %in% c("HyperSQL")) %>%
+  filter(score_type %in% c("Time-Constrained")) %>%
+  print(n=100)
+```
+
 
