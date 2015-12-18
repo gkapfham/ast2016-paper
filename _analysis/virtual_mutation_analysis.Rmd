@@ -44,7 +44,7 @@ Analysis of the results in this graph:
 
 - Much more variability for the time-constrained method than the virtual one
 - Greater variability in the Person schema is due to the fact that sometimes the score is zero, other times it is one
-- Also, the BankAccount schema sees a lot of variability, with very different high and low values
+- Also, the BankAccount schema sees a lot of variability, with noticeable high and low values
 
 Additional data points to support this analysis
 
