@@ -30,7 +30,7 @@ suppressPackageStartupMessages(library(grid))
 suppressPackageStartupMessages(library(scales))
 ```
 
-```{r fig.height=5, fig.width=10, cache=TRUE}
+```{r, echo=TRUE}
 time_constrained_data = read_time_constrained_mutation_data()
 time_constrained_data_tidy = time_constrained_data %>% transform_time_constrained_data_for_scores()
 visualise_mutation_score_time_constrained(time_constrained_data_tidy)
