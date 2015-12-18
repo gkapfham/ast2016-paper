@@ -29,6 +29,7 @@ library(virtualmutationanalysis)
 suppressPackageStartupMessages(library(plyr))
 suppressPackageStartupMessages(library(dplyr))
 suppressPackageStartupMessages(library(ggplot2))
+suppressPackageStartupMessages(library(knitr))
 suppressPackageStartupMessages(library(grid))
 suppressPackageStartupMessages(library(scales))
 ```
@@ -69,7 +70,8 @@ time_constrained_data_tidy %>%
 
 ```{r, echo=TRUE}
 time_constrained_data = read_time_constrained_mutation_data()
-time_constrained_data_totals_tidy = time_constrained_data %>% transform_time_constrained_data_for_totals()
+time_constrained_data_totals_tidy = time_constrained_data %>%
+  transform_time_constrained_data_for_totals()
 visualise_mutation_totals_time_constrained(time_constrained_data_totals_tidy)
 ```
 
