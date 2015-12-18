@@ -66,3 +66,10 @@ time_constrained_data_tidy %>%
 ```
 
 ## Visualise the Total Number of Mutants
+
+```{r, echo=TRUE}
+time_constrained_data = read_time_constrained_mutation_data()
+time_constrained_data_totals_tidy = time_constrained_data %>% transform_time_constrained_data_for_totals()
+visualise_mutation_totals_time_constrained(time_constrained_data_totals_tidy)
+```
+
