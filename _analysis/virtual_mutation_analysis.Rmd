@@ -74,4 +74,9 @@ time_constrained_data_totals_tidy = time_constrained_data %>%
   transform_time_constrained_data_for_totals()
 visualise_mutation_totals_time_constrained(time_constrained_data_totals_tidy)
 ```
+Analysis of the results in this graph:
+
+- The values for the Time-Constrained method are averages across the thirty runs
+- There is the greatest disparity in the total number of mutants run, confirming the last graph
+- For SQLite, it is possible to run all of the mutants for a small number of schemas (e.g., StudentResidence)
 
