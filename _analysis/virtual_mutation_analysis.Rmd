@@ -75,10 +75,26 @@ time_constrained_data_totals_tidy = time_constrained_data %>%
   transform_time_constrained_data_for_totals()
 visualise_mutation_totals_time_constrained(time_constrained_data_totals_tidy)
 ```
+
 Analysis of the results in this graph:
 
 - The values for the Time-Constrained method are averages across the thirty runs
 - There is the greatest disparity in the total number of mutants run for the Postgres DBMS
 - Running mutation analysis on the Postgres DBMS only allows 0, 1, 2, or 3 mutants to be run
 - For SQLite, it is possible to run all of the mutants for a small number of schemas (e.g., StudentResidence)
-- I did several "spot checks" and the values in the graph seem to be correct
+- I did several "spot checks" and the values in the graph seem to be correct (e.g., low values for Postgres)
+
+## Evaluating the Correlation Between the Scores
+
+```{r, echo=TRUE}
+time_constrained_data = read_time_constrained_mutation_data()
+calculate_mutation_score_correlation(time_constrained_data)
+```
+
+Analysis of the results in this output:
+
+- The p-value is very low and thus essentially zero. This rules out the hypothesis that the value of $\tau_b$ is equal to
+  zero, which would have indicate that there is no correlation between the mutation scores.
+- If the correlation has a value of 1 this means that the scores are in perfect agreement.
+- If the correlation has a value of -1 this means that the scores are in perfect disagreement.
+- The score of $0.49$ indicates that there is a "modest" agreement between the mutation scores.
