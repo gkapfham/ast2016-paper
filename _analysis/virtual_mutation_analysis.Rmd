@@ -28,9 +28,10 @@ First, load in the libraries that are used along with the virtualmutationanalysi
 library(virtualmutationanalysis)
 suppressPackageStartupMessages(library(plyr))
 suppressPackageStartupMessages(library(dplyr))
+suppressPackageStartupMessages(library(broom))
 suppressPackageStartupMessages(library(ggplot2))
-suppressPackageStartupMessages(library(knitr))
 suppressPackageStartupMessages(library(grid))
+suppressPackageStartupMessages(library(knitr))
 suppressPackageStartupMessages(library(scales))
 ```
 
@@ -80,5 +81,4 @@ Analysis of the results in this graph:
 - There is the greatest disparity in the total number of mutants run for the Postgres DBMS
 - Running mutation analysis on the Postgres DBMS only allows 0, 1, 2, or 3 mutants to be run
 - For SQLite, it is possible to run all of the mutants for a small number of schemas (e.g., StudentResidence)
-
-Additional data points to support this analysis:
+- I did several "spot checks" and the values in the graph seem to be correct
