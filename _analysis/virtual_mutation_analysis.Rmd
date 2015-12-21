@@ -40,7 +40,7 @@ Now, plot the graph that shows the mutation scores for the virtual mutation tech
 that can run for the same amount of time as the virtual one.
 
 ```{r, echo=TRUE}
-time_constrained_data = read_time_constrained_mutation_data()
+time_constrained_data = read_time_constrained_mutation_data_subset()
 time_constrained_data_tidy = time_constrained_data %>% transform_time_constrained_data_for_scores()
 visualise_mutation_score_time_constrained(time_constrained_data_tidy)
 ```
