@@ -26,9 +26,6 @@ First, load in the libraries that are used along with the virtualmutationanalysi
 
 ```{r, echo=TRUE}
 library(virtualmutationanalysis)
-suppressPackageStartupMessages(library(plyr))
-suppressPackageStartupMessages(library(dplyr))
-suppressPackageStartupMessages(library(broom))
 suppressPackageStartupMessages(library(ggplot2))
 suppressPackageStartupMessages(library(grid))
 suppressPackageStartupMessages(library(knitr))
