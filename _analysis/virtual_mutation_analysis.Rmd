@@ -34,14 +34,21 @@ suppressPackageStartupMessages(library(knitr))
 suppressPackageStartupMessages(library(scales))
 ```
 
+## Show the Schemas for the AST 2016 Paper
+
+```{r, echo=TRUE}
+time_constrained_data <- read_time_constrained_mutation_data_subset()
+time_constrained_data_tidy = time_constrained_data %>% transform_time_constrained_data_for_scores()
+viable_schemas <- time_constrained_data_tidy %>% select(schema) %>% unique()
+knitr::kable(viable_schemas, digits = 3)
+```
+
 ## Visualise the Mutation Scores
 
 Now, plot the graph that shows the mutation scores for the virtual mutation technique and the original mutation method
 that can run for the same amount of time as the virtual one.
 
 ```{r, echo=TRUE}
-time_constrained_data = read_time_constrained_mutation_data_subset()
-time_constrained_data_tidy = time_constrained_data %>% transform_time_constrained_data_for_scores()
 visualise_mutation_score_time_constrained(time_constrained_data_tidy)
 ```
 
@@ -69,8 +76,8 @@ time_constrained_data_tidy %>%
 ## Visualise the Total Number of Mutants
 
 ```{r, echo=TRUE}
-time_constrained_data = read_time_constrained_mutation_data()
-time_constrained_data_totals_tidy = time_constrained_data %>%
+time_constrained_data <- read_time_constrained_mutation_data()
+time_constrained_data_totals_tidy <- time_constrained_data %>%
   transform_time_constrained_data_for_totals()
 visualise_mutation_totals_time_constrained(time_constrained_data_totals_tidy)
 ```
@@ -86,7 +93,7 @@ Analysis of the results in this graph:
 ## Evaluating the Correlation Between the Scores
 
 ```{r, echo=TRUE}
-time_constrained_data = read_time_constrained_mutation_data()
+time_constrained_data <- read_time_constrained_mutation_data()
 calculate_mutation_score_correlation(time_constrained_data)
 ```
 
