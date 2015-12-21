@@ -22,7 +22,9 @@ devtools::install_local(paste(mypath, "virtualmutationanalysis", sep=""))
 
 ## Initialise the System
 
-First, load in the libraries that are used along with the virtualmutationanalysis package.
+First, load in the libraries that are used in addition to those with the virtualmutationanalysis package. Note that
+right now the virtualmutationanalysis package will automatically load all of the packages that it needs to performs its
+various analyses.
 
 ```{r, echo=TRUE}
 library(virtualmutationanalysis)
