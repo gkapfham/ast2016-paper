@@ -18,7 +18,7 @@ mypath = "/home/gkapfham/working/research/source/analysis/databases/"
 devtools::install_local(paste(mypath, "virtualmutationanalysis", sep=""))
 ```
 
-# Comparing "Time-Constrained" Original Mutation and Virtual Mutation
+# Comparing "Time-Constrained" Original and Virtual Mutation
 
 ## Initialise the System
 
@@ -40,7 +40,7 @@ suppressPackageStartupMessages(library(scales))
 time_constrained_data <- read_time_constrained_mutation_data_subset()
 time_constrained_data_tidy = time_constrained_data %>% transform_time_constrained_data_for_scores()
 viable_schemas <- time_constrained_data_tidy %>% select(schema) %>% unique()
-knitr::kable(viable_schemas, digits = 3)
+knitr::kable(viable_schemas)
 ```
 
 ## Visualise the Mutation Scores
