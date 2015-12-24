@@ -3,76 +3,76 @@
 \section{Empirical Study}
 \label{sec:empirical-study}
 
-	\subsection{Experimental Setup}
+    \subsection{Experimental Setup}
 
-		\input{tables/schemas.tex}
+        \input{tables/schemas.tex}
 
-		\begin{itemize}
-			\item 32 schemas
-			\begin{itemize}
-				\item 1 to 42 tables
-				\item 3 to 309 columns
-				\item 0 to 134 constraints
-				\item Includes each of the types of constraint supported by \SchemaAnalyst (\PK, \FK, \NOTNULL, \UNIQUE and \CHECK constraints)
-			\end{itemize}
-			\item 3 DBMSs -- \Postgres, \HyperSQL (in-memory), \SQLite (in-memory)
-			\item 30 repeated trials
-			\item 2 techniques -- \Original and \VirtualMutationAnalysis
-			\item Metrics -- time taken for mutation analysis, number of mutants, number of test cases
-			\item Mention that the mutation scores of the Original technique are used to validate the results given by virtual mutation analysis, and that in every case the results were identical. (Possibly repeat this in the threats section?)
-		\end{itemize}
+        \begin{itemize}
+            \item 32 schemas
+            \begin{itemize}
+                \item 1 to 42 tables
+                \item 3 to 309 columns
+                \item 0 to 134 constraints
+                \item Includes each of the types of constraint supported by \SchemaAnalyst (\PK, \FK, \NOTNULL, \UNIQUE and \CHECK constraints)
+            \end{itemize}
+            \item 3 DBMSs -- \Postgres, \HyperSQL (in-memory), \SQLite (in-memory)
+            \item 30 repeated trials
+            \item 2 techniques -- \Original and \VirtualMutationAnalysis
+            \item Metrics -- time taken for mutation analysis, number of mutants, number of test cases
+            \item Mention that the mutation scores of the Original technique are used to validate the results given by virtual mutation analysis, and that in every case the results were identical. (Possibly repeat this in the threats section?)
+        \end{itemize}
 
-		\paper{Mutation2013}{To perform the experiments, we used the Java programming language to implement our approach in the SchemaAnalyst tool [3]. SchemaAnalyst was compiled with the JDK 7 compiler and executed with the Oracle Java 1.7 64-bit virtual machine for Linux. We executed the experiments on a \_\_\_\_\_\_ machine, \_\_\_\_\_\_ 64-bit kernel, with a \_\_\_\_\_\_ GHz CPU and \_\_\_\_\_\_ RAM. The specific DBMS versions were Postgres \_\_\_\_\_\_ and SQLite \_\_\_\_\_\_, used in \_\_\_\_\_\_ configurations.}\todo{Add version number for HyperSQL. Mention that SQLite and HyperSQL were `in-memory'.}
+        \paper{Mutation2013}{To perform the experiments, we used the Java programming language to implement our approach in the SchemaAnalyst tool [3]. SchemaAnalyst was compiled with the JDK 7 compiler and executed with the Oracle Java 1.7 64-bit virtual machine for Linux. We executed the experiments on a \_\_\_\_\_\_ machine, \_\_\_\_\_\_ 64-bit kernel, with a \_\_\_\_\_\_ GHz CPU and \_\_\_\_\_\_ RAM. The specific DBMS versions were Postgres \_\_\_\_\_\_ and SQLite \_\_\_\_\_\_, used in \_\_\_\_\_\_ configurations.}\todo{Add version number for HyperSQL. Mention that SQLite and HyperSQL were `in-memory'.}
 
-	\subsection{Empirical Results}
+    \subsection{Empirical Results}
 
-		\begin{table*}[t]
-			\caption{\label{tbl:time_saved_by_dbms_table}
-				Time saving summary.
-			}\vspace{1em}
-			\scriptsize
-			\centering
-			\scalebox{\tablescalefactor}{
-				\begin{tabular}{|l|r|r|r|r|r|r|r|r|}
-					\hline
-					\multirow{2}{*}{DBMS} & Proportion & \multicolumn{3}{c|}{Time taken (ms)} & \multicolumn{3}{c|}{Time taken (\%)} & \multirow{2}{*}{Total (ms)} \\ \cline{3-8}
-					& \multicolumn{1}{c|}{faster} & Mean & Max & Min & Mean & Max & Min & \\
-					\hline
-					HyperSQL & 1.00 & 12,499 & 358,707 & 1 & 0.69 & 0.97 & 0.23 & 399,968\\
-					\hline
-					Postgres & 1.00 & 872,356 & 24,932,544 & 1 & 0.99 & 1.00 & 0.87 & 27,915,395\\
-					\hline
-					SQLite & 0.84 & 20,174 & 614,607 & -30 & 0.40 & 1.00 & -0.50 & 645,575\\
-					\hline
-				\end{tabular}
-			}
-		\end{table*}
+        \begin{table*}[t]
+            \caption{\label{tbl:time_saved_by_dbms_table}
+                Time saving summary.
+            }\vspace{1em}
+            \scriptsize
+            \centering
+            \scalebox{\tablescalefactor}{
+                \begin{tabular}{|l|r|r|r|r|r|r|r|r|}
+                    \hline
+                    \multirow{2}{*}{DBMS} & Proportion & \multicolumn{3}{c|}{Time taken (ms)} & \multicolumn{3}{c|}{Time taken (\%)} & \multirow{2}{*}{Total (ms)} \\ \cline{3-8}
+                    & \multicolumn{1}{c|}{faster} & Mean & Max & Min & Mean & Max & Min & \\
+                    \hline
+                    HyperSQL & 1.00 & 12,499 & 358,707 & 1 & 0.69 & 0.97 & 0.23 & 399,968\\
+                    \hline
+                    Postgres & 1.00 & 872,356 & 24,932,544 & 1 & 0.99 & 1.00 & 0.87 & 27,915,395\\
+                    \hline
+                    SQLite & 0.84 & 20,174 & 614,607 & -30 & 0.40 & 1.00 & -0.50 & 645,575\\
+                    \hline
+                \end{tabular}
+            }
+        \end{table*}
 
-		\begin{figure*}[t]
-			\centering
-			\includegraphics[width=6in]{graphics/time_saved_vs_tests_scatter_noitrust_facetdbms.pdf}
-			\caption{Scatter plot of time saved against number of tests.}
-			{\small Values for the \texttt{iTrust} schema are excluded to prevent scaling issues but follow a similar trend.}
-		\end{figure*}
+        \begin{figure*}[t]
+            \centering
+            \includegraphics[width=6in]{graphics/time_saved_vs_tests_scatter_noitrust_facetdbms.pdf}
+            \caption{Scatter plot of time saved against number of tests.}
+            {\small Values for the \texttt{iTrust} schema are excluded to prevent scaling issues but follow a similar trend.}
+        \end{figure*}
 
-		\begin{figure*}[t]
-			\centering
-			\includegraphics[width=6in]{graphics/time_saved_vs_mutants_scatter_noitrust_facetdbms.pdf}
-			\caption{Scatter plot of time saved against number of mutants.}
-			{\small Values for the \texttt{iTrust} schema are excluded to prevent scaling issues but follow a similar trend.}
-		\end{figure*}
+        \begin{figure*}[t]
+            \centering
+            \includegraphics[width=6in]{graphics/time_saved_vs_mutants_scatter_noitrust_facetdbms.pdf}
+            \caption{Scatter plot of time saved against number of mutants.}
+            {\small Values for the \texttt{iTrust} schema are excluded to prevent scaling issues but follow a similar trend.}
+        \end{figure*}
 
-		\subsubsection{Research questions}
+        \subsubsection{Research questions}
 
-			\textbf{RQ1: }\emph{How does the time taken by Virtual mutation analysis compare to the Original technique, and how does this vary depending on the DBMS in use?}\\
-
-
-			\textbf{RQ2: }\emph{Is the performance of Virtual mutation analysis dependant upon (a) the number of test cases being executed, or (b) the number of mutants being analysed?}\\
+            \textbf{RQ1: }\emph{How does the time taken by Virtual mutation analysis compare to the Original technique, and how does this vary depending on the DBMS in use?}\\
 
 
-			\textbf{RQ3: }\emph{(RQ regarding number of mutants that can be analysed in the same time)}\\
+            \textbf{RQ2: }\emph{Is the performance of Virtual mutation analysis dependant upon (a) the number of test cases being executed, or (b) the number of mutants being analysed?}\\
 
 
-		
+            \textbf{RQ3: }\emph{(RQ regarding number of mutants that can be analysed in the same time)}\\
 
-	\subsection{Threats to Validity}
+
+        
+
+    \subsection{Threats to Validity}
