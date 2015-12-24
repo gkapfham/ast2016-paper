@@ -119,4 +119,14 @@ original_and_virtual_mutation_data = create_original_and_virtual_data()
 visualise_mutation_time_original_virtual(original_and_virtual_mutation_data)
 ```
 
+Commentary on the results in this output:
+
+- Note that this data has been "log transformed" using a log-to-the-base-ten transformation
+- Transformation is done because the Postgres-Original data is on a different scale than all other data
+- This means that you will only see variation for Postgres-Original (without transformation)
+- Using the log-transformed data shows the basic trends in the data sets
+
 Analysis of the results in this output:
+
+- The original technique on Postgres is the slowest overall, suggesting one situation in which it is always best to
+  deploy a virtual technique.
