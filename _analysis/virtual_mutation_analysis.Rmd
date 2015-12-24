@@ -154,7 +154,17 @@ visualise_savings_and_mutants(original_and_virtual_mutation_data_mutant_savings)
 ```
 Analysis of the results in this output:
 
-## Confirm the Results in the Visualisation with a Table
+## Visualise the Time Savings for Using Virtual Instead of Original, with Regard to Tests
+
+```{r, echo=TRUE}
+original_mutation_data = read_original_mutation_data_subset()
+original_and_virtual_mutation_data_mutant_savings = original_and_virtual_mutation_data %>%
+  transform_mutation_time_savings(original_mutation_data)
+visualise_savings_and_tests(original_and_virtual_mutation_data_mutant_savings)
+```
+Analysis of the results in this output:
+
+## Confirm the Results from the Two Graphs with a Table
 
 ```{r, echo=TRUE}
 original_mutation_data = read_original_mutation_data_subset()
