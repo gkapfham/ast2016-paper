@@ -142,7 +142,20 @@ original_and_virtual_data_summary <- original_and_virtual_mutation_data %>%
   summarise_mutation_analysis_time()
 knitr::kable(original_and_virtual_data_summary, digits = 3)
 ```
+
 Analysis of the results in this output:
+
+- Note that this table is useful for writing content that will appear in the abstract and at the end of the
+  introduction.
+- The original technique is only better for five of the configurations studied.
+- Original is only better for the SQLite database management system, which is in-memory and in a separate process.
+- Original is only better for small database schemas, when it is expected that virtual will not be as useful.
+- Original is judged to be "better" in cases where the results are still within the same order of magnitude.
+- Normally, original is only better than virtual (for SQLite, small schema) by 50-100 ms.
+- Otherwise, the virtual technique is always better than the original technique.
+- So, it is acceptable to use the virtual technique in all cases if you are willing to accept small losses for small
+  schemas when you are using the fast SQLite database management system.
+- TODO: Get a quick summary percentage out of this table.
 
 ## Visualise the Time Savings for Using Virtual Instead of Original, with Regard to Mutants
 
@@ -152,6 +165,7 @@ original_and_virtual_mutation_data_mutant_savings = original_and_virtual_mutatio
   transform_mutation_time_savings(original_mutation_data)
 visualise_savings_and_mutants(original_and_virtual_mutation_data_mutant_savings)
 ```
+
 Analysis of the results in this output:
 
 ## Visualise the Time Savings for Using Virtual Instead of Original, with Regard to Tests
