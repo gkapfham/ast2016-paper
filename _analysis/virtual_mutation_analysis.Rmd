@@ -138,7 +138,8 @@ Analysis of the results in this output:
 ## Determine How Frequently Virtual is Better Than Original
 
 ```{r, echo=TRUE}
-original_and_virtual_data_summary <- original_and_virtual_mutation_data %>% summarise_mutation_analysis_time()
+original_and_virtual_data_summary <- original_and_virtual_mutation_data %>% 
+  summarise_mutation_analysis_time()
 knitr::kable(original_and_virtual_data_summary, digits = 3)
 ```
 
