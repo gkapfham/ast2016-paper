@@ -190,7 +190,11 @@ original_and_virtual_mutation_data_mutant_savings = original_and_virtual_mutatio
   transform_mutation_time_savings(original_mutation_data)
 visualise_savings_and_tests(original_and_virtual_mutation_data_mutant_savings)
 ```
+
 Analysis of the results in this output:
+
+- The trends in this graph are similar to what was given for the previous graph.
+- This graph should only be included as space is available, place near the other graph.
 
 ## Confirm the Results from the Two Graphs with a Table
 
@@ -202,3 +206,15 @@ knitr::kable(original_and_virtual_mutation_data_mutant_savings, digits = 3)
 ```
 
 Analysis of the results in this output:
+
+- This table supports the checking of the results inside of the graphs, a quick check shows things are okay.
+- Note that the very poor -92.9 percent increase for the Iso3166 is for results under 100 ms.
+- It is likely the case that these different times would actually be indistinguishable from a user's perspective.
+- Look into the recent Harman SSBSE about the transformed effect size metric for a citation for the last point.
+- So, even when virtual is the "loser" this would not be noticeable. But, when it is the "winner" this would be
+  apparent.
+
+Questions about the results analysis:
+
+- Is there every a case where we want to do statistical analysis or effect size calculations?
+- I think that the "transformation" idea from Harman would apply to our analysis of the timing values.
