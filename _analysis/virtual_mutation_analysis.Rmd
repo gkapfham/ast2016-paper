@@ -134,3 +134,11 @@ Analysis of the results in this output:
   HyperSQL database, especially for larger schemas like JWhoisServer.
 - Virtual is sometimes slower than Original for the SQLite DBMS, owing to the fact that SQLite is in-memory. Still, for
   larger schemas, like JWhoisServer, it is better to use virtual than Original.
+
+## Determine How Frequently Virtual is Better Than Original
+
+```{r, echo=TRUE}
+original_and_virtual_data_summary <- original_and_virtual_mutation_data %>% summarise_mutation_analysis_time()
+knitr::kable(original_and_virtual_data_summary, digits = 3)
+```
+
