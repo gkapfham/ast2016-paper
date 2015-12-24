@@ -138,8 +138,16 @@ Analysis of the results in this output:
 ## Determine How Frequently Virtual is Better Than Original
 
 ```{r, echo=TRUE}
-original_and_virtual_data_summary <- original_and_virtual_mutation_data %>% 
+original_and_virtual_data_summary <- original_and_virtual_mutation_data %>%
   summarise_mutation_analysis_time()
 knitr::kable(original_and_virtual_data_summary, digits = 3)
 ```
+Analysis of the results in this output:
 
+## Visualise the Time Savings for Using Virtual Instead of Original, with Regard to Mutants
+
+```{r, echo=TRUE}
+original_and_virtual_mutation_data_mutant_savings = original_and_virtual_mutation_data %>% transform_mutation_time_savings()
+visualise_savings_and_mutants(original_and_virtual_mutation_data_mutant_savings)
+```
+Analysis of the results in this output:
