@@ -104,3 +104,19 @@ Analysis of the results in this output:
 - If the correlation has a value of 1 this means that the scores are in perfect agreement.
 - If the correlation has a value of -1 this means that the scores are in perfect disagreement.
 - The score of $0.49$ indicates that there is a "modest" agreement between the mutation scores.
+
+# Comparing the Original and Virtual Mutation Techniques
+
+## Create a Data Set Combining Original and Virtual Observations
+
+```{r, echo=TRUE}
+original_and_virtual_mutation_data = create_original_and_virtual_data()
+```
+
+## Visualise the Mutation Analysis Time for Original and Virtual
+
+```{r, echo=TRUE}
+visualise_mutation_time_original_virtual(original_and_virtual_mutation_data)
+```
+
+Analysis of the results in this output:
