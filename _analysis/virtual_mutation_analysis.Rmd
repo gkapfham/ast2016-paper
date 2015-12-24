@@ -130,3 +130,7 @@ Analysis of the results in this output:
 
 - The original technique on Postgres is the slowest overall, suggesting one situation in which it is always best to
   deploy a virtual technique.
+- The log-transformed data shows that the virtual technique is always faster or comparable to the original one for the
+  HyperSQL database, especially for larger schemas like JWhoisServer.
+- Virtual is sometimes slower than Original for the SQLite DBMS, owing to the fact that SQLite is in-memory. Still, for
+  larger schemas, like JWhoisServer, it is better to use virtual than Original.
