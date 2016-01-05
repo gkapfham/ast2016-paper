@@ -30,10 +30,7 @@ analyses.
 
 ```{r, echo=TRUE}
 library(virtualmutationanalysis)
-suppressPackageStartupMessages(library(ggplot2))
-suppressPackageStartupMessages(library(grid))
 suppressPackageStartupMessages(library(knitr))
-suppressPackageStartupMessages(library(scales))
 ```
 
 ## Show the Schemas for the AST 2016 Paper
