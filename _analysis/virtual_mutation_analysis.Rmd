@@ -10,7 +10,8 @@ output:
 
 This code will load in the virtual mutation package from a local directory. I was not able to get it to work with an
 installation from Bitbucket because of permission errors. You will need to change the path so that it is correct for
-your file system.
+your file system. Note that ultimately, I plan to have this package available through a public GitHub repository. Then,
+in this case, it will be possible to use devtools to perform a standard installation.
 
 ```{r, echo=TRUE}
 options(scipen=10, width=200)
@@ -22,9 +23,10 @@ devtools::install_local(paste(mypath, "virtualmutationanalysis", sep=""))
 
 ## Initialise the System
 
-First, load in the libraries that are used in addition to those with the virtualmutationanalysis package. Note that
-right now the virtualmutationanalysis package will automatically load all of the packages that it needs to performs its
-various analyses.
+First, load in the libraries that are used in addition to those with the virtualmutationanalysis package (i.e., load all
+of the packages not used by virtualmutationanalysis but still used in this RMarkdown file). Note that right now the
+virtualmutationanalysis package will automatically load all of the packages that it needs to performs its various
+analyses.
 
 ```{r, echo=TRUE}
 library(virtualmutationanalysis)
