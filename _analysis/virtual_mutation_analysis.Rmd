@@ -48,7 +48,7 @@ knitr::kable(viable_schemas, format = "latex", booktabs=TRUE)
 Now, plot the graph that shows the mutation scores for the virtual mutation technique and the original mutation method
 that can run for the same amount of time as the virtual one.
 
-```{r, echo=TRUE}
+```{r, fig.width=5.7, fig.height=3.5, echo=TRUE}
 visualise_mutation_score_time_constrained(time_constrained_data_tidy)
 ```
 
