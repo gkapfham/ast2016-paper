@@ -71,11 +71,6 @@ time_constrained_data_tidy_print <- time_constrained_data_tidy %>%
   filter(dbms %in% c("Postgres")) %>%
   filter(score_type %in% c("Time-Constrained"))
 knitr::kable(time_constrained_data_tidy_print, format = "latex", booktabs=TRUE)
-time_constrained_data_tidy %>%
-  filter(schema %in% c("BankAccount")) %>%
-  filter(dbms %in% c("HyperSQL")) %>%
-  filter(score_type %in% c("Time-Constrained")) %>%
-  print(n=100)
 ```
 
 ## Visualise the Total Number of Mutants
