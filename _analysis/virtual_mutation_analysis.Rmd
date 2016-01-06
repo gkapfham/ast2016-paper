@@ -58,7 +58,7 @@ Analysis of the results in this graph:
 - However, the mutation scores are often roughly similar between the two techniques, especially for the HyperSQL and
   SQLite DBMSs
 - It is important to note that the time-constrained method yields mutation scores that are higher than those produced by
-  he virtual mutation technique (e.g., CoffeeOrders and Employee schemas). And, note that the virtual method
+  the virtual mutation technique (e.g., CoffeeOrders and Employee schemas). And, note that the virtual method
   leads to a score that is the same as the standard one. So, time constrained will over estimate the scores sometimes.
 - Greater variability in the Person schema is due to the fact that sometimes the mutation score is zero (i.e., all of
   the mutants are killed) and other times it is one (i.e., none of the mutants are killed)
