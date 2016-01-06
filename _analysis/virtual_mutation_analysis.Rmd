@@ -66,11 +66,11 @@ Analysis of the results in this graph:
 Additional data points to support this analysis:
 
 ```{r, echo=TRUE}
-time_constrained_data_tidy %>%
+time_constrained_data_tidy_print <- time_constrained_data_tidy %>%
   filter(schema %in% c("Person")) %>%
   filter(dbms %in% c("Postgres")) %>%
-  filter(score_type %in% c("Time-Constrained")) %>%
-  print(n=100)
+  filter(score_type %in% c("Time-Constrained"))
+knitr::kable(time_constrained_data_tidy_print, format = "latex", booktabs=TRUE)
 time_constrained_data_tidy %>%
   filter(schema %in% c("BankAccount")) %>%
   filter(dbms %in% c("HyperSQL")) %>%
