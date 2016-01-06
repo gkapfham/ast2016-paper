@@ -3,28 +3,13 @@
 \section{Background}
 \label{sec:background}
 
-	\begin{enumerate}
-		
-		\item Mutating relational database schemas
+\input{figures/nist-weather}
 
-		\begin{itemize}
-			
-			\item The general algorithm for mutation analysis of schemas.
+\inlineheading{Relational Database Schemas} \Figure{fig:nistweather} shows the SQL for the ``\NistWeather'' schema, which is taken from the NIST SQL conformance test suite. It models the collection of annual temperature and rainfall statistics. The schema involves two tables, designed to contained rows of information about weather stations (``\sql{Station}'') and a table for rows of statistics collected from those particular stations in a given month (``\sql{Stats}''). Each table defines a number of columns, with associated data types along with a series of integrity constraints on those columns, highlighted in pink. The role of an integrity constraint is to preserve the validity of the data in the database, defending it from the insertion of certain ``illegal'' values. For example, the \sql{MONTH} columns of the \sql{Stats} table has a ``\CHECK'' constraint defined on it, to ensure that its value can only be between 1 and 12. Further \CCs ensure other column values are within valid limits. Several columns have a ``\NOTNULL'' constraint defined on them, ensuring that a value exists for that particular column in rows of the table. The \sql{Stats} table involves a ``foreign key''---the ``\sql{ID}'' column must be identical to an existing value for the corresponding \sql{ID} column in a row of the \sql{Station} table. Finally, both tables have ``primary keys'' defined on them---a constraint that specifies a set of columns in the table that must have distinct sets of values for each row, so that the row can be uniquely identified for potential lookup up in future. For example, the \sql{Stats} table has a multicolumn primary key defined on the \sql{ID} and \sql{MONTH} columns. 
 
-			\item The different types of faults we model using our mutation operators.
+\inlineheading{Testing Integrity Constraints}
 
-			\item How we generate data to test constraints -- reference the use of constraint predicates in defining coverage criteria 
 
-		\end{itemize}
+\inlineheading{Mutation Analysis of Relational Database Schemas}
 
-		\item Modelling behaviour of SQL databases
 
-		\begin{itemize}
-			
-			\item Internal representation of SQL in SchemaAnalyst
-
-			\item Reference to how data generation requires a model of the DBMS in use
-
-		\end{itemize}
-
-	\end{enumerate}
