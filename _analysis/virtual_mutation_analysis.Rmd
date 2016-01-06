@@ -159,7 +159,7 @@ Analysis of the results in this output:
 
 ## Visualise the Time Savings for Using Virtual Instead of Original, with Regard to Mutants
 
-```{r, echo=TRUE}
+```{r, fig.width=3, fig.height=3.5, echo=TRUE}
 original_mutation_data = read_original_mutation_data_subset()
 original_and_virtual_mutation_data_mutant_savings = original_and_virtual_mutation_data %>%
   transform_mutation_time_savings(original_mutation_data)
