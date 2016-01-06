@@ -38,27 +38,31 @@ executed, or (b) the number of mutants being analysed?}\\
 
 \subsection{Empirical Results}
 
-\begin{table*}[t]
-  \caption{\label{tbl:time_saved_by_dbms_table}
-    Time saving summary.
-  }\vspace{1em}
-  \scriptsize
-  \centering
-  \scalebox{\tablescalefactor}{
-    \begin{tabular}{|l|r|r|r|r|r|r|r|r|}
-      \hline
-      \multirow{2}{*}{DBMS} & Proportion & \multicolumn{3}{c|}{Time taken (ms)} & \multicolumn{3}{c|}{Time taken (\%)} & \multirow{2}{*}{Total (ms)} \\ \cline{3-8}
-                            & \multicolumn{1}{c|}{faster} & Mean & Max & Min & Mean & Max & Min & \\
-      \hline
-      HyperSQL & 1.00 & 12,499 & 358,707 & 1 & 0.69 & 0.97 & 0.23 & 399,968\\
-      \hline
-      Postgres & 1.00 & 872,356 & 24,932,544 & 1 & 0.99 & 1.00 & 0.87 & 27,915,395\\
-      \hline
-      SQLite & 0.84 & 20,174 & 614,607 & -30 & 0.40 & 1.00 & -0.50 & 645,575\\
-      \hline
-    \end{tabular}
-  }
-\end{table*}
+% GMK NOTE: For now, I am commenting out this table as it corresponds to the old results. Also, I am not sure that it is
+% absolutely needed with all of the graphs that we have in the paper. Perhaps it will take up too much space and not be
+% that useful? Finally, the font size of this table is too small.
+
+% \begin{table*}[t]
+%   \caption{\label{tbl:time_saved_by_dbms_table}
+%     Time saving summary.
+%   }\vspace{1em}
+%   \scriptsize
+%   \centering
+%   \scalebox{\tablescalefactor}{
+%     \begin{tabular}{|l|r|r|r|r|r|r|r|r|}
+%       \hline
+%       \multirow{2}{*}{DBMS} & Proportion & \multicolumn{3}{c|}{Time taken (ms)} & \multicolumn{3}{c|}{Time taken (\%)} & \multirow{2}{*}{Total (ms)} \\ \cline{3-8}
+%                             & \multicolumn{1}{c|}{faster} & Mean & Max & Min & Mean & Max & Min & \\
+%       \hline
+%       HyperSQL & 1.00 & 12,499 & 358,707 & 1 & 0.69 & 0.97 & 0.23 & 399,968\\
+%       \hline
+%       Postgres & 1.00 & 872,356 & 24,932,544 & 1 & 0.99 & 1.00 & 0.87 & 27,915,395\\
+%       \hline
+%       SQLite & 0.84 & 20,174 & 614,607 & -30 & 0.40 & 1.00 & -0.50 & 645,575\\
+%       \hline
+%     \end{tabular}
+%   }
+% \end{table*}
 
 \begin{figure*}[t]
   \centering
