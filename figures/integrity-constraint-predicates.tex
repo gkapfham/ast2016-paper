@@ -1,0 +1,66 @@
+%!TEX root=../ast2016.tex
+
+\begin{figure}
+\centering
+
+\scalefigure{
+\begin{tabular}{|l|}
+\hline
+
+\begin{tabular}{l}
+\vspace{-2ex} \\
+
+{\bf function} obtain\_primary\_key\_constraint\_predicate($pkc(tbl, CL), nr$) \\
+
+\atab {\bf where} \\
+\atab \atab \tinybullet $pkc(tbl, CL), nr$ is a \PKC \\
+\atab \atab \atab \tinybullet $tbl$ is the table on which the constraint is defined \\
+\atab \atab \atab \tinybullet $CL = cl_1 ... cl_n$ is the set of columns of the constraint \\
+\atab \atab \tinybullet $nr$ be a new row of data to be inserted into $tbl$ \smallvspace \smallvspace \\
+
+\atab {\it // null condition} \\
+\atab {\bf let} $nc_{pk} \leftarrow (\selectneqnull{nr}{cl_1} \smallwedge \ldots \smallwedge \selectneqnull{nr}{cl_n})$ \smallvspace \\
+
+\atab {\it // constraint condition} \\
+\atab {\bf let} $cc_{pk} \leftarrow (\forallinrel{er}{tbl}: \selectneq{nr}{er}{cl_1} \smallvee \ldots \smallvee \selectneq{nr}{er}{cl_n})$ \smallvspace \\
+
+\atab {\it // integrity constraint predicate} \\
+\atab {\bf let} $icp_{pk} \leftarrow nc_{pk} \smallwedge cc_{pk}$ \smallvspace \\
+
+\atab {\bf return} $icp_{pk}$ \smallvspace \\
+
+{\bf end function} \\
+\\
+
+{\bf function} obtain\_primary\_key\_constraint\_predicate\_for\_\sqlite($pkc(tbl, CL), nr$) \\
+
+\atab {\bf where} \\
+\atab \atab \tinybullet $pkc(tbl, CL)$ is a \PKC for SQLite \\
+\atab \atab \atab \tinybullet $tbl$ is the table on which the constraint is defined \\
+\atab \atab \atab \tinybullet $CL = cl_1 ... cl_n$ is the set of columns of the constraint \\
+\atab \atab \tinybullet $nr$ be a new row of data to be inserted into $tbl$ \smallvspace \smallvspace \\
+
+\atab {\it // null condition} \\
+\atab {\bf let} $nc_{pk} \leftarrow (\selecteqnull{nr}{cl_1} \smallvee \ldots \smallvee \selecteqnull{nr}{cl_n})$ \smallvspace \\
+
+\atab {\it // constraint condition} \\
+\atab {\bf let} $cc_{pk} \leftarrow (\forallinrel{er}{tbl}: \selectneq{nr}{er}{cl_1} \smallvee \ldots \smallvee \selectneq{nr}{er}{cl_n})$ \smallvspace \\
+
+\atab {\it // integrity constraint predicate} \\
+\atab {\bf let} $icp_{pk} \leftarrow nc_{pk} \smallvee cc_{pk}$ \smallvspace \\
+
+\atab {\bf return} $icp_{pk}$ \smallvspace \\
+
+{\bf end function} \\
+
+\vspace{-2ex} \\
+\end{tabular} \\
+
+\hline
+\end{tabular}}
+
+\caption{\label{fig:integrity-constraint-functions-primary-keys}
+Functions for obtaining \PK integrity constraint predicates. The first function is a general definition, the secondary function applies to the specific behavior of \sqlite.}
+
+\end{figure}
+

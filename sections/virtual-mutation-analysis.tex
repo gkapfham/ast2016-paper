@@ -1,0 +1,32 @@
+%!TEX root=../ast2016.tex
+
+\section{Virtual Mutation Analysis}
+\label{sec:virtual-mutation-analysis}
+
+As previously described, mutation analysis of database schema involves creating the mutant schema using the DBMS, and then submitting \INSERT statements and monitoring whether the data is admitted into the database or not. If the mutant accepts or rejects \INSERT statements that the original schema did not, a difference in behavior is detected, and the mutant is ``killed''.
+
+Program mutation analysis is an expensive process, and this is also true of database schema mutation. For database schema mutation, there are additional communication overheads with the DBMS, which typically occurs over a network socket. This can be slow even when the DBMS is running on the same machine as the process submitting the relevant SQL commands. 
+% This might draw the question of why we didn't compare with mutant schemata
+In previous work, we sought to minimize the amount of communication that needed to take place, for example by combining all mutants into a single database schema \cite{Wright2013}. 
+Nevertheless, the overheads of setting up communication and executing SQL commands on the DBMS cannot be completely eliminated.
+
+An alternative is to model the behavior of the DBMS and use it to perform mutation analysis ``virtually''. McMinn et al. modeled the integrity constraints of different DBMSs in order to derive different coverage criteria \cite{McMinn2015}. In this paper, we argue that such a model can be used to evaluate mutants. The existence of such a model for a DMBS makes it possible to perform mutation analysis without the need to interact with a DBMS at all, potentially speeding up the time taken to evaluate mutants.
+
+\subsection{Modeling a DBMS}
+McMinn et al. introduce {\it integrity constraint predicates} to model integrity constraints that can be specified as part of a database schema for a DBMS. Integrity constraint predicates evaluate to {\it true} when a row of data in an \INSERT statement satisfies the constraint, and false when it does not.
+
+
+
+
+
+
+%% From Chris's thesis:
+
+% \thesis{Communication between different processes can prove to be very computationally expensive, even when those processes are running on the same physical machine (e.g., via Unix domain sockets), compared to sharing data between different parts of the same process (either with single or multiple threads of execution). All of the previously described mutation analysis techniques require interaction with a database instance hosted in a DBMS, and therefore incur such a performance cost. The \emph{Virtual Mutation Analysis} technique aims to reduce the time taken for mutation analysis by removing this requirement, by instead exploiting a model of DBMS behaviour used elsewhere in \SA to perform mutation analysis without creating a database.
+
+% As discussed in \todo{data generation reference}, the data generation component of \SA is able to automatically generate test suites of data that exercise the constraints of a relational database schema, according to a chosen coverage criterion. To generate the required data a search-based technique is used, with \SA employing the \AVM algorithm, as described in \todo{search algorithms reference}. The search process is guided according to a fitness function that evaluates whether a given set of data tests the constraints as required, either by satisfying or violating all or some of them. This function returns a score between 0 and 1 that can be used to determine how far away a set of data is from meeting the current requirements, such that it can direct the search towards a set of data values that will exhibit the correct response from the DBMS. In this way, the fitness functions produced during data generation model the expected behaviour of the DBMS.
+
+% The Virtual mutation analysis technique exploits these fitness functions to determine whether a test case for a schema will be accepted or rejected by a given DBMS. By repeating this for all cases in a test suite, repeating the process for each mutant of a schema, it is possible to perform mutation analysis without any DBMS interaction. As the fitness functions are designed to be quick to evaluate -- as they may be evaluated many thousands of times during data generation -- the Virtual mutation analysis technique is expected to reduce the time taken for mutation analysis considerably, compared to those communicating with a DBMS.
+
+% A drawback of the Virtual mutation analysis technique is that it requires the internal modelling of each DBMS within \SA to be wholly accurate with respect to the SQL features used in the schema under test. This means that supporting a new DBMS requires the formation of the fitness function to be adjusted according to any subtle differences in its implementation of SQL. However, in general the differences between DBMSs are relatively small, especially for the small set of SQL features used most commonly in many relational database schemas, therefore this human cost is relatively low.
+%}
