@@ -202,7 +202,7 @@ Analysis of the results in this output:
 original_mutation_data = read_original_mutation_data_subset()
 original_and_virtual_mutation_data_mutant_savings = original_and_virtual_mutation_data %>%
   transform_mutation_time_savings(original_mutation_data)
-knitr::kable(original_and_virtual_mutation_data_mutant_savings, format = "latex", digits=3)
+knitr::kable(original_and_virtual_mutation_data_mutant_savings, format = "latex", booktabs=TRUE, digits=3)
 ```
 
 Analysis of the results in this output:
