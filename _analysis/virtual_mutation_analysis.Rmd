@@ -29,6 +29,9 @@ virtualmutationanalysis package will automatically load all of the packages that
 analyses. Now, we are ready to call the functions from the virtualmutationanalysis package and produce the appropriate
 summary tables and graphs.
 
+In addition, note that this document uses the term "Original" and the paper itself now uses the term "Standard". As time
+permits, this small mistake in the naming convention should be updated.
+
 ```{r, echo=TRUE}
 library(virtualmutationanalysis)
 suppressPackageStartupMessages(library(knitr))
@@ -134,6 +137,17 @@ Analysis of the results in this output:
   HyperSQL database, especially for larger schemas like JWhoisServer.
 - Virtual is sometimes slower than Original for the SQLite DBMS, owing to the fact that SQLite is in-memory. Still, for
   larger schemas, like JWhoisServer, it is better to use virtual than Original.
+
+## Perform a Statistical Analysis on the Execution Timings of the Virtual and Original Techniques
+
+```{r, echo=TRUE}
+analyse_wilcox_rank_sum_test(original_and_virtual_mutation_data)
+```
+
+Note that this hypothesis testing approach creates two vectors of timings, one for all of the original timings and one
+for all of the virtual timings, across all of the schemas. As the p-value is very small, these results reveal that there
+is a statistically significant difference between the timings and thus the virtual technique is faster in a statistically
+significant fashion. But, it is also important to discern whether there is a practical significance to these results.
 
 ## Determine How Frequently Virtual is Better Than Original
 
