@@ -1,4 +1,4 @@
-%!TEX root=ast2016.tex
+%!TEX root=../ast2016.tex
 
 \section{Empirical Study}
 \label{sec:empirical-study}
@@ -26,13 +26,25 @@
 
 \subsubsection{Research questions}
 
-\textbf{RQ1: }\emph{How does the time taken by Virtual mutation analysis compare to the Original technique, and how does
+\textbf{RQ1: }\emph{How does the time taken by \vma compare to the Original technique, and how does
 this vary depending on the DBMS in use?}\\
 
 \textbf{RQ2: }\emph{Is the performance of Virtual mutation analysis dependant upon (a) the number of test cases being
 executed, or (b) the number of mutants being analysed?}\\
 
 \textbf{RQ3: }\emph{(RQ regarding number of mutants that can be analysed in the same time)}\\
+
+
+\subsubsection{Methodology}
+For RQs 1 and 2, we ran the \Original technique and \vma 30 times each, for each of the schemas with each of the DBMSs, collating the time taken. For each run, we used a test suite automatically generated using a search-based technique with a unique random seed. 
+
+Details of the specific test suite generation algorithms used are detailed by McMinn \etal~\cite{McMinn2015}. We used the \AVM method as it is the most reliable automated technique for generating high levels of test coverage. The coverage criterion we used was a combination of ``ClauseAICC'', ``AUCC'' and ``ANCC'', which merges the strongest criteria for testing the integrity constraints of database schemas.
+
+For RQ3, we then ran the \Original technique 30 times, but by performing mutation analysis by selecting mutants at random until each the time taken for the corresponding run of the 30 repetitions of \vma was exhausted.
+
+We performed all experiments with our \SA tool \cite{Kapfhammer2013,Wright2014,McMinn2015},
+compiled with the Java Development Kit 7 compiler and executed with the Linux version of the 64-bit Oracle Java 1.7 virtual machine. Experiments were executed on an Ubuntu 14.04 workstation, with a 3.13.0-44 GNU/Linux 64-bit kernel, a quad-core 2.4GHz CPU and 12GB RAM. All input (i.e., schemas) and output (i.e., data) files were stored on the local disk. We used the default configuration of \PostgreSQL version 9.3.5, \HyperSQL version 2.2.8 and \SQLite 3.8.2. \HyperSQL and \SQLite were used with ``in-memory'' mode enabled.
+
 
 \subsection{Threats to Validity}
 
