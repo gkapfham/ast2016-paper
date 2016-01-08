@@ -35,18 +35,23 @@ The experiments in this paper investigate three research questions, which we sta
 
 \vspace{5pt}
 
+\noindent
 \textbf{RQ1 (Efficiency):} How does the time overhead of \VMA compare to the \Standard technique's cost, and how does
 this vary depending on the DBMS in use?
 
 \vspace{5pt}
 
-\textbf{RQ2 (Scalability):} How does the time savings from using \VMA scale when increasing the number of analysed mutants
-or the number of tests?
+\noindent
+\textbf{RQ2 (Scalability):} How does the time savings from using \VMA scale when increasing either the number
+of analysed mutants or the number of executed tests?
 
 \vspace{5pt}
 
+% can only analyse mutants for the same amount of time as the presented approach?
+
+\noindent
 \textbf{RQ3 (Effectiveness):} How does the mutation score of \VMA compare to the score of a time-constrained method that
-can only analyse mutants for the same amount of time as the presented approach?
+is only permitted to run for as long as the virtual one?
 
 \subsection{Methodology}
 \label{sec:methodology}
@@ -66,7 +71,8 @@ compiled with the Java Development Kit 7 compiler and executed with the Linux ve
 \label{sec:threats-to-validity}
 
 % TODO: Explain that we check the mutation score to ensure that Standard and Virtual are the same!
-% TODO: Reference the SSBSE 2015 paper that talk about transformation of the 
+% TODO: Reference the SSBSE 2015 paper that talks about transformation of the values; we also
+% did this and we are certain that there is no difference (we also looked at different thresholds).
 
 \section{Empirical Results}
 \label{sec:empirical-results}
