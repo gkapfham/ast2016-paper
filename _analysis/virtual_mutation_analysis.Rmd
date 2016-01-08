@@ -153,7 +153,7 @@ these results. So, it is also important to calculate the effect size using the V
 ## Perform an Effect Size Analysis on the Execution Timings of the Virtual and Original Techniques
 
 ```{r, echo=TRUE}
-analyse_vargha_delaney_effect_size(original_and_virtual_mutation_data)
+analyse_vargha_delaney_effect_size(original_and_virtual_mutation_data) %>% str()
 ```
 
 The estimate of the effect size is $.253$ and is thus "large". Since we are dealing with timings where a lower value is
@@ -163,7 +163,7 @@ statement). But, what is the effect size if we disregard all timings below 100 m
 ```{r, echo=TRUE}
 original_and_virtual_mutation_data_transformed <-
   transform_execution_times_for_threshold(original_and_virtual_mutation_data)
-analyse_vargha_delaney_effect_size(original_and_virtual_mutation_data_transformed)
+analyse_vargha_delaney_effect_size(original_and_virtual_mutation_data_transformed) %>% str()
 ```
 
 ## Determine How Frequently Virtual is Better Than Original
