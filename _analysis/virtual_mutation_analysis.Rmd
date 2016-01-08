@@ -170,6 +170,14 @@ original_and_virtual_mutation_data_transformed <-
 analyse_vargha_delaney_effect_size(original_and_virtual_mutation_data_transformed) %>% str()
 ```
 
+Finally, it is useful to see a wide range of effect sizes to discern how sensitive the effect size is to thresholding.
+
+```{r, echo=TRUE}
+analyse_vargha_delaney_effect_size_thresholding(original_and_virtual_mutation_data)
+```
+
+The conclusion from this result is that virtual is definitely better than original.
+
 ## Determine How Frequently Virtual is Better Than Original
 
 ```{r, echo=TRUE}
