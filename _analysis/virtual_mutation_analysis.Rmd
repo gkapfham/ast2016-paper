@@ -33,7 +33,7 @@ In addition, note that this document uses the term "Original" and the paper itse
 permits, this small mistake in the naming convention should be updated.
 
 ```{r, echo=TRUE}
-library(virtualmutationanalysis)
+suppressPackageStartupMessages(library(virtualmutationanalysis))
 suppressPackageStartupMessages(library(knitr))
 ```
 
@@ -148,6 +148,13 @@ Note that this hypothesis testing approach creates two vectors of timings, one f
 for all of the virtual timings, across all of the schemas. As the p-value is very small, these results reveal that there
 is a statistically significant difference between the timings and thus the virtual technique is faster in a statistically
 significant fashion. But, it is also important to discern whether there is a practical significance to these results.
+
+## Perform an Effect Size Analysis on the Execution Timings of the Virtual and Original Techniques
+
+```{r, echo=TRUE}
+analyse_vargha_delaney_effect_size(original_and_virtual_mutation_data)
+```
+
 
 ## Determine How Frequently Virtual is Better Than Original
 
