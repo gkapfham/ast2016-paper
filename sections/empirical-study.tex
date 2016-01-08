@@ -22,21 +22,29 @@
   \item Mention that the mutation scores of the Original technique are used to validate the results given by virtual mutation analysis, and that in every case the results were identical. (Possibly repeat this in the threats section?)
 \end{itemize}
 
-% \paper{Mutation2013}{To perform the experiments, we used the Java programming language to implement our approach in the SchemaAnalyst tool [3]. SchemaAnalyst was compiled with the JDK 7 compiler and executed with the Oracle Java 1.7 64-bit virtual machine for Linux. We executed the experiments on a \_\_\_\_\_\_ machine, \_\_\_\_\_\_ 64-bit kernel, with a \_\_\_\_\_\_ GHz CPU and \_\_\_\_\_\_ RAM. The specific DBMS versions were Postgres \_\_\_\_\_\_ and SQLite \_\_\_\_\_\_, used in \_\_\_\_\_\_ configurations.}\todo{Add version number for HyperSQL. Mention that SQLite and HyperSQL were `in-memory'.}
+\subsubsection{Research Questions}
+\label{sec:research-questions}
 
-\subsubsection{Research questions}
+The experiments in this paper investigate three research questions, which we state in the following fashion.
 
-\textbf{RQ1: }\emph{How does the time taken by \vma compare to the Original technique, and how does
-this vary depending on the DBMS in use?}\\
+\vspace{5pt}
 
-\textbf{RQ2: }\emph{Is the performance of Virtual mutation analysis dependant upon (a) the number of test cases being
-executed, or (b) the number of mutants being analysed?}\\
+\textbf{RQ1 (Efficiency):} How does the time overhead of \VMA compare to the \Standard technique's cost, and how does
+this vary depending on the DBMS in use?
+
+\vspace{5pt}
+
+% \textbf{RQ2: }\emph{Is the performance of Virtual mutation analysis dependant upon (a) the number of test cases being
+% executed, or (b) the number of mutants being analysed?}\\
+
+\textbf{RQ2 (Scalability):} How does the time taken by \VMA compare to the \Standard technique, and how does
+this vary depending on the DBMS in use? \\
 
 \textbf{RQ3: }\emph{(RQ regarding number of mutants that can be analysed in the same time)}\\
 
-
 \subsubsection{Methodology}
-For RQs 1 and 2, we ran the \Original technique and \vma 30 times each, for each of the schemas with each of the DBMSs, collating the time taken. For each run, we used a test suite automatically generated using a search-based technique with a unique random seed. 
+\label{sec:methodology}
+For RQs 1 and 2, we ran the \Original technique and \vma 30 times each, for each of the schemas with each of the DBMSs, collating the time taken. For each run, we used a test suite automatically generated using a search-based technique with a unique random seed.
 
 Details of the specific test suite generation algorithms used are detailed by McMinn \etal~\cite{McMinn2015}. We used the \AVM method as it is the most reliable automated technique for generating high levels of test coverage. The coverage criterion we used was a combination of ``ClauseAICC'', ``AUCC'' and ``ANCC'', which merges the strongest criteria for testing the integrity constraints of database schemas.
 
