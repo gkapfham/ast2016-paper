@@ -160,6 +160,12 @@ The estimate of the effect size is $.253$ and is thus "large". Since we are deal
 better, this indicates that virtual mutation is the "clear winner" (see the recent SSBSE 2015 paper for support for this
 statement). But, what is the effect size if we disregard all timings below 100 ms?
 
+```{r, echo=TRUE}
+original_and_virtual_mutation_data_transformed <-
+  transform_execution_times_for_threshold(original_and_virtual_mutation_data)
+analyse_vargha_delaney_effect_size(original_and_virtual_mutation_data_transformed)
+```
+
 ## Determine How Frequently Virtual is Better Than Original
 
 ```{r, echo=TRUE}
