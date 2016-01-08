@@ -3,7 +3,13 @@
 \section{Empirical Study}
 \label{sec:empirical-study}
 
+% TODO: Add in one introductory sentence to start off this section
+
 \subsection{Experimental Setup}
+\label{sec:experimental-setup}
+
+\subsubsection{Relational Database Schemas}
+\label{sec:subjects}
 
 \input{tables/schemas.tex}
 
@@ -34,15 +40,12 @@ this vary depending on the DBMS in use?
 
 \vspace{5pt}
 
-% \textbf{RQ2: }\emph{Is the performance of Virtual mutation analysis dependant upon (a) the number of test cases being
-% executed, or (b) the number of mutants being analysed?}\\
-
-\textbf{RQ2 (Scalability):} How does the time savings from using \VMA scale when increasing the number of mutants
-subject to analysis or the number of tests?
+\textbf{RQ2 (Scalability):} How does the time savings from using \VMA scale when increasing the number of analysed mutants
+or the number of tests?
 
 \vspace{5pt}
 
-\textbf{RQ3: }\emph{(RQ regarding number of mutants that can be analysed in the same time)}\\
+\textbf{RQ2 (Effectiveness):} How does the mutation score
 
 \subsubsection{Methodology}
 \label{sec:methodology}
@@ -55,8 +58,14 @@ For RQ3, we then ran the \Original technique 30 times, but by performing mutatio
 We performed all experiments with our \SA tool \cite{Kapfhammer2013,Wright2014,McMinn2015},
 compiled with the Java Development Kit 7 compiler and executed with the Linux version of the 64-bit Oracle Java 1.7 virtual machine. Experiments were executed on an Ubuntu 14.04 workstation, with a 3.13.0-44 GNU/Linux 64-bit kernel, a quad-core 2.4GHz CPU and 12GB RAM. All input (i.e., schemas) and output (i.e., data) files were stored on the local disk. We used the default configuration of \PostgreSQL version 9.3.5, \HyperSQL version 2.2.8 and \SQLite 3.8.2. \HyperSQL and \SQLite were used with ``in-memory'' mode enabled.
 
-\subsection{Threats to Validity}
+\subsubsection{Evaluation Metrics}
+\label{sec:evaluation-metrics}
+
+\subsubsection{Threats to Validity}
 \label{sec:threats-to-validity}
+
+% TODO: Explain that we check the mutation score to ensure that Standard and Virtual are the same!
+% TODO: Reference the SSBSE 2015 paper that talk about transformation of the 
 
 \subsection{Empirical Results}
 \label{sec:empirical-results}
