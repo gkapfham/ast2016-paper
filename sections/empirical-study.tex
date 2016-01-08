@@ -36,13 +36,13 @@ The experiments in this paper investigate three research questions, which we sta
 \vspace{5pt}
 
 \noindent
-\textbf{RQ1 (Efficiency):} How does the time overhead of \VMA compare to the \Standard technique's cost, and how does
+\textbf{RQ1 (Efficiency):} How does the time overhead of \vma compare to the \Standard technique's cost, and how does
 this vary depending on the DBMS in use?
 
 \vspace{5pt}
 
 \noindent
-\textbf{RQ2 (Scalability):} How does the time savings from using \VMA scale when increasing either the number
+\textbf{RQ2 (Scalability):} How does the time savings from using \vma scale when increasing either the number
 of analysed mutants or the number of executed tests?
 
 \vspace{5pt}
@@ -50,11 +50,12 @@ of analysed mutants or the number of executed tests?
 % can only analyse mutants for the same amount of time as the presented approach?
 
 \noindent
-\textbf{RQ3 (Effectiveness):} How does the mutation score of \VMA compare to the score of a time-constrained method that
+\textbf{RQ3 (Effectiveness):} How does the mutation score of \vma compare to the score of a time-constrained method that
 is only permitted to run for as long as the virtual one?
 
 \subsection{Methodology}
 \label{sec:methodology}
+
 For RQs 1 and 2, we ran the \Original technique and \vma 30 times each, for each of the schemas with each of the DBMSs, collating the time taken. For each run, we used a test suite automatically generated using a search-based technique with a unique random seed.
 
 Details of the specific test suite generation algorithms used are detailed by McMinn \etal~\cite{McMinn2015}. We used the \AVM method as it is the most reliable automated technique for generating high levels of test coverage. The coverage criterion we used was a combination of ``ClauseAICC'', ``AUCC'' and ``ANCC'', which merges the strongest criteria for testing the integrity constraints of database schemas.
