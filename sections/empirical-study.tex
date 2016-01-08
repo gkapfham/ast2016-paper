@@ -1,14 +1,14 @@
 %!TEX root=ast2016.tex
 
-\section{Empirical Study}
-\label{sec:empirical-study}
+% \section{Empirical Study}
+% \label{sec:empirical-study}
 
 % TODO: Add in one introductory sentence to start off this section
 
-\subsection{Experimental Setup}
+\section{Experimental Setup}
 \label{sec:experimental-setup}
 
-\subsubsection{Relational Database Schemas}
+\subsection{Relational Database Schemas}
 \label{sec:subjects}
 
 \input{tables/schemas.tex}
@@ -28,7 +28,7 @@
   \item Mention that the mutation scores of the Original technique are used to validate the results given by virtual mutation analysis, and that in every case the results were identical. (Possibly repeat this in the threats section?)
 \end{itemize}
 
-\subsubsection{Research Questions}
+\subsection{Research Questions}
 \label{sec:research-questions}
 
 The experiments in this paper investigate three research questions, which we state in the following fashion.
@@ -48,7 +48,7 @@ or the number of tests?
 \textbf{RQ2 (Effectiveness):} How does the mutation score of \VMA compare to the score of a time-constrained method that
 can only analyse mutants for the same amount of time as the presented approach?
 
-\subsubsection{Methodology}
+\subsection{Methodology}
 \label{sec:methodology}
 For RQs 1 and 2, we ran the \Original technique and \vma 30 times each, for each of the schemas with each of the DBMSs, collating the time taken. For each run, we used a test suite automatically generated using a search-based technique with a unique random seed.
 
@@ -59,16 +59,16 @@ For RQ3, we then ran the \Original technique 30 times, but by performing mutatio
 We performed all experiments with our \SA tool \cite{Kapfhammer2013,Wright2014,McMinn2015},
 compiled with the Java Development Kit 7 compiler and executed with the Linux version of the 64-bit Oracle Java 1.7 virtual machine. Experiments were executed on an Ubuntu 14.04 workstation, with a 3.13.0-44 GNU/Linux 64-bit kernel, a quad-core 2.4GHz CPU and 12GB RAM. All input (i.e., schemas) and output (i.e., data) files were stored on the local disk. We used the default configuration of \PostgreSQL version 9.3.5, \HyperSQL version 2.2.8 and \SQLite 3.8.2. \HyperSQL and \SQLite were used with ``in-memory'' mode enabled.
 
-\subsubsection{Evaluation Metrics}
+\subsection{Evaluation Metrics}
 \label{sec:evaluation-metrics}
 
-\subsubsection{Threats to Validity}
+\subsection{Threats to Validity}
 \label{sec:threats-to-validity}
 
 % TODO: Explain that we check the mutation score to ensure that Standard and Virtual are the same!
 % TODO: Reference the SSBSE 2015 paper that talk about transformation of the 
 
-\subsection{Empirical Results}
+\section{Empirical Results}
 \label{sec:empirical-results}
 
 % PURPOSE: Compare the virtual mutation technique to the original one in terms of their execution time, showing that
