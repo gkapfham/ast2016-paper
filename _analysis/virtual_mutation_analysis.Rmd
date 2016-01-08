@@ -157,8 +157,12 @@ analyse_vargha_delaney_effect_size(original_and_virtual_mutation_data) %>% str()
 ```
 
 The estimate of the effect size is $.253$ and is thus "large". Since we are dealing with timings where a lower value is
-better, this indicates that virtual mutation is the "clear winner" (see the recent SSBSE 2015 paper for support for this
-statement). But, what is the effect size if we disregard all timings below 100 ms?
+better, this indicates that virtual mutation is the "clear winner" (see the recent SSBSE 2015 paper by Neumann, Harman,
+and Poulding for support for this statement). The interpretation of this value is as follows: "In a contest between
+original and virtual mutation, over a number of trial applications, virtual is expected to have a higher value than
+original 25.3% of the time". Again, since we are dealing with a lower-is-better metric, then this means that the virtual
+technique will normally be faster than the original method. But, what is the effect size if we disregard all timings
+below 100 ms?
 
 ```{r, echo=TRUE}
 original_and_virtual_mutation_data_transformed <-
