@@ -1,4 +1,5 @@
-%!TEX root=../ast2016.tex
+% vim: ft=tex
+%!TEX root=ast2016.tex
 
 \section{Virtual Mutation Analysis}
 \label{sec:virtual-mutation-analysis}
@@ -14,10 +15,18 @@ McMinn et al. introduce {\it integrity constraint predicates} to model integrity
 
 As per the relational model, originally due to Codd~\cite{Codd1970}, a database table consists of a set of rows with identical columns names. We write an individual row as $r = (cl_1:v_1, \dots, cl_{ncl}:v_{ncl})$ for a table with $ncl$ columns, where $cl_{1 \ldots ncl}$ are the column names and $v_{1 \ldots ncl}$ are the values for each column. As a shorthand, we use the notation $\select{r}{cl}$ to refer to the value of a column $cl$ for a row $r$ and the use of $\relnull$ to denote \NULL.
 
-\Figure{fig:integrity-constraint-functions} shows functions for obtaining integrity constraint predicates. The function ``get\_primary\_key\_constraint\_predicate'' gives a predicate for the standard DBMS implementation of a primary key, while ``get\_primary\_key\_constraint\_predicate\_for\_SQLite'' is an especially customized version for \SQLite. \SQLite differs from most other DBMSs in that \NULL values are legal entries for primary key columns. Both 
-functions take the configuration of a primary key represented as a set of columns $CL$ for a table $tbl$ and a row of data values $nr$. The predicate returned by the function can then be used to decide, given the current state of the table $tbl$, whether the values in $nr$ conform to the primary key of $tbl$ or not. For example, the predicate returned for the \PK of the \sql{Station} table for a non-\SQLite DBMS such as \Postgres is:
-\[\selectneqnull{nr}{\sql{id}} \smallwedge \forallinrel{er}{\sql{Station}}: \selectneq{nr}{er}{\sql{id}})\]
-That is, the value of \sql{id} in the row $nr$ must not be \NULL, and it must not be identical to some other value for \sql{id} in rows already in the table.
+\begin{sloppypar}
+\Figure{fig:integrity-constraint-functions} shows functions for obtaining integrity constraint predicates. The function
+``get\_primary\_key\_constraint\_predicate'' gives a predicate for the standard DBMS implementation of a primary key,
+while ``get\_primary\_key\_constraint\_predicate\_for\_SQLite'' is an especially customized version for \SQLite. \SQLite
+differs from most other DBMSs in that \NULL values are legal entries for primary key columns. Both functions take the
+configuration of a primary key represented as a set of columns $CL$ for a table $tbl$ and a row of data values $nr$. The
+predicate returned by the function can then be used to decide, given the current state of the table $tbl$, whether the
+values in $nr$ conform to the primary key of $tbl$ or not. For example, the predicate returned for the \PK of the
+\sql{Station} table for a non-\SQLite DBMS such as \Postgres is: \[\selectneqnull{nr}{\sql{id}} \smallwedge
+\forallinrel{er}{\sql{Station}}: \selectneq{nr}{er}{\sql{id}})\] That is, the value of \sql{id} in the row $nr$ must not
+be \NULL, and it must not be identical to some other value for \sql{id} in rows already in the table.
+\end{sloppypar}
 
 \input{figures/integrity-constraint-predicates}
 
