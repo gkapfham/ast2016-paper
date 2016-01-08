@@ -41,9 +41,9 @@ suppressPackageStartupMessages(library(knitr))
 
 ```{r, echo=TRUE}
 time_constrained_data <- read_time_constrained_mutation_data_subset()
-time_constrained_data_tidy = time_constrained_data %>% transform_time_constrained_data_for_scores()
+time_constrained_data_tidy <- time_constrained_data %>% transform_time_constrained_data_for_scores()
 viable_schemas <- time_constrained_data_tidy %>% select(schema) %>% unique()
-knitr::kable(viable_schemas, format = "latex", booktabs=TRUE)
+knitr::kable(viable_schemas, format="latex", booktabs=TRUE)
 ```
 
 ## Visualise the Mutation Scores
@@ -73,7 +73,7 @@ time_constrained_data_tidy_print <- time_constrained_data_tidy %>%
   filter(schema %in% c("Person")) %>%
   filter(dbms %in% c("PostgreSQL")) %>%
   filter(score_type %in% c("Time-Constrained"))
-knitr::kable(time_constrained_data_tidy_print, format = "latex", booktabs=TRUE)
+knitr::kable(time_constrained_data_tidy_print, format="latex", booktabs=TRUE)
 ```
 
 ## Visualise the Total Number of Mutants
@@ -113,7 +113,7 @@ Analysis of the results in this output:
 ## Create a Data Set Combining Original and Virtual Observations
 
 ```{r, echo=TRUE}
-original_and_virtual_mutation_data = create_original_and_virtual_data()
+original_and_virtual_mutation_data <- create_original_and_virtual_data()
 ```
 
 ## Visualise the Mutation Analysis Time for Original and Virtual
@@ -146,8 +146,9 @@ analyse_wilcox_rank_sum_test(original_and_virtual_mutation_data)
 
 Note that this hypothesis testing approach creates two vectors of timings, one for all of the original timings and one
 for all of the virtual timings, across all of the schemas. As the p-value is very small, these results reveal that there
-is a statistically significant difference between the timings and thus the virtual technique is faster in a statistically
-significant fashion. But, it is also important to discern whether there is a practical significance to these results.
+is a statistically significant difference between the timings and thus the virtual technique is faster in a
+statistically significant fashion. But, it is also important to discern whether there is a practical significance to
+these results. So, it is also important to calculate the effect size using the Vargha-Delaney method.
 
 ## Perform an Effect Size Analysis on the Execution Timings of the Virtual and Original Techniques
 
@@ -155,6 +156,9 @@ significant fashion. But, it is also important to discern whether there is a pra
 analyse_vargha_delaney_effect_size(original_and_virtual_mutation_data)
 ```
 
+The estimate of the effect size is $.253$ and is thus "large". Since we are dealing with timings where a lower value is
+better, this indicates that virtual mutation is the "clear winner" (see the recent SSBSE 2015 paper for support for this
+statement). But, what is the effect size if we disregard all timings below 100 ms?
 
 ## Determine How Frequently Virtual is Better Than Original
 
