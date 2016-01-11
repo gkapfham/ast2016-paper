@@ -18,13 +18,13 @@
 \atab \atab \atab \tinybullet $CL = cl_1 ... cl_n$ is the set of columns of the constraint \\
 \atab \atab \tinybullet $nr$ be a new row of data to be inserted into $tbl$ \smallvspace \smallvspace \\
 
-\atab {\it // null condition} \\
+\atab {\it // The test for null values:} \\
 \atab {\bf let} $nc_{pk} \leftarrow (\selectneqnull{nr}{cl_1} \smallwedge \ldots \smallwedge \selectneqnull{nr}{cl_n})$ \smallvspace \\
 
-\atab {\it // constraint condition} \\
+\atab {\it // The test for uniqueness of values:} \\
 \atab {\bf let} $cc_{pk} \leftarrow (\forallinrel{er}{tbl}: \selectneq{nr}{er}{cl_1} \smallvee \ldots \smallvee \selectneq{nr}{er}{cl_n})$ \smallvspace \\
 
-\atab {\it // integrity constraint predicate} \\
+\atab {\it // The complete integrity constraint predicate:} \\
 \atab {\bf let} $icp_{pk} \leftarrow nc_{pk} \smallwedge cc_{pk}$ \smallvspace \\
 
 \atab {\bf return} $icp_{pk}$ \smallvspace \\
@@ -40,13 +40,13 @@
 \atab \atab \atab \tinybullet $CL = cl_1 ... cl_n$ is the set of columns of the constraint \\
 \atab \atab \tinybullet $nr$ be a new row of data to be inserted into $tbl$ \smallvspace \smallvspace \\
 
-\atab {\it // null condition} \\
+\atab {\it // The test for null values:} \\
 \atab {\bf let} $nc_{pk} \leftarrow (\selecteqnull{nr}{cl_1} \smallvee \ldots \smallvee \selecteqnull{nr}{cl_n})$ \smallvspace \\
 
-\atab {\it // constraint condition} \\
+\atab {\it // The test for uniqueness of values:} \\
 \atab {\bf let} $cc_{pk} \leftarrow (\forallinrel{er}{tbl}: \selectneq{nr}{er}{cl_1} \smallvee \ldots \smallvee \selectneq{nr}{er}{cl_n})$ \smallvspace \\
 
-\atab {\it // integrity constraint predicate} \\
+\atab {\it // The complete integrity constraint predicate:} \\
 \atab {\bf let} $icp_{pk} \leftarrow nc_{pk} \smallvee cc_{pk}$ \smallvspace \\
 
 \atab {\bf return} $icp_{pk}$ \smallvspace \\
@@ -68,7 +68,7 @@
 
   {\small \justifying{\noindent This figure gives two functions for obtaining \PK integrity constraint predicates. The
   first function is a general definition, the secondary function applies to the specific behavior of the \sqlite DBMS.
-  (Excerpted from McMinn \etal~\cite{McMinn2015}.)} \par}
+  (Adapted from McMinn \etal~\cite{McMinn2015}.)} \par}
 
 \vspace{-1em}
 \end{figure}
