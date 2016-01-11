@@ -47,8 +47,6 @@ of analysed mutants or the number of executed tests?
 
 \vspace{5pt}
 
-% can only analyse mutants for the same amount of time as the presented approach?
-
 \noindent
 \textbf{RQ3 (Effectiveness):} How does the mutation score of \vma compare to the score of a time-constrained method that
 is only permitted to run for as long as the virtual one?
@@ -60,7 +58,7 @@ To answer the first and second research questions, we ran the \Original techniqu
 
 Details of the specific test suite generation algorithms used are given by McMinn \etal~\cite{McMinn2015}. We used the \AVM technique since past experiments have show it to be the most reliable automated method for generating test suites that achieve high levels of test coverage~\cite{McMinn2015}. The coverage criterion we used was a combination of ``ClauseAICC'', ``AUCC'' and ``ANCC'', thus merging the strongest criteria for testing the integrity constraints of database schemas.
 
-For RQ3, we then ran the \Original technique 30 times, but by performing mutation analysis by selecting mutants at random until each the time taken for the corresponding run of the 30 repetitions of \vma was exhausted.
+To answer the third research question, we ran the \Original technique 30 times, performing a mutation analysis that randomly selected mutants until the time taken for the corresponding run of the 30 repetitions of \vma was exhausted. In other words, the \Original method was run in a ``time-constrained'' fashion where its maximum allotted time was equal to the time needed to complete the comparable \vma.
 
 We performed all experiments with our \SA tool \cite{Kapfhammer2013,Wright2014,McMinn2015},
 compiled with the Java Development Kit 7 compiler and executed with the Linux version of the 64-bit Oracle Java 1.7 virtual machine. Experiments were executed on an Ubuntu 14.04 workstation, with a 3.13.0-44 GNU/Linux 64-bit kernel, a quad-core 2.4GHz CPU and 12GB RAM. All input (i.e., schemas) and output (i.e., data) files were stored on the local disk. We used the default configuration of \PostgreSQL version 9.3.5, \HyperSQL version 2.2.8 and \SQLite 3.8.2. \HyperSQL and \SQLite were used with ``in-memory'' mode enabled.
