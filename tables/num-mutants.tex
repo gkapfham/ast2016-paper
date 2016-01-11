@@ -1,0 +1,30 @@
+% vim: ft=tex
+%!TEX root=../ast2016.tex
+
+\begin{table}[t!]
+  \caption{Number of mutants generated for each of the schemas analysed in the empirical study with each DBMS used.} \label{tbl:num_mutants}
+  \vspace{1em}
+  \footnotesize
+  \centering
+  \scalebox{\tablescalefactor}{
+	\begin{tabular}{l@{\hskip -5pt}rrr}
+      {Schema} & \HyperSQL & \Postgres & \SQLite \\
+      \toprule
+
+CoffeeOrders & 51 & 51 & 56\\
+Employee & 43 & 43 & 44\\
+Inventory & 17 & 18 & 18\\
+Iso3166 & 9 & 9 & 10\\
+JWhoisServer & 178 & 178 & 184\\
+MozillaPermissions & 29 & 29 & 30\\
+NistWeather & 31 & 31 & 34\\
+Person & 21 & 21 & 22\\
+Products & 47 & 47 & 51\\
+\midrule 
+Total & 426 & 427 & 449 \\
+
+      \bottomrule
+    \end{tabular}
+  }
+  \vspace{-1em}
+\end{table}
