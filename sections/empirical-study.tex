@@ -66,23 +66,20 @@ We performed all of the experiments with the \SA tool \cite{Kapfhammer2013,McMin
 \label{sec:analysis-methods}
 
 Figures~\ref{fig:graphic_bwplot_schema_analysistime_org_vm} and ~\ref{fig:graphic_bwplot_schema_mutationscore_vm_tcm}
-furnish box plots 
+furnish box and whisker plots.  In these plots the box itself represents the interquartile range (IQR), or the measure
+of statistical dispersion that is the difference between the first and third quartiles. Furthermore, the upper whisker
+extends from the top of the box to the highest value that is within $1.5$ times the IQR, the lower whisker goes from the
+bottom of the box to the lowest value within $1.5$ times the IQR, and the thick horizontal line represents the median
+value.  Additionally, these box plots use a filled circle for an outlier and an open diamond for the mean value.
 
-In these plots the box itself represents the interquartile range (IQR), or the measure of statistical dispersion that is
-the difference between the first and third quartiles. Furthermore, the upper whisker extends from the top of the box to
-the highest value that is within $1.5$ times the IQR, the lower whisker goes from the bottom of the box to the lowest
-value within $1.5$ times the IQR, and the thick horizontal line represents the median value.  Additionally, in this box
-plot a filled circle denotes an outlier and the open diamond is the mean value.
-
-
-Where not obvious from the box plots, we conducted tests for significance with the nonparametric Wilcoxon rank-sum test,
-using the sets of 30 execution times obtained with a particular DBMS and the pair of approaches under scrutiny.  A {\it
-p}-value of less than $0.05$ is deemed to be significant.  To complement significance tests, the nonparametric
-\^{A}\textsubscript{12} statistic of Vargha and Delaney \cite{Vargha2000} was used to compute effect sizes, which
-determine the average probability that one approach out performs another.  We followed the guidelines of Vargha and
-Delaney in that an effect size is deemed to be ``large'' if the value of \atwelve~is $< 0.29$ or $> 0.71$, ``medium'' if
-\atwelve~is $< 0.36$ or $> 0.64$ and ``small'' if \atwelve~is $< 0.44$ or $> 0.56$.  Values of \atwelve~close to the
-$0.5$ value are deemed to have no size.
+To statistically confirm the trends in Figure~\ref{fig:graphic_bwplot_schema_analysistime_org_vm} we conducted tests for
+significance with the nonparametric Wilcoxon rank-sum test, using the sets of 30 execution times obtained with a
+specific DBMS and the pair of approaches under scrutiny.  A {\it p}-value of less than $0.05$ is deemed to be
+significant.  To complement significance tests, the nonparametric \^{A}\textsubscript{12} statistic of Vargha and
+Delaney \cite{Vargha2000} was used to compute effect sizes, which determine the average probability that one approach
+out performs another.  We followed the guidelines of Vargha and Delaney in that an effect size is deemed to be ``large''
+if the value of \atwelve~is $< 0.29$ or $> 0.71$, ``medium'' if \atwelve~is $< 0.36$ or $> 0.64$ and ``small'' if
+\atwelve~is $< 0.44$ or $> 0.56$.  Values of \atwelve~close to the $0.5$ value are deemed to have no size.
 
 
 \subsection{Threats to Validity}
