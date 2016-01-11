@@ -1,14 +1,12 @@
 % vim: ft=tex
-%!TEX root=ast2016.tex
+%!TEX root=../ast2016.tex
 
+\vspace{-1ex}
 \section{Virtual Mutation Analysis}
 \label{sec:virtual-mutation-analysis}
+\VMA of relational database schemas is the use of a model of DBMS to perform mutation analysis rather than communicating with a real instance of a DBMS. 
 
-Like mutation analysis for programs \cite{}, database schema mutation analysis is a time-consuming process. With database schema mutation analysis, the time cost incurred includes the overheads of communicating with a DBMS over a network socket. This can be a bottleneck even when the DBMS is running on the same machine as the process conducting the analysis and submitting the relevant SQL commands. 
-% This might draw the question of why we didn't compare with mutant schemata
-In previous work, we sought to minimize the amount of communication that needed to take place, for example by combining all mutants into a single database schema \cite{Wright2013}. This however, does not completely eliminate communication costs.
-
-We propose an alternative approach of modeling the relevant behavior of the DBMS pertaining to the testing of integrity constraints, and using that model to perform mutation analysis ``virtually''---i.e., without the use of the actual DBMS in question. We derive this model from previous work \cite{McMinn2015} where we modeled the integrity constraints of different DBMSs in order to derive different coverage criteria to test them. In this paper, we argue that this model can be used to evaluate mutants. The use of model removes the need communicate with a real instance of a DBMS, thus potentially speeding up the time needed to evaluate mutants.
+In this paper, we derive a model for the \HyperSQL, \Postgres, and \SQLite DBMSs based on previous work \cite{McMinn2015} in which we modeled the behavior of the integrity constraints of different DBMSs. This model was originally motivated by the desire to derive different coverage criteria for testing the integrity constraints of a relational database schema. In this paper, we show how this same model can be used to evaluate mutants, and removes the need communicate with a real instance of a DBMS, and so potentially speeding up the time needed to perform mutation analysis.
 
 \inlineheading{Modeling the Integrity Constraints of a DBMS}
 McMinn et al. introduce {\it integrity constraint predicates} to model integrity constraints that can be specified as part of a database schema for a DBMS. Integrity constraint predicates evaluate to {\it true} when a row of data in an \INSERT statement satisfies the constraint, and false when it does not.
