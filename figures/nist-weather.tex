@@ -1,4 +1,4 @@
-%!TEX root=ast2016.tex
+%!TEX root=../ast2016.tex
 
 \begin{figure}
 \centering
@@ -7,28 +7,29 @@
 \begin{tabular}{r|l|}
 \hhline{~-}
  1 & \texttt{CREATE TABLE Station (}\\
- 3 & \texttt{~~ID INTEGER \highlight{PRIMARY KEY},}\\
- 4 & \texttt{~~CITY CHAR(20),}\\
- 5 & \texttt{~~STATE CHAR(2),}\\
- 6 & \texttt{~~LAT\_N INTEGER \highlight{NOT NULL}}\\
- 7 & \texttt{~~~~\highlight{CHECK (LAT\_N BETWEEN 0 and 90)},}\\
- 8 & \texttt{~~LONG\_W INTEGER \highlight{NOT NULL}}\\
- 9 & \texttt{~~~~\highlight{CHECK (LONG\_W BETWEEN SYMMETRIC 180 AND -180)}}\\
-10 & \texttt{);}\\
-11 & \texttt{}\\
-12 & \texttt{CREATE TABLE Stats (}\\
-14 & \texttt{~~ID INTEGER \highlight{REFERENCES STATION(ID)},}\\
-15 & \texttt{~~MONTH INTEGER \highlight{NOT NULL}}\\
-16 & \texttt{~~~~\highlight{CHECK (MONTH BETWEEN 1 AND 12)},}\\
-17 & \texttt{~~TEMP\_F INTEGER \highlight{NOT NULL}}\\
-18 & \texttt{~~~~\highlight{CHECK (TEMP\_F BETWEEN 80 AND 150)},}\\
-19 & \texttt{~~RAIN\_I INTEGER \highlight{NOT NULL}}\\
-20 & \texttt{~~~~\highlight{CHECK (RAIN\_I BETWEEN 0 AND 100)},}\\
-21 & \texttt{~~\highlight{PRIMARY KEY (ID, MONTH)}}\\
-22 & \texttt{);}\\
+ 2 & \texttt{~~ID INTEGER \highlight{PRIMARY KEY},}\\
+ 3 & \texttt{~~CITY CHAR(20),}\\
+ 4 & \texttt{~~STATE CHAR(2),}\\
+ 5 & \texttt{~~LAT\_N INTEGER \highlight{NOT NULL}}\\
+ 6 & \texttt{~~~~\highlight{CHECK (LAT\_N BETWEEN 0 and 90)},}\\
+ 7 & \texttt{~~LONG\_W INTEGER \highlight{NOT NULL}}\\
+ 8 & \texttt{~~~~\highlight{CHECK (LONG\_W BETWEEN SYMMETRIC 180 AND -180)}}\\
+ 9 & \texttt{);}\\
+   & \vspace{-0.8em} \\
+10 & \texttt{CREATE TABLE Stats (}\\
+11 & \texttt{~~ID INTEGER \highlight{REFERENCES STATION(ID)},}\\
+12 & \texttt{~~MONTH INTEGER \highlight{NOT NULL}}\\
+13 & \texttt{~~~~\highlight{CHECK (MONTH BETWEEN 1 AND 12)},}\\
+14 & \texttt{~~TEMP\_F INTEGER \highlight{NOT NULL}}\\
+15 & \texttt{~~~~\highlight{CHECK (TEMP\_F BETWEEN 80 AND 150)},}\\
+16 & \texttt{~~RAIN\_I INTEGER \highlight{NOT NULL}}\\
+17 & \texttt{~~~~\highlight{CHECK (RAIN\_I BETWEEN 0 AND 100)},}\\
+18 & \texttt{~~\highlight{PRIMARY KEY (ID, MONTH)}}\\
+19 & \texttt{);}\\
 \hhline{~-}
 \end{tabular}}
 %
+\vspace{-.5em}
 \caption{\label{fig:nistweather}The \NistWeather database schema.}
-\vspace{-1em}
+\vspace{-2em}
 \end{figure}
