@@ -85,20 +85,22 @@ Key benefits to using a relational database include the good performance of data
  
 %% Introduce integrity constraints
 \begin{sloppypar}
-A relational database schema further involves the definition of a series of {\it integrity constraints} that guard the validity and consistency of stored data. Integrity constraints ensure that certain data values are unique, through \PKCs and \UCs; maintain referential integrity with other data values, through \FKCs; are actually present, through \NNCs; and are subject to other arbitrary domain-specific conditions, through \CCs. Integrity constraints prevent invalid values being admitted into the database via SQL \INSERT statements, by causing the DBMS to reject the statement with an error. Integrity constraints encode key application logic, and providing the applciation with a last line of defense against malformed data entries. As such, and in accordance with industry advice \cite{DzoneDatabaseTesting}, they require thorough testing. 
+A relational database schema further involves the definition of a series of {\it integrity constraints} that guard the validity and consistency of stored data. Integrity constraints ensure that certain data values are unique, through \PKCs and \UCs; maintain referential integrity with other data values, through \FKCs; are actually present, through \NNCs; and are subject to other arbitrary domain-specific conditions, through \CCs. Integrity constraints prevent invalid values being admitted into the database via SQL \INSERT statements, by causing the DBMS to reject the statement with an error. Integrity constraints encode key application logic, providing the broader software application with a last line of defense against malformed data entries. As such, and in accordance with industry advice \cite{DzoneDatabaseTesting}, they require thorough testing. 
 \end{sloppypar}
 
 %% Introduce work to date
-To the end, we have devised coverage criteria and automated test suite generation approaches for relational database schema integrity constraint testing \cite{Kapfhammer2013,McMinn2015}. We have also proposed mutation analysis techniques to seed faults in database schemas that simulate faults of commission and omission, which may be used to evaluate test suites for integrity constraints. 
+To the end, previous work has devised coverage criteria and automated test suite generation approaches for relational database schema integrity constraint testing \cite{Kapfhammer2013,McMinn2015}. Past work has also proposed mutation analysis techniques to seed faults in database schemas that simulate faults of commission and omission, which may be used to evaluate test suites for integrity constraints \cite{Kapfhammer2007,Wright2013}. 
 %
 %% Introduce the problem
-However, as with most forms of mutation, including traditional program mutation analysis, our techniques are costly to execute, since the test suite needs to be evaluated against every mutated schema containing a seeded fault. 
+However, as with most forms of mutation---including traditional program mutation analysis---these techniques are costly to execute, since the test suite needs to be evaluated against every mutant to determine whether it is capable of exposing the seeded fault. 
 %% Removed sentence as we're not mentioning scalability anymore.
 %Therefore, in common with program mutation, our mutation analysis methods do not scale well with the number of mutated schemas. 
-%
+
 %% Introduce the solution
-One cost incurred in relational database schema test suite evaluation is the communication overhead with the DBMS hosting the database. This communication takes place over a network socket, and forms a significant component of the overall time needed to perform the analysis. In this paper, we propose to perform mutation analysis {\it virtually}, on a local model of the DBMS, rather than an actual running instance, that involves constant and costly interaction. Since different DBMSs interpret the SQL standard differently, and have unique implementation ``quirks'', a model is required for each different DBMS with which we wish to perform mutation analysis. In this paper we utilize models for three popular and widely-used DBMSs: \HyperSQL, \Postgres and \SQLite. % do we need citations here?
-We show how using the virtual model can significantly cut the costs of mutation analysis. %TODO -- Greg -- stats :-)
+One cost incurred in evaluating relational database schema test suites is the overhead of communication that must take place with the DBMS that hosts each of the mutant databases, which forms a significant component of the overall time needed to perform mutation analysis. In this paper, we propose to perform mutation analysis {\it virtually}, on a local model of the DBMS, rather than an actual running instance that incurs constant and costly interaction. Since different DBMSs interpret the SQL standard differently, and have unique implementation ``quirks'', a model is required for each different DBMS. In this paper we utilize models for three popular and widely-used DBMSs: \HyperSQL, \Postgres and \SQLite. % do we need citations here?
+
+%% Summary of the empirical study
+We show how using the virtual model can significantly cut the costs of mutation analysis. % TODO -- Here goes the content of Greg Staats (as opposed to Matt St-'ahhh....'-ts :-)).
 
 %% Contributions
 The contributions of this paper are therefore as follows:
