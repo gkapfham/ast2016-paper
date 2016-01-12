@@ -870,7 +870,8 @@
 \vskip 2em                   % Vertical space above title.
    \begin{center}
     {\ttlfnt \@title\par}       % Title set in 18pt Helvetica (Arial) bold size.
-    \vskip 1.5em                % Vertical space after title.
+% GMK changed this command
+    \vskip 1em                % Vertical space after title.
 %This should be the subtitle.
 {\subttlfnt \the\subtitletext\par}\vskip 1.25em%\fi
     {\baselineskip 16pt\aufnt   % each author set in \12 pt Arial, in a
@@ -881,7 +882,8 @@
    \end{center}
  }
  \dimen0=\ht\@acmtitlebox
- \advance\dimen0 by -9.75pc\relax % Increased space for title box -- KBT
+ % GMK changed this command
+ \advance\dimen0 by -8.25pc\relax % Increased space for title box -- KBT
  \unvbox\@acmtitlebox
  \ifdim\dimen0<0.0pt\relax\vskip-\dimen0\fi}
 \fi
