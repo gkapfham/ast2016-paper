@@ -1,6 +1,38 @@
 % vim: ft=tex
 %!TEX root=ast2016.tex
 
+% Here are the percentage savings values. You can also render the RMarkdown file to get results like this.
+
+               % schema       dbms     Standard    Virtual       saving saving_percent mutantcount testcount
+               %  (chr)      (chr)        (dbl)      (dbl)        (dbl)          (dbl)       (int)     (int)
+% 1            Products PostgreSQL  78427.20000  516.40000  77910.80000     0.99341555          47        46
+% 2            Products   HyperSQL   1667.50000  515.20000   1152.30000     0.69103448          47        46
+% 3            Products     SQLite    724.40000  582.00000    142.40000     0.19657648          51        52
+% 4              Person PostgreSQL   8077.50000  169.36667   7908.13333     0.97903229          21        19
+% 5              Person   HyperSQL    374.13333  167.36667    206.76667     0.55265502          21        19
+% 6              Person     SQLite    136.83333  174.53333    -37.70000    -0.27551766          22        20
+% 7         NistWeather PostgreSQL  47717.63333  461.90000  47255.73333     0.99032014          31        52
+% 8         NistWeather   HyperSQL   1238.83333  451.53333    787.30000     0.63551729          31        52
+% 9         NistWeather     SQLite    471.63333  503.96667    -32.33333    -0.06855608          34        56
+% 10 MozillaPermissions PostgreSQL  22871.53333  198.93333  22672.60000     0.99130214          29        32
+% 11 MozillaPermissions   HyperSQL    662.13333  199.56667    462.56667     0.69860048          29        32
+% 12 MozillaPermissions     SQLite    246.20000  209.96667     36.23333     0.14717032          30        33
+% 13       JWhoisServer PostgreSQL 631285.63333 2088.00000 629197.63333     0.99669246         178       152
+% 14       JWhoisServer   HyperSQL   7805.26667 2060.30000   5744.96667     0.73603721         178       152
+% 15       JWhoisServer     SQLite   7707.66667 2139.93333   5567.73333     0.72236302         184       158
+% 16            Iso3166 PostgreSQL   2225.80000   66.56667   2159.23333     0.97009315           9         9
+% 17            Iso3166   HyperSQL     77.03333   66.76667     10.26667     0.13327564           9         9
+% 18            Iso3166     SQLite     40.43333   78.00000    -37.56667    -0.92910140          10        12
+% 19          Inventory PostgreSQL   7986.60000  133.50000   7853.10000     0.98328450          18        16
+% 20          Inventory   HyperSQL    220.06667  132.43333     87.63333     0.39821266          17        16
+% 21          Inventory     SQLite     84.00000  139.83333    -55.83333    -0.66468254          18        18
+% 22           Employee PostgreSQL  26860.73333  367.80000  26492.93333     0.98630715          43        35
+% 23           Employee   HyperSQL    881.83333  357.73333    524.10000     0.59432999          43        35
+% 24           Employee     SQLite    353.26667  391.16667    -37.90000    -0.10728439          44        38
+% 25       CoffeeOrders PostgreSQL 211013.40000  563.23333 210450.16667     0.99733082          51        77
+% 26       CoffeeOrders   HyperSQL   2276.83333  558.40000   1718.43333     0.75474709          51        77
+% 27       CoffeeOrders     SQLite   1642.26667  606.70000   1035.56667     0.63057157          56        90
+
 % PURPOSE: Explain the results for the PostgreSQL and HyperSQL database management systems
 
 \inlineheading{Saving Time with Virtual Mutation} As evident by the scatter plots in Figure~\ref{fig:graphic_scatterplot_mutantstests_percentagetimesaved}, it is useful to show how the time savings associated with using \virtualmutationanalysis~varies as the number of mutants and tests increases. Since \postgres~is a heavyweight DBMS relative to \HyperSQL~and \sqlite, the scatter plots reveal that, by avoiding database interactions, the \virtual~method yields substantial savings regardless of the number of mutants subject to analysis of the number of tests run.  Figure~\ref{fig:graphic_scatterplot_mutantstests_percentagetimesaved} also affirms that using \virtual~mutation on \HyperSQL~saves time, albeit in a way that is gradual and tapering off as there are more mutants and tests.
