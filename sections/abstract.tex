@@ -1,0 +1,32 @@
+%!TEX root=../ast2016.tex
+
+\begin{abstract}
+
+%% Chris's original bullet points:
+%   \begin{itemize}
+%       \item Relational schemas can include constraints that contain business logic so need to be tested.
+%       \item Mutation analysis can be used to model faults of omission and commission in constraints.
+%       \item As with mutation analysis elsewhere, it can be costly (regardless of prior researched optimisations).
+%       \item Virtual analysis exploits an existing model of database behaviour, used elsewhere for data generation, to reduce this \todo{to/by substantial figure here}.
+%       \item Therefore we can mutate even large schemas quickly, making it a practically feasible testing technique.
+%   \end{itemize}
+
+%% Why this topic is important
+Relational databases are a vital component of many modern software applications.
+%
+%% What the schema is, introduce integrity constraints
+Key to the definition of the database schema, which specifies what types of data will be stored in the database and the structure in which the data is to be organized, are integrity constraints.
+%
+%% What integrity constraints are, and why we need to test them
+Integrity constraints are conditions that help maintain the consistency and validity of data in the database, ensuring that any data values that violate their rules are rejected. They often encode business logic, and as such, needed to be tested.
+%
+%% Introduce mutation analysis
+Mutation analysis is a technique that can be used to seed faults of omission and commission, and has been successfully applied to integrity constraint testing. Yet, as with more traditional mutation analysis for program testing, it is costly to perform, and does not scale easily. 
+%
+%% The crux of our technique
+One overhead incurred by database schema mutation is the cost of communicating with the database management system (DBMS). In this paper we seek to eliminate this cost by performing mutation analysis virtually on a model of the DBMS, rather than an actual instance. We show that this significantly improves the time taken to perform mutation analysis. 
+%
+%% Some stats
+%TODO
+
+\end{abstract}
