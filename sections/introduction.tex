@@ -81,17 +81,11 @@ Relational databases provide a reliable way to store and retrieve data, forming 
 \end{sloppypar}
 
 %% Establish some key benefits and introduce the schema
-Key benefits to using a relational database include the good performance of database management systems (DBMSs) \cite{Abrahami2015}, such as \Postgres and \SQLite, two popular and free DBMSs, and their reliability. Developers often prefer relational databases to other storage and retrieval systems due to the need for a clear schema for specifying the data to be stored and its structure into tables, which acts as a form of readily-available documentation \cite{}. 
-
-% TODO -- properly cite this article in the above.
-%  % GMK NOTE: A past employee of Amazon noted that relational is good because you have to document the schema
-%  % Please note that the spelling mistake in this URL is correct (do not let you spell checker fix this mistake)
-%  % http://stackoverflow.com/questions/3294755/with-the-recent-prevelance-of-nosql-databases-why-would-i-use-a-sql-database
-%
+Key benefits to using a relational database include the good performance of database management systems (DBMSs) \cite{Abrahami2015}---such as \Postgres and \SQLite, two popular and free DBMSs---and their reliability. Developers often prefer relational databases to other storage and retrieval systems due to the availability of a clear database {\it schema}, which specifies the data to be stored and how it is structured into tables, serving as easy-to-refer-to documentation\footnote{\url{http://goo.gl/v03nUr}}\hspace{-1ex}. % points to: http://stackoverflow.com/questions/3294755/with-the-recent-prevelance-of-nosql-databases-why-would-i-use-a-sql-database
  
 %% Introduce integrity constraints
 \begin{sloppypar}
-A relational database schema further involves the definition of a series of {\it integrity constraints} that guard the validity and consistency of stored data. Integrity constraints ensure that certain data values are unique, through \PKCs and \UCs; maintain referential integrity with other data values, through FKCs; are properly defined, through \NNCs; and are subject to other arbitrary conditions at the bequest of the developer, through \CCs. Integrity constraints prevent invalid values being admitted into the database through SQL \INSERT statements, by rejecting statements involving data that do not conform to the conditions that they set out. They often encode key application logic, providing a last line of defense against malformed data entries. As such, and in accordance with industry advice \cite{DzoneDatabaseTesting}, they require thorough testing. 
+A relational database schema further involves the definition of a series of {\it integrity constraints} that guard the validity and consistency of stored data. Integrity constraints ensure that certain data values are unique, through \PKCs and \UCs; maintain referential integrity with other data values, through \FKCs; are actually present, through \NNCs; and are subject to other arbitrary domain-specific conditions, through \CCs. Integrity constraints prevent invalid values being admitted into the database via SQL \INSERT statements, by causing the DBMS to reject the statement with an error. Integrity constraints encode key application logic, and providing the applciation with a last line of defense against malformed data entries. As such, and in accordance with industry advice \cite{DzoneDatabaseTesting}, they require thorough testing. 
 \end{sloppypar}
 
 %% Introduce work to date
