@@ -1,11 +1,12 @@
 % vim: ft=tex
 %!TEX root=ast2016.tex
 
+% PURPOSE: Explain the results for the PostgreSQL and HyperSQL database management systems
+
 \inlineheading{Saving Time with Virtual Mutation} As evident by the scatter plots in Figure~\ref{fig:graphic_scatterplot_mutantstests_percentagetimesaved}, it is useful to show how the time savings associated with using \virtualmutationanalysis~varies as the number of mutants and tests increases. Since \postgres~is a heavyweight DBMS relative to \HyperSQL~and \sqlite, the scatter plots reveal that, by avoiding database interactions, the \virtual~method yields substantial savings regardless of the number of mutants subject to analysis of the number of tests run.  Figure~\ref{fig:graphic_scatterplot_mutantstests_percentagetimesaved} also affirms that using \virtual~mutation on \HyperSQL~saves time, albeit in a way that is gradual and tapering off as there are more mutants and tests.
 
+% PURPOSE: Discuss how the SQLite database management system and small schemas is faster than virtual
 
-
-
-
+The scatter plots also highlight the fact that, when run on \sqlite, \virtual~only improves the performance of mutation analysis for four of the nine schemas. While these larger schemas see reduced overheads with the \virtual~technique, the five smaller schemas do not benefit from the decrease in database interactions afforded by the presented method --- thus leading to the negative values of the percentage of mean time saved seen in Figure~\ref{fig:graphic_scatterplot_mutantstests_percentagetimesaved}. Yet, even in cases in which a small schema and a fast DBMS should outperform \vma, we found that the difference in execution time was always less than 100 milliseconds, a negligible amount that experts agree is not perceivable by users of a software tool~\cite{Neumann2015}.
 
 
