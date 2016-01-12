@@ -3,11 +3,12 @@
 
 % PURPOSE: Discuss the trends in the first graph, sketching at a high level
 
-\inlineheading{Comparing Standard and Virtual Mutation} The box and whisker plots in Figure~\ref{fig:graphic_bwplot_schema_analysistime_org_vm} show the mutation analysis time for the two techniques across all of the relational schemas and the three DBMSs. This plot reveals that, when using the \HyperSQL~DBMS, the \virtual~method is faster than the \Original~one, especially for large schemas such as JWhoisServer. Since \Postgres~is a ``heavyweight'' disk-based DBMS, \vma~demonstrates much lower execution times than the \Original~method because it avoids database interactions. Yet, these plots show that the performance of the virtual approach is similar to the standard one when mutation analysis runs on the high-performance \sqlite~DBMS.
+\inlineheading{Comparing Standard and Virtual Mutation}~The box and whisker plots in Figure~\ref{fig:graphic_bwplot_schema_analysistime_org_vm} show the mutation analysis time for the two techniques across all of the relational schemas and the three DBMSs. This plot reveals that, when using the \HyperSQL~DBMS, the \virtual~method is faster than the \Original~one, especially for large schemas such as JWhoisServer. Since \Postgres~is a ``heavyweight'' disk-based DBMS, \vma~demonstrates much lower execution times than the \Original~method because it avoids database interactions. Yet, these plots show that the performance of the virtual approach is similar to the standard one when mutation analysis runs on the high-performance \sqlite~DBMS.
 
 % PURPOSE: Analyse the trends further through the statistical analysis and the effect size computations. For effect
 % sizes, make sure to comment on the fact that we did thresholding of the scores.
 
+The statistical tests and effect size calculations confirm the trends evident in Figure~\ref{fig:graphic_bwplot_schema_analysistime_org_vm}. When comparing the timings for the two mutation analysis methods on the \HyperSQL~and \Postgres~DBMSs, the \wilcoxon~reveals, with a \pvalue~near zero, that virtual is faster than \Original~in a statistically significant fashion. Moreover, the \atwelve~values of $0.26$ and $0.0008$ for the timings on \HyperSQL~and \Postgres, respectively, show that there is a large effect size evident in the timings and thus sustain \vma~as the clear winner for efficiency. Returning a \pvalue~of $0.905$, the \wilcoxon~confirms that there is no statistical difference between the standard and virtual methods when mutation runs on \sqlite. An effect size of $0.503$, indicating that the two techniques are stochastically equivalent, further shows that a fast DBMS obviates the benefits of virtual mutation.
 
 
 
