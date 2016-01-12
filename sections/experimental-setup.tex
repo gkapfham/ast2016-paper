@@ -67,7 +67,27 @@ As the number of mutants subject to analysis and the number of generated tests i
 
 We employed a correlation statistic to determine how the mutation scores of the \tc method correspond to those of \vma.  Due to the possibility of rank ties, which are not supported by a number of correlation measures, we chose to use the tie-aware Kendall's \taub~coefficient, as provided by the ``Kendall'' R package \cite{KendallCran}.  Kendall's \taub~provides a measurement of correlation between -1 and 1, representing a strong negative and strong positive association, respectively, with 0 indicating that there is no correlation. Following Inozemtseva and Holmes, we adopt the Guildford scale to describe the correlation values, with the absolute value of a coefficient being described as ``low'' when it is less than $0.4$, ``moderate'' when it is between $0.4$ and $0.7$, ``high'' when ranging from $0.7$ to $0.9$, and ``very high'' when it is greater than \mbox{$0.9$ \cite{Inozemtseva2014}}.
 
+% These are the threats to validity:
+
+% -- Randomness in the SA tool and the generated test suite
+% -- Randomness in the selection of mutants for time-constrained
+% -- Variability in the running time of the mutation analysis
+% ---> So, ran multiple trials and did statistical analysis
+% ---> When calculated effect sizes, we also looked at thresholds
+
 \inlineheading{Threats to Validity}
-% TODO: Explain that we check the mutation score to ensure that Standard and Virtual are the same!
-% TODO: Reference the SSBSE 2015 paper that talks about transformation of the values; we also
-% did this and we are certain that there is no difference (we also looked at different thresholds).
+There are several threats to the validity of the empirical results presented in this paper. First, several of the
+techniques that we evaluated (e.g., the test data generator in \SA and the mutant selection by the \tcm~method) employ
+randomness.
+
+% -- Defects in the test data generator
+% -- Defects in the virtual mutation analysis
+% ---> So, we tested these programs and checked the mutation scores
+
+% -- Defects in the analysis routines
+% --> So, we tested this these programs
+
+% -- Limited number of subjects in the empirical study
+% --> But, these subjects are representative and open-source
+
+
