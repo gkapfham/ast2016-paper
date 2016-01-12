@@ -1,4 +1,5 @@
 %!TEX root=../ast2016.tex
 
-\section{Conclusions and Future Work}
-\label{sec:conclusions-and-future-work}
+\section{Conclusions}
+\label{sec:conclusions}
+In this paper, we have introduced a more cost-effective, scalable technique for performing mutation analysis for relational database schemas. Our technique, \vma, executes test suites virtually against a model of the mutated database schema. This removes the need to setup an instance of a database with the mutated schema on a real DBMS, and communicate with the DBMS over a socket connection to set the database up, execute SQL the \INSERT statements of a test case against it, and then clear the database down ready for the next test case. In an empirical evaluation of our technique, we found that .... %TODO -- summary of empirical findings
