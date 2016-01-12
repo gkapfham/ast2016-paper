@@ -76,26 +76,34 @@
 %\end{itemize}
 
 %% Establish the importance of relational databases
+Relational databases provide a reliable way to store and retrieve data, forming an critical component of a wide range of different software applications, from domains such as Internet browsers (e.g., Chrome \cite{} and Firefox \cite{}) to applications powering political campaigns~\cite{Butler2012}. Despite the recent wave of interest in ``NoSQL'', relational databases are still important, relevant and popular in modern software application design, as evidenced by the $x$ questions on the popular StackExchange question and answer website tagged with labels related to relational databases.
 
-Relational databases form an essential part of a wide range of different software applications, providing a reliable way to store and retrieve data in a broad range of domains from popular Internet browsers (e.g., Chrome \cite{} and Firefox \cite{}) to forming the backbone of custom-built applications for powering political campaigns~\cite{Butler2012}. Despite the recent wave of interest in ``NoSQL'', relational databases are still important, relevant and popular in modern software application design. This is evidenced by the $x$ questions on the popular StackExchange question and answer website that have been tagged with labels related to relational databases.
+%% Establish some key benefits and introduce the schema
+Key benefits to using a relational database include the good performance of database management systems (DBMSs) \cite{Abrahami2015}, such as \Postgres and \SQLite, two popular and free DBMSs, and their reliability. Developers often prefer relational databases to other storage and retrieval systems due to the need for a clear schema for specifying the data to be stored and its structure into tables, which acts as a form of readily-available documentation \cite{}. 
 
-
-%Benefits to using the relational database include: (i) ubiquity, (ii) good performance \cite{Abrahami2015}, (iii) documentation of the data's structure, and (iv) availability of reliable implementations. The issue about documenting the structure of the data can then transition into the next point .
-
-
+% TODO -- properly cite this article in the above.
 %  % GMK NOTE: A past employee of Amazon noted that relational is good because you have to document the schema
 %  % Please note that the spelling mistake in this URL is correct (do not let you spell checker fix this mistake)
 %  % http://stackoverflow.com/questions/3294755/with-the-recent-prevelance-of-nosql-databases-why-would-i-use-a-sql-database
 %
  
- %Information is stored according to a relational schema, expressing the structure to be used as a series of tables and columns, usually expressed with the structured query language (SQL). To ensure the data is valid and can be retrieved efficiently a series of constraints can also be defined. These express restrictions such as that particular columns must be unique for each row in a table or that rows in one table must correctly refer to rows in another.
+%% Introduce integrity constraints
+\begin{sloppypar}
+A relational database schema further involves the definition of a series of {\it integrity constraints} that guard the validity and consistency of stored data. Integrity constraints ensure that certain data values are unique, through \PKCs and \UCs; maintain referential integrity with other data values, through FKCs; are properly defined, through \NNCs; and are subject to other arbitrary conditions at the bequest of the developer, through \CCs. Integrity constraints prevent invalid values being admitted into the database through SQL \INSERT statements, by rejecting statements involving data that do not conform to the conditions that they set out. They often encode key application logic, providing a last line of defense against malformed data entries. As such, and in accordance with industry advice \cite{DzoneDatabaseTesting}, they require thorough testing. 
+\end{sloppypar}
 
- %As these constraints prevent invalid or incomplete data from being stored in the database, they are essential to ensuring that applications using this data behave correctly, as well as that any information derived from the data is not incorrect. Therefore, it is vital that these constraints are tested.
+%% Introduce work to date
+To the end, we have devised coverage criteria and automated test suite generation approaches for relational database schema integrity constraint testing \cite{Kapfhammer2013,McMinn2015}. We have also proposed mutation analysis techniques to seed faults in database schemas that simulate faults of commission and omission, which may be used to evaluate test suites for integrity constraints. 
+%
+%% Introduce the problem
+However, as with most forms of mutation, including traditional program mutation analysis, our techniques are costly to execute, since the test suite needs to be evaluated against every mutated schema containing a seeded fault. Therefore, in common with program mutation, our mutation analysis methods do not scale well with the number of mutated schemas. 
 
- %To this end, we have previously proposed a technique to exercise the constraints of a relational database schema, using data generated by a search-based technique and a range of constraint coverage criteria, designed to identify different types of programmer fault.
+%% Introduce the solution
+One cost incurred in relational database schema test suite evaluation is the communication overhead with the DBMS hosting the database. This communication takes place over a network socket, and forms a significant component of the overall time needed to perform the analysis. In this paper, we propose to perform mutation analysis {\it virtually}, on a local model of the DBMS, rather than an actual running instance, that involves constant and costly interaction. Since different DBMSs interpret the SQL standard differently, and have unique implementation ``quirks'', a model is required for each different DBMS with which we wish to perform mutation analysis. In this paper we utilize models for three popular and widely-used DBMSs: \HyperSQL, \Postgres and \SQLite. % do we need citations here?
+We show how using the virtual model can significantly cut the costs of mutation analysis. %TODO -- Greg -- stats :-)
 
- %In order to evaluate how well this data is able to detect faults, and provide a means of comparing this to other data generation approaches for schema testing in the future, a mutation analysis technique was developed. This systematically injects faults into a schema, one at a time, to produce mutant schemas and then executes the test data against each, identifying whether the modification leads to a change in behaviour, `killing' the mutant.
+%% Contributions
+The contributions of this paper are therefore as follows:
 
- %However, as with mutation analysis of other software artefacts, such as programs, the computational cost of this can become very high, as the number of mutants increases rapidly as the size of the mutated artefact increases. Prior work to ameliorate this for mutation analysis of relational database schemas sought to incorporate techniques inspired by those applied to mutation analysis of programs (Mutation2013 ref). In contrast, this paper proposes a novel technique that makes use of an existing model of relational databases to avoid the need for a database during testing, leading to significant efficiency improvements whilst maintaining the same effectiveness (\todo{Perhaps include a phrase here to indicate it works across multiple DBMSs -- it isn't just that we're choosing a slow DBMS to beat, we're beating three of the most popular in performance.}).
 
 
