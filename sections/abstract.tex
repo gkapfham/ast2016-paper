@@ -15,18 +15,18 @@
 Relational databases are a vital component of many modern software applications.
 %
 %% What the schema is, introduce integrity constraints
-Key to the definition of the database schema, which specifies what types of data will be stored in the database and the structure in which the data is to be organized, are integrity constraints.
+Key to the definition of the database schema---which specifies what types of data will be stored in the database and the structure in which the data is to be organized---are integrity constraints.
 %
 %% What integrity constraints are, and why we need to test them
-Integrity constraints are conditions that help maintain the consistency and validity of data in the database, ensuring that any data values that violate their rules are rejected. They often encode business logic, and as such, needed to be tested.
+Integrity constraints are conditions that protect and preserve the consistency and validity of data in the database, preventing data values that violate their rules from being admitted into database tables. They often encode logic about the application concerned, and like any other component of a software application, need to be properly tested.
 %
 %% Introduce mutation analysis
-Mutation analysis is a technique that can be used to seed faults of omission and commission, and has been successfully applied to integrity constraint testing. Yet, as with more traditional mutation analysis for program testing, it is costly to perform, and does not scale easily. 
+Mutation analysis is a technique that has been successfully applied to integrity constraint testing, seeding database schema faults of both omission and commission. Yet, as with traditional mutation analysis for program testing, it is costly to perform, and tends not to scale well where large numbers of mutant schemas are involved.
 %
 %% The crux of our technique
-One overhead incurred by database schema mutation is the cost of communicating with the database management system (DBMS). In this paper we seek to eliminate this cost by performing mutation analysis virtually on a model of the DBMS, rather than an actual instance. We show that this significantly improves the time taken to perform mutation analysis. 
+One overhead incurred by database schema mutation is the cost of communicating with the database management system (DBMS). In this paper we seek to eliminate this cost by performing mutation analysis virtually on a model of the DBMS, rather than on an actual, running instance. We present an empirical evaluation of our virtual technique that shows that significantly improves the time taken to perform mutation analysis, improving the scalability of the technique.
 %
 %% Some stats
-%TODO
+% TODO
 
 \end{abstract}
