@@ -98,6 +98,12 @@ Analysis of the results in this graph:
 ```{r, echo=TRUE}
 time_constrained_data <- read_time_constrained_mutation_data()
 calculate_mutation_score_correlation(time_constrained_data)
+time_constrained_data_hypersql = time_constrained_data %>% filter(dbms %in% c("HyperSQL"))
+time_constrained_data_hypersql %>% calculate_mutation_score_correlation()
+time_constrained_data_postgres = time_constrained_data %>% filter(dbms %in% c("Postgres"))
+time_constrained_data_postgres %>% calculate_mutation_score_correlation()
+time_constrained_data_sqlite = time_constrained_data %>% filter(dbms %in% c("SQLite"))
+time_constrained_data_sqlite %>% calculate_mutation_score_correlation()
 ```
 
 Analysis of the results in this output:
