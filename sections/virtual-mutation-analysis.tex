@@ -11,7 +11,7 @@ In this paper, we derive a model for the \HyperSQL, \Postgres, and \SQLite DBMSs
 \inlineheading{Modeling the Integrity Constraints of a DBMS}
 McMinn et al. introduce {\it integrity constraint predicates} to model the integrity constraints that can be specified as part of a database schema for a DBMS. Integrity constraint predicates evaluate to {\it true} when a row of data in an \INSERT statement satisfies the constraint, and false when it does not.
 
-As per the relational model, originally due to Codd~\cite{Codd1970}, a database table consists of a set of rows with identical columns names. We write an individual row as $r = (cl_1:v_1, \dots, cl_{ncl}:v_{ncl})$ for a table with $ncl$ columns, where $cl_{1 \ldots ncl}$ are the column names and $v_{1 \ldots ncl}$ are the values for each column. As a shorthand, we use the notation $\select{r}{cl}$ to refer to the value of a column $cl$ for a row $r$ and the use of $\relnull$ to denote \NULL.
+As per the relational model, originally due to Codd~\cite{Codd1970}, a database table consists of a set of rows with identical columns names. We write an individual row as $r = (cl_1:v_1, \dots, cl_{ncl}:v_{ncl})$ for a table with $ncl$ columns, where $cl_{1 \ldots ncl}$ are the column names and $v_{1 \ldots ncl}$ are the values for each column. As a shorthand, we use the notation $\select{r}{cl}$ to refer to the value of a column $cl$ for a row $r$.
 
 \begin{sloppypar}
 \Figure{fig:integrity-constraint-functions} shows functions for obtaining integrity constraint predicates. The function
@@ -37,7 +37,7 @@ be \NULL, and it must not be identical to some other value for \sql{id} appearin
 
 \input{figures/integrity-constraint-predicates}
 
-Once predicates have been obtained for all integrity constraints pertaining to a database table\footnote{{\scriptsize See McMinn \etal~\cite{McMinn2015} for a full list of functions for all of the integrity constraints and database management systems that we study in this paper.}}, an {\it acceptance predicate} can be formed. An acceptance predicate describes whether a row of data (such as that which forms part of an \INSERT statement in a test case) conforms to all of the integrity constraints defined on a table, and as such, whether that row of data will be admitted into the database. An acceptance predicate is formed by the conjunction of each of the individual integrity constraint predicates.
+Once predicates have been obtained for all integrity constraints pertaining to a database table\footnote{{\scriptsize See McMinn \etal~\cite{McMinn2015} for a full list of functions for the integrity constraints for each of the database management systems that we study in this paper.}}, an {\it acceptance predicate} can be formed. An acceptance predicate describes whether a row of data (such as that which forms part of an \INSERT statement in a test case) conforms to all of the integrity constraints defined on a table, and as such, whether that row of data will be admitted into the database. An acceptance predicate is formed by the conjunction of each of the individual integrity constraint predicates.
 
 % further examples ?
 

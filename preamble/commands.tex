@@ -81,20 +81,20 @@
 
 \newcommand{\fk}{foreign key\xspace}
 \newcommand{\fks}{foreign keys\xspace}
-\newcommand{\FK}{\sql{FOREIGN KEY}\xspace}
-\newcommand{\FKs}{\sql{FOREIGN KEY}s\xspace}
+\newcommand{\FK}{\sql{FOREIGN} \sql{KEY}\xspace}
+\newcommand{\FKs}{\sql{FOREIGN} \sql{KEY}s\xspace}
 \newcommand{\FKC}{\FK constraint\xspace}
 \newcommand{\FKCs}{\FK constraints\xspace}
 
-\newcommand{\NOTNULL}{\sql{NOT NULL}\xspace}
-\newcommand{\NOTNULLs}{\sql{NOT NULL}s\xspace}
-\newcommand{\NNC}{\sql{NOT NULL} constraint\xspace}
-\newcommand{\NNCs}{\sql{NOT NULL} constraints\xspace}
+\newcommand{\NOTNULL}{\sql{NOT} \sql{NULL}\xspace}
+\newcommand{\NOTNULLs}{\sql{NOT} \sql{NULL}s\xspace}
+\newcommand{\NNC}{\sql{NOT} \sql{NULL} constraint\xspace}
+\newcommand{\NNCs}{\sql{NOT} \sql{NULL} constraints\xspace}
 
 \newcommand{\pk}{primary key\xspace}
 \newcommand{\pks}{primary keys\xspace}
-\newcommand{\PK}{\sql{PRIMARY KEY}\xspace}
-\newcommand{\PKs}{\sql{PRIMARY KEY}s\xspace}
+\newcommand{\PK}{\sql{PRIMARY} \sql{KEY}\xspace}
+\newcommand{\PKs}{\sql{PRIMARY} \sql{KEY}s\xspace}
 \newcommand{\PKC}{\PK constraint\xspace}
 \newcommand{\PKCs}{\PK constraints\xspace}
 
@@ -152,12 +152,12 @@
 }
 
 % Equations
+\newcommand{\relnull}{\sql{NULL}}
 \newcommand{\eqnull}{= \relnull}
 \newcommand{\existsinrel}[2]{\exists \inrel{#1}{#2}}
 \newcommand{\forallinrel}[2]{\forall \inrel{#1}{#2}}
 \newcommand{\inrel}[2]{#1 \in \: #2}
 \newcommand{\neqnull}{\neq \relnull}
-\newcommand{\relnull}{\bot}
 \newcommand{\select}[2]{#1 (#2)}
 \newcommand{\selecteqnull}[2]{\select{#1}{#2} \eqnull}
 \newcommand{\selectneqnull}[2]{\select{#1}{#2} \neqnull}
