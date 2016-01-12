@@ -4,7 +4,7 @@
 \vspace{-1ex}
 \section{Virtual Mutation Analysis}
 \label{sec:virtual-mutation-analysis}
-\VMA of relational database schemas is the use of a model of DBMS to perform mutation analysis rather than communicating with a real instance of a DBMS. 
+\VMA of relational database schemas is the use of a model of DBMS to perform mutation analysis rather than communicating with a real instance of a DBMS.
 
 In this paper, we derive a model for the \HyperSQL, \Postgres, and \SQLite DBMSs based on previous work \cite{McMinn2015} in which we modeled the behavior of the integrity constraints of different DBMSs. This model was originally motivated by the desire to derive different coverage criteria for testing the integrity constraints of a relational database schema. In this paper, we show how this same model can be used to evaluate mutants, and removes the need communicate with a real instance of a DBMS, and so potentially speeding up the time needed to perform mutation analysis.
 
@@ -21,7 +21,7 @@ differs from most other DBMSs in that \NULL values are legal entries for primary
 configuration of a primary key represented as a set of columns $CL$ for a table $tbl$ and a row of data values $nr$. The
 predicate returned by the function can then be used to decide, given the current state of the table $tbl$, whether the
 values in $nr$ conform to the primary key of $tbl$ or not. For example, the predicate returned for the \PK of the
-\sql{Station} table for a non-\SQLite DBMS such as \Postgres is: 
+\sql{Station} table for a non-\SQLite DBMS such as \Postgres is:
 \end{sloppypar}
 
 \vspace{-.5em}
@@ -43,7 +43,11 @@ Once predicates have been obtained for all integrity constraints pertaining to a
 
 \inlineheading{Performing \VMA} Once an acceptance predicate is obtained for each of the tables of a database schema, they can be used to perform virtual mutation analysis. Instead of submitting the rows of data in the \INSERT statements of a test case directly to the DBMS, rows of data can instead be evaluated by the acceptance predicate relevant to the table that is the subject of the \INSERT. Whereas with standard mutation analysis, we seek to observe a difference in the acceptance and rejection behavior of the DBMS with respect to the \INSERT statements submitted as part of each test case, with \vma we instead seek to monitor difference in truth values of acceptance predicates when evaluated with the data contained within each of the original \INSERT statements of the test suite. Any difference in truth value of an acceptance predicate with the original schema and a mutant indicates that the mutant has been killed. As with standard mutation analysis, \vma can be used to compute a mutation score; that is, the number of mutants killed divided by all mutants under consideration.
 
-One disadvantage of \VMA is that a model of the operation of the integrity constraints is needed for the DBMS with which we wish to test schemas and perform mutation analysis. While integrity constraints tend to operate in broadly the same way across most DBMSs there is the potential for subtle variations due to different interpretations of the SQL standard (as shown with the primary key example with \SQLite). Thus, while we have a model that is accurate for \HyperSQL, \Postgres and \SQLite that is used in this paper, new models may potentially be required for other DBMSs. 
+One disadvantage of \vma is that a model of the operation of the integrity constraints is needed for the DBMS with which
+we wish to test schemas and perform mutation analysis. While integrity constraints tend to operate in broadly the same
+way across most DBMSs there is the potential for subtle variations due to differing interpretations of the SQL standard
+(as shown with the primary key example with \SQLite). So, while we have a model --- that is accurate for \HyperSQL,
+\Postgres and \SQLite and used in this paper --- new models may be required for \mbox{other DBMSs}.
 
 %% TODO accentuate the following:
 % savings
