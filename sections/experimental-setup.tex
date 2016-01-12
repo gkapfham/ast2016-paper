@@ -71,6 +71,10 @@ As the number of mutants subject to analysis and the number of generated tests i
 
 We employed a correlation statistic to determine how the mutation scores of the \tc method correspond to those of \vma.  Due to the possibility of rank ties, which are not supported by a number of correlation measures, we chose to use the tie-aware Kendall's \taub~coefficient, as provided by the ``Kendall'' R package \cite{KendallCran}.  Kendall's \taub~provides a measurement of correlation between -1 and 1, representing a strong negative and strong positive association, respectively, with 0 indicating that there is no correlation. Following Inozemtseva and Holmes, we adopt the Guildford scale to describe the correlation values, with the absolute value of a coefficient being described as ``low'' when it is less than $0.4$, ``moderate'' when it is between $0.4$ and $0.7$, ``high'' when ranging from $0.7$ to $0.9$, and ``very high'' when it is greater than \mbox{$0.9$ \cite{Inozemtseva2014}}.
 
+% GRAPHIC: This is the figure that will contain the graphs for the percentage and the number of mutants (and tests)
+% NOTE: This input had to be moved to this location in the code to ensure that the graphs were properly spaced.
+\input{figures/percentage-number-of-mutants-and-tests}
+
 % These are the threats to validity:
 
 % -- Randomness in the SA tool and the generated test suite
