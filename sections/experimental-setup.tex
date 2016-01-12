@@ -81,12 +81,15 @@ We employed a correlation statistic to determine how the mutation scores of the 
 % -- Defects in the virtual mutation analysis
 % ---> So, we tested these programs and checked the mutation scores
 
-Another threat to the validity of our results is defects in the test data generator or one of the mutation analysis
-techniques. We controlled these threats by implementing and regularly applying an automated test suite for all of these
-software tools; we also manually performed ``spot checks'' on small schemas to ensure their correct operation.
-
 % -- Defects in the analysis routines
 % --> So, we tested this these programs
+
+Another threat to the validity of our results is defects in the test data generator or one of the mutation analysis
+techniques. We controlled these threats by implementing and regularly applying an automated test suite for all of these
+software tools; to ensure their correct operation we also manually performed ``spot checks'' on small schemas. In
+addition, we checked that the \vma technique always yielded the same mutation score as the \Original one. Finally, since
+defects in our analysis routines would compromise the conclusions from our experiments, we created and regularly ran 
+
 
 % -- Limited number of subjects in the empirical study
 % --> But, these subjects are representative and open-source
