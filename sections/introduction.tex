@@ -96,8 +96,10 @@ A relational database schema further involves the definition of a series of {\it
 To the end, we have devised coverage criteria and automated test suite generation approaches for relational database schema integrity constraint testing \cite{Kapfhammer2013,McMinn2015}. We have also proposed mutation analysis techniques to seed faults in database schemas that simulate faults of commission and omission, which may be used to evaluate test suites for integrity constraints. 
 %
 %% Introduce the problem
-However, as with most forms of mutation, including traditional program mutation analysis, our techniques are costly to execute, since the test suite needs to be evaluated against every mutated schema containing a seeded fault. Therefore, in common with program mutation, our mutation analysis methods do not scale well with the number of mutated schemas. 
-
+However, as with most forms of mutation, including traditional program mutation analysis, our techniques are costly to execute, since the test suite needs to be evaluated against every mutated schema containing a seeded fault. 
+%% Removed sentence as we're not mentioning scalability anymore.
+%Therefore, in common with program mutation, our mutation analysis methods do not scale well with the number of mutated schemas. 
+%
 %% Introduce the solution
 One cost incurred in relational database schema test suite evaluation is the communication overhead with the DBMS hosting the database. This communication takes place over a network socket, and forms a significant component of the overall time needed to perform the analysis. In this paper, we propose to perform mutation analysis {\it virtually}, on a local model of the DBMS, rather than an actual running instance, that involves constant and costly interaction. Since different DBMSs interpret the SQL standard differently, and have unique implementation ``quirks'', a model is required for each different DBMS with which we wish to perform mutation analysis. In this paper we utilize models for three popular and widely-used DBMSs: \HyperSQL, \Postgres and \SQLite. % do we need citations here?
 We show how using the virtual model can significantly cut the costs of mutation analysis. %TODO -- Greg -- stats :-)

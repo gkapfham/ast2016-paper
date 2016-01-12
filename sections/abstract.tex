@@ -20,7 +20,9 @@ Key to the definition of the database schema---which specifies what types of dat
 Integrity constraints are conditions that protect and preserve the consistency and validity of data in the database, preventing data values that violate their rules from being admitted into database tables. They often encode logic about the application concerned, and like any other component of a software application, need to be properly tested.
 %
 %% Introduce mutation analysis
-Mutation analysis is a technique that has been successfully applied to integrity constraint testing, seeding database schema faults of both omission and commission. Yet, as with traditional mutation analysis for program testing, it is costly to perform, and tends not to scale well where large numbers of mutant schemas are involved.
+Mutation analysis is a technique that has been successfully applied to integrity constraint testing, seeding database schema faults of both omission and commission. Yet, as with traditional mutation analysis for program testing, it is costly to perform. 
+%% cut because we're not mentioning scalability now...
+% and tends not to scale well where large numbers of mutant schemas are involved.
 %
 %% The crux of our technique
 One overhead incurred by database schema mutation is the cost of communicating with the database management system (DBMS). In this paper we seek to eliminate this cost by performing mutation analysis virtually on a model of the DBMS, rather than on an actual, running instance. We present an empirical evaluation of our virtual technique that shows that significantly improves the time taken to perform mutation analysis, improving the scalability of the technique.
