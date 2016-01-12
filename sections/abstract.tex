@@ -23,9 +23,9 @@ Integrity constraints are conditions that protect and preserve the consistency a
 Mutation analysis is a technique that has been successfully applied to integrity constraint testing, seeding database schema faults of both omission and commission. Yet, as for traditional mutation analysis for program testing, it is costly to perform,
 %% cut because we're not mentioning scalability now...
 % and tends not to scale well where large numbers of mutant schemas are involved.
-since every mutant schema needs to be evaluated against the test suite of concern to establish whether it exposes the fault.
+since the test suite under analysis needs to be run against each individual mutant to establish whether or not it exposes the fault.
 %% The crux of our technique
-One overhead incurred by database schema mutation is the cost of communicating with the database management system (DBMS). In this paper we seek to eliminate this cost by performing mutation analysis virtually on a local model of the DBMS, rather than on an actual, running instance that hosts the real database. We present an empirical evaluation of our virtual technique that shows that significantly improves the time taken to perform mutation analysis, improving the scalability of the technique.
+One overhead incurred by database schema mutation is the cost of communicating with the database management system (DBMS). In this paper we seek to eliminate this cost by performing mutation analysis {\it virtually} on a local model of the DBMS, rather than on an actual, running instance hosting a real database. We present an empirical evaluation of our virtual technique that shows that significantly improves the time taken to perform mutation analysis, improving the scalability of the technique.
 %
 %% Some stats
 % TODO
