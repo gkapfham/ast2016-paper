@@ -5,9 +5,6 @@
 \section{Experimental Setup}
 \label{sec:experimental-setup}
 
-% NOTE: This table was moved to an earlier file so that it can appear sooner in the paper
-% \input{tables/schemas.tex}
-
 % PURPOSE: Give the lead in to the research questions and then formally state each question
 
 To experimentally evaluate the presented \vma technique, we investigate three research questions, comparing it against the \Original approach to mutation analysis for relational database schemas, which uses an actual instance of a DBMS (and is hereafter simply referred to as the ``\Original'' approach):
@@ -67,7 +64,12 @@ We employed a correlation statistic to determine how the mutation scores of the 
 
 % GRAPHIC: This is the figure that will contain the graphs for the percentage and the number of mutants (and tests)
 % NOTE: This input had to be moved to this location in the code to ensure that the graphs were properly spaced.
+% SCATTERPLOT INPUT
 \input{figures/percentage-number-of-mutants-and-tests}
+
+% GRAPHIC: This is the box and whisker plot that shows the mutation score for the two techniques
+% BOXPLOT input
+\input{figures/mutation-score-virtual-vs-time-constrained}
 
 % These are the threats to validity:
 
@@ -92,7 +94,3 @@ Another threat to the validity of our results is defects in the test data genera
 % --> But, these subjects are "representative" and open-source
 
 While the rich and diverse nature of real software systems makes it impossible for us to claim that our schemas are representative of all the characteristics of all possible relational database schemas, we endeavored to select schemas from a wide variety of sources, comprising open-source programs, conformance suites for the SQL standard and schemas from databases that were used in previous studies. Table~\ref{tbl:study-schemas} shows the variety captured by the schemas, with tables that contain 1--50 constraints, including \CHECKs, \FKs, \PKs, \NOTNULLs and \UNIQUEs.
-
-% GRAPHIC: This is the box and whisker plot that shows the mutation score for the two techniques
-\input{figures/mutation-score-virtual-vs-time-constrained}
-
