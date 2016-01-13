@@ -1,6 +1,8 @@
 % vim: ft=tex
 %!TEX root=../ast2016.tex
 
+\input{figures/integrity-constraint-predicates}
+
 \vspace{-1ex}
 \section{Virtual Mutation Analysis}
 \label{sec:virtual-mutation-analysis}
@@ -35,7 +37,7 @@ $\selectneqnull{nr}{\sql{id}} \smallwedge \forallinrel{er}{\sql{Station}}: \sele
 \noindent That is, the value of \sql{id} in the row $nr$ must not
 be \NULL, and it must not be identical to some other value for \sql{id} appearing in a row already present in the table.
 
-\input{figures/integrity-constraint-predicates}
+% \input{figures/integrity-constraint-predicates}
 
 Once predicates have been obtained for all integrity constraints pertaining to a database table\footnote{{\scriptsize See McMinn \etal~\cite{McMinn2015} for a full list of functions for the integrity constraints for each of the database management systems that we study in this paper.}}, an {\it acceptance predicate} can be formed. An acceptance predicate describes whether a row of data (such as that which forms part of an \INSERT statement in a test case) conforms to all of the integrity constraints defined on a table, and as such, whether that row of data will be admitted into the database. An acceptance predicate is formed by the conjunction of each of the individual integrity constraint predicates.
 
@@ -52,4 +54,6 @@ we wish to test schemas and perform mutation analysis. While integrity constrain
 way across most DBMSs there is the potential for subtle variations due to differing interpretations of the SQL standard
 (as shown with the primary key example with \SQLite). So, while we have a model --- that is accurate for \HyperSQL,
 \Postgres and \SQLite and used in this paper --- new models may be required for \mbox{other DBMSs}.
+
+\input{tables/schemas.tex}
 
