@@ -81,7 +81,7 @@ Relational databases provide a reliable way to store and retrieve data, forming 
 \end{sloppypar}
 
 %% Establish some key benefits and introduce the schema
-Key benefits to using a relational database include the good performance of database management systems (DBMSs) \cite{Abrahami2015}---such as \Postgres and \SQLite, two popular and free DBMSs---and their reliability. Developers often prefer relational databases to other storage and retrieval systems due to the availability of a clear database {\it schema}, which specifies the data to be stored and how it is structured into tables, serving as easy-to-refer-to documentation\footnote{\url{http://goo.gl/v03nUr}}\hspace{-1ex}. % points to: http://stackoverflow.com/questions/3294755/with-the-recent-prevelance-of-nosql-databases-why-would-i-use-a-sql-database
+Key benefits to using a relational database include the good performance of database management systems (DBMSs) \cite{Abrahami2015} --- such as \Postgres and \SQLite, two popular and free DBMSs --- and their reliability. Developers often prefer relational databases to other storage and retrieval systems due to the availability of a clear database {\it schema}, which specifies the data to be stored and how it is structured into tables, serving as easy-to-refer-to documentation\footnote{\url{http://goo.gl/v03nUr}}\hspace{-1ex}. % points to: http://stackoverflow.com/questions/3294755/with-the-recent-prevelance-of-nosql-databases-why-would-i-use-a-sql-database
  
 %% Introduce integrity constraints
 \begin{sloppypar}
@@ -92,7 +92,7 @@ A relational database schema further involves the definition of a series of {\it
 To the end, previous work has devised coverage criteria and automated test suite generation approaches for relational database schema integrity constraint testing \cite{Kapfhammer2013,McMinn2015}. Past work has also proposed mutation analysis techniques to seed faults in database schemas that simulate faults of commission and omission, which may be used to evaluate test suites for integrity constraints \cite{Kapfhammer2007,Wright2013}. 
 %
 %% Introduce the problem
-However, as with most forms of mutation---including traditional program mutation analysis---these techniques are costly to execute, since the test suite needs to be evaluated against every mutant to determine whether it is capable of exposing the seeded fault. 
+However, as with most forms of mutation --- including traditional program mutation analysis --- these techniques are costly to execute, since the test suite needs to be evaluated against every mutant to determine whether it is capable of exposing the seeded fault. 
 %% Removed sentence as we're not mentioning scalability anymore.
 %Therefore, in common with program mutation, our mutation analysis methods do not scale well with the number of mutated schemas. 
 
