@@ -4,7 +4,7 @@
 \section{Experimental Setup}
 \label{sec:experimental-setup}
 
-\input{tables/schemas.tex}
+% \input{tables/schemas.tex}
 
 To experimentally evaluate the presented \vma technique, we investigate three research questions, comparing it against the \Original approach to mutation analysis for relational database schemas, which uses an actual instance of a DBMS (and is hereafter simply referred to as the ``\Original'' approach):
 
@@ -49,7 +49,8 @@ To answer the third research question, we ran the \Original technique $30$ times
 
 We performed all of the experiments with our \SA tool \cite{Kapfhammer2013,McMinn2015,Wright2014}, compiled with the Java Development Kit 7 compiler and executed with the Linux version of the 64-bit Oracle Java 1.7 virtual machine.  Experiments were executed on an Ubuntu 14.04 workstation, with a 3.13.0-44 Linux 64-bit kernel, a quad-core 2.4GHz CPU and 12GB RAM. All input (i.e., the database schemas) and output (i.e., the result files) were stored on the workstation's local disk. We used the default configuration of \PostgreSQL version 9.3.5, \HyperSQL version 2.2.8 and \SQLite 3.8.2.  \HyperSQL and \SQLite were used with ``in-memory'' mode enabled.
 
-\input{tables/num-mutants.tex}
+% NOTE: This table on the number of mutants is being removed to save space and potentially allow for a bar chart at the end of the paper
+% \input{tables/num-mutants.tex}
 
 % GRAPHIC: This is the box and whisker plot that shows the execution time of original and virtual techniques
 % NOTE: This input must be moved to this location to ensure that a graph appears on the correct page
