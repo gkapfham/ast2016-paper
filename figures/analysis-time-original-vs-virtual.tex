@@ -17,13 +17,6 @@
   % the lowest value within 1.5 * IQR of the hinge. Data beyond the end of the whiskers are outliers and plotted as points
   % (as specified by Tukey).
 
-  % Commentary on the results in this output:
-
-  % - Note that this data has been "log transformed" using a log-to-the-base-ten transformation
-  % - Transformation is done because the Postgres-Original data is on a different scale than all other data
-  % - This means that you will only see variation for Postgres-Original (without transformation)
-  % - Using the log-transformed data shows the basic trends in the data sets
-
   {\small \justifying{ \noindent For a detailed description of the meaning of the boxes in this plot, please refer to
       Section~\ref{sec:experimental-setup}. The boxes in this plot are noticeably compressed because there is little variability in
       the timings across the different configurations.  Since the results from running the standard method on the
