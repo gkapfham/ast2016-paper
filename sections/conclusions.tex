@@ -1,11 +1,14 @@
 % vim: ft=tex
 %!TEX root=ast2016.tex
 
-\section{Conclusions}
+\section{Conclusions and Future Work}
 \label{sec:conclusions}
 
 % PURPOSE: Draw the paper to conclusion and highlight some of the key empirical results
 
-This paper introduces a cost-effective and accurate technique that performs mutation analysis for relational database schemas. \Vma~executes test suites virtually against a model of the mutated database schema. This novel approach removes the need to setup an instance of a database with the mutated schema on a real DBMS, communicate with the DBMS over a socket connection to set up the database, execute the SQL \INSERTs of a test case against it, and then tear down the database to ready it for the next test.
+This paper introduces a cost-effective and accurate technique that performs mutation analysis for relational database schemas. \Vma~executes test suites virtually against a model of the mutated database schema. This novel approach removes the need to setup an instance of a database with the mutated schema on a real DBMS, communicate with the DBMS over a socket connection to set up the database, execute the SQL \INSERTs of a test case against it, and then tear down the database to ready it for the next test. Incorporating nine representative schemas and three industry-standard DBMSs, this paper's experiments reveal that \vma is better than the standard technique in 22 of the 27 configurations studied, yielding a time savings ranging from $13$ to $99\%$. Yet, even in the 5 cases in which a small schema and a fast DBMS should allow the standard method to outperform \vma, the experiments showed that the presented method was still competitive.
+
+
+
 
 
