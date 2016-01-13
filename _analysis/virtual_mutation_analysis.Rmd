@@ -4,6 +4,7 @@ output:
   pdf_document:
     keep_tex: true
     highlight: pygments
+    number_sections: true
 ---
 
 # Installing the Virtual Mutation Package
