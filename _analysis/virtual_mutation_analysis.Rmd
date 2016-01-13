@@ -79,7 +79,7 @@ knitr::kable(time_constrained_data_tidy_print, format="latex", booktabs=TRUE)
 
 ## Visualise the Total Number of Mutants
 
-```{r, fig.width=5.7, fig.height=3.5, echo=TRUE}
+```{r, fig.width=5.7, fig.height=3.3, echo=TRUE}
 time_constrained_data <- read_time_constrained_mutation_data_subset()
 time_constrained_data_totals_tidy <- time_constrained_data %>%
   transform_time_constrained_data_for_totals()
