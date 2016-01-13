@@ -47,7 +47,7 @@ Once predicates have been obtained for all integrity constraints pertaining to a
 %% PSM - no need to explain this again -- it's introduced in the background
 %; that is, the number of mutants killed divided by all mutants under consideration.
 
-Virtual mutation analysis therefore avoids the need to communicate with an actual instance of a DBMS that hosts each of the mutant databases. This saves the cost of setting up the tables of each database according to either the original schema or each of the mutants, executing the \INSERT statements in the test suite against the database, and then, finally, restoring the state of the DBMS by removing the database.
+Virtual mutation analysis therefore avoids the need to communicate with an actual instance of a DBMS that hosts each of the mutant databases. This saves the cost of setting up the tables of each database according to either the original schema or each of the mutants (through SQL \sql{CREATE TABLE} statements), executing the \INSERT statements in the test suite against the database, and then, finally, restoring the state of the DBMS by removing the database tables (through SQL \sql{DROP TABLE} statements).
 
 One disadvantage of \vma is that a model of the operation of the integrity constraints is needed for the DBMS with which
 we wish to test schemas and perform mutation analysis. While integrity constraints tend to operate in broadly the same
