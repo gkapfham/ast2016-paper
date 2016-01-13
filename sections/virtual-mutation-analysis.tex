@@ -56,12 +56,8 @@ Once predicates have been obtained for all integrity constraints pertaining to a
 
 Virtual mutation analysis therefore avoids the need to communicate with an actual instance of a DBMS that hosts each of the mutant databases. This saves the cost of setting up the tables of each database according to either the original schema or each of the mutants (through SQL \sql{CREATE TABLE} statements), executing the \INSERT statements in the test suite against the database, and then, finally, restoring the state of the DBMS by removing the database tables (through SQL \sql{DROP TABLE} statements).
 
-One disadvantage of \vma is that a model of the operation of the integrity constraints is needed for the DBMS with which
-we wish to test schemas and perform mutation analysis. While integrity constraints tend to operate in broadly the same
-way across most DBMSs there is the potential for subtle variations due to differing interpretations of the SQL standard
-(as shown with the primary key example with \SQLite). So, while we have a model --- that is accurate for \HyperSQL,
-\Postgres and \SQLite and used in this paper --- new models may be required for \mbox{other DBMSs}.
+One disadvantage of \vma is that a model of the operation of the integrity constraints is needed for the DBMS with which we wish to test schemas and perform mutation analysis. While integrity constraints tend to operate in broadly the same way across most DBMSs there is the potential for subtle variations due to differing interpretations of the SQL standard (as shown with the primary key example with \SQLite). So, while we have a model --- that is accurate for \HyperSQL, \Postgres and \SQLite and used in this paper --- new models may be required for \mbox{other DBMSs}.
 
-\inlineheading{Related Work}
+\inlineheading{Related Work} Although this paper is the first to present the idea of virtual mutation, there is a substantial amount of work focused on improving the efficiency of mutation analysis; due to space constraints we briefly survey some of the most related work. For instance, Just \etal~showed how a compiler-integrated method can make mutation testing faster~\cite{Just2011}. Also, Tuya \etal~applied selective mutation to the mutation testing of SQL \SELECT statements.
 
 
