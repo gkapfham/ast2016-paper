@@ -1,6 +1,7 @@
 %!TEX root=../ast2016.tex
 
 \begin{abstract}
+
 %% Chris's original bullet points:
 %   \begin{itemize}
 %       \item Relational schemas can include constraints that contain business logic so need to be tested.
@@ -25,9 +26,6 @@ Mutation analysis is a technique that has been successfully applied to integrity
 % and tends not to scale well where large numbers of mutant schemas are involved.
 since the test suite under analysis needs to be run against each individual mutant to establish whether or not it exposes the fault.
 %% The crux of our technique
-One overhead incurred by database schema mutation is the cost of communicating with the database management system (DBMS). In this paper we seek to eliminate this cost by performing mutation analysis {\it virtually} on a local model of the DBMS, rather than on an actual, running instance hosting a real database. We present an empirical evaluation of our virtual technique that shows that significantly improves the time taken to perform mutation analysis, improving the scalability of the technique.
-%
-%% Some stats
-% TODO
+One overhead incurred by database schema mutation is the cost of communicating with the database management system (DBMS). In this paper, we seek to eliminate this cost by performing mutation analysis {\it virtually} on a local model of the DBMS, rather than on an actual, running instance hosting a real database. We present an empirical evaluation of our virtual technique revealing that, across all of the studied DBMSs and schemas, the virtual method leads to a time savings of $51\%$ over the standard technique.
 
 \end{abstract}
