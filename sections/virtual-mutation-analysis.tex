@@ -10,6 +10,8 @@
 
 In this paper, we derive a model for the \HyperSQL, \Postgres, and \SQLite DBMSs based on previous work \cite{McMinn2015} in which we modeled the behavior of the integrity constraints of different DBMSs. This model was originally motivated by the desire to derive different coverage criteria for testing the integrity constraints of a relational database schema. In this paper, we show how this same model can be used to evaluate mutants, and removes the need communicate with a real instance of a DBMS, and so potentially speeding up the time needed to perform mutation analysis.
 
+\input{tables/schemas.tex}
+
 \inlineheading{Modeling the Integrity Constraints of a DBMS}
 McMinn et al. introduced {\it integrity constraint predicates} to model the integrity constraints that can be specified as part of a database schema for a DBMS~\cite{McMinn2015} . Integrity constraint predicates evaluate to {\it true} when a row of data in an \INSERT statement satisfies the constraint, and false when it does not.
 
@@ -55,5 +57,4 @@ way across most DBMSs there is the potential for subtle variations due to differ
 (as shown with the primary key example with \SQLite). So, while we have a model --- that is accurate for \HyperSQL,
 \Postgres and \SQLite and used in this paper --- new models may be required for \mbox{other DBMSs}.
 
-\input{tables/schemas.tex}
 
