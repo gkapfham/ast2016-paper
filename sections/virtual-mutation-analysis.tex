@@ -1,6 +1,7 @@
 % vim: ft=tex
 %!TEX root=../ast2016.tex
 
+% Display the figure that gives two examples of integrity constraint predicate functions
 \input{figures/integrity-constraint-predicates}
 
 \vspace{-1ex}
@@ -11,6 +12,8 @@
 
 In this paper, we derive a model for the \HyperSQL, \Postgres, and \SQLite DBMSs based on previous work \cite{McMinn2015} in which we modeled the behavior of the integrity constraints of different DBMSs. This model was originally motivated by the desire to derive different coverage criteria for testing the integrity constraints of a relational database schema. In this paper, we show how this same model can be used to evaluate mutants, thus removing the need to communicate with a real instance of a DBMS and so potentially speeding up the time needed to perform mutation analysis.
 
+% Display the table that gives the characteristics of the schemas; this must be placed here at such an early location
+% because of the fact that we need to fit in the three large graphs later in the paper
 \input{tables/schemas.tex}
 
 \inlineheading{Modeling the Integrity Constraints of a DBMS}
@@ -39,10 +42,9 @@ $\selectneqnull{nr}{\sql{id}} \smallwedge \forallinrel{er}{\sql{Station}}: \sele
 
 \noindent That is, the value of the \sql{id} column in the row $nr$ must not be \NULL, and it must not be identical to some other value for \sql{id} appearing in a row already present in the \sql{Station} table.
 
-% \input{figures/integrity-constraint-predicates}
-
 % GRAPHIC: This is the box and whisker plot that shows the execution time of original and virtual techniques
 % NOTE: This input must be moved to this location to ensure that a graph appears on the correct page
+% BOXPLOT
 \input{figures/analysis-time-original-vs-virtual}
 
 Once predicates have been obtained for all integrity constraints pertaining to a database table\footnote{{\scriptsize See McMinn \etal~\cite{McMinn2015} for a full list of functions for the integrity constraints for each of the database management systems that we study in this paper.}}, an {\it acceptance predicate} can be formed. An acceptance predicate describes whether a row of data (such as that which forms part of an \INSERT statement in a test case) conforms to all of the integrity constraints defined on a table, and as such, whether that row of data will be admitted into the database. An acceptance predicate is formed by the conjunction of each of the individual integrity constraint predicates.
