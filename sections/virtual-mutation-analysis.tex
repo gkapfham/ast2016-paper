@@ -22,7 +22,7 @@ As per the relational model, originally due to Codd~\cite{Codd1970}, a database 
 \Figure{fig:integrity-constraint-functions} shows functions for obtaining predicates for primary keys. The function
 ``get\_primary\_key\_constraint\_predicate'' gives a predicate for the standard DBMS implementation of a primary key,
 while ``get\_primary\_key\_constraint\_predicate\_for\_SQLite'' is an especially customized version for \SQLite. \SQLite
-differs from most other DBMSs in \NULL is a legal entry for a primary key column. Both functions take the
+differs from most other DBMSs in that \NULL is a legal entry for a primary key column. Both functions take the
 configuration of a primary key represented as a set of columns $CL$ for a table $tbl$ and a row of data values $nr$. The
 predicate returned by the function can then be used to decide, given the current state of the table $tbl$, whether the
 values in $nr$ conform to the primary key of $tbl$ or not. For example, the predicate returned for the \PK of the
@@ -37,8 +37,7 @@ $\selectneqnull{nr}{\sql{id}} \smallwedge \forallinrel{er}{\sql{Station}}: \sele
 \end{center}
 \vspace{-.6em}
 
-\noindent That is, the value of \sql{id} in the row $nr$ must not
-be \NULL, and it must not be identical to some other value for \sql{id} appearing in a row already present in the table.
+\noindent That is, the value of the \sql{id} column in the row $nr$ must not be \NULL, and it must not be identical to some other value for \sql{id} appearing in a row already present in the \sql{Station} table.
 
 % \input{figures/integrity-constraint-predicates}
 
