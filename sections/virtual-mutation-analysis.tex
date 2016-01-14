@@ -18,7 +18,7 @@ McMinn et al. introduced {\it integrity constraint predicates} to model the inte
 As per the relational model, originally due to Codd~\cite{Codd1970}, a database table consists of a set of rows with identical columns names. We write an individual row as $r = (cl_1:v_1, \dots, cl_{ncl}:v_{ncl})$ for a table with $ncl$ columns, where $cl_{1 \ldots ncl}$ are the column names and $v_{1 \ldots ncl}$ are the values for each column. As a shorthand, we use the notation $\select{r}{cl}$ to refer to the value of a column $cl$ for a row $r$.
 
 \begin{sloppypar}
-\Figure{fig:integrity-constraint-functions} shows functions for obtaining integrity constraint predicates. The function
+\Figure{fig:integrity-constraint-functions} shows functions for obtaining predicates for primary keys. The function
 ``get\_primary\_key\_constraint\_predicate'' gives a predicate for the standard DBMS implementation of a primary key,
 while ``get\_primary\_key\_constraint\_predicate\_for\_SQLite'' is an especially customized version for \SQLite. \SQLite
 differs from most other DBMSs in \NULL is a legal entry for a primary key column. Both functions take the
@@ -49,7 +49,9 @@ Once predicates have been obtained for all integrity constraints pertaining to a
 
 % further examples ?
 
-\inlineheading{Performing \VMA} Once acceptance predicates have been obtained for each of the tables of a database schema, they can be used to perform virtual mutation analysis. Instead of submitting the rows of data in the \INSERT statements of a test case directly to the DBMS, rows of data can instead be evaluated by the acceptance predicate relevant to the table that is the subject of the \INSERT. Whereas with standard mutation analysis, we seek to observe a difference in the acceptance and rejection behavior of the DBMS with respect to the \INSERT statements submitted as part of each test case, with \vma we instead seek to monitor difference in truth values of acceptance predicates when evaluated with the data contained within each of the original \INSERT statements of the test suite. Any difference in truth value of an acceptance predicate with the original schema and a mutant indicates that the mutant has been killed.  As with standard mutation analysis, the virtual method can compute a mutation score.
+\inlineheading{Performing \VMA} Once acceptance predicates have been obtained for each of the tables of a database schema, they can be used to perform virtual mutation analysis. Instead of submitting the rows of data in the \INSERT statements of a test case directly to the DBMS, rows of data can instead be evaluated by the acceptance predicate relevant to the table that is the subject of the \INSERT. Whereas with standard mutation analysis, we seek to observe a difference in the acceptance and rejection behavior of the DBMS with respect to the \INSERT statements submitted as part of each test case, with \vma we instead seek to monitor difference in truth values of acceptance predicates when evaluated with the data contained within each of the original \INSERT statements of the test suite. A difference in truth value of an acceptance predicate with the original schema compared a mutant indicates the mutant is killed by the test suite.
+%% Obvious?
+%As with standard mutation analysis, the virtual method can compute a mutation score.
 
 %% PSM - no need to explain this again -- it's introduced in the background
 %; that is, the number of mutants killed divided by all mutants under consideration.
