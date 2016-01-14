@@ -8,6 +8,7 @@
 % NIST WEATHER input
 \input{figures/nist-weather}
 
+\vspace{-2mm}
 \inlineheading{Relational Database Schemas}
 \Figure{fig:nistweather} shows SQL \sql{CREATE TABLE} statements for the ``\NistWeather'' schema, which is a part of the NIST SQL conformance test suite\footnote{\small{\url{http://www.itl.nist.gov/div897/ctg/sql_form.htm}}}. The schema defines two tables. The ``\sql{Stats}'' table (lines 10--19) is for storing rainfall and temperature statistics for a given month pertaining to a particular weather station, the details of which are to be  stored in the ``\sql{Station}'' table (lines 1--9). Each table involves a number of different columns, each with an associated data type, and a series of integrity constraints, which are highlighted in the figure.
 
