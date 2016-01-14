@@ -28,13 +28,13 @@ values in $nr$ conform to the primary key of $tbl$ or not. For example, the pred
 \sql{Station} table for a non-\SQLite DBMS such as \Postgres is:
 \end{sloppypar}
 
-\vspace{-.5em}
+\vspace{-.6em}
 \begin{center}
-\scalebox{\inlinescalefactor}{
+\scalebox{0.95}{
 $\selectneqnull{nr}{\sql{id}} \smallwedge \forallinrel{er}{\sql{Station}}: \selectneq{nr}{er}{\sql{id}})$
 }
 \end{center}
-\vspace{-.5em}
+\vspace{-.6em}
 
 \noindent That is, the value of \sql{id} in the row $nr$ must not
 be \NULL, and it must not be identical to some other value for \sql{id} appearing in a row already present in the table.

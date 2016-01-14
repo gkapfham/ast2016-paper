@@ -73,10 +73,10 @@ However, as with most forms of mutation --- including traditional program mutati
 
 One cost incurred in evaluating relational database schema test suites is the overhead of communicating with the DBMS that hosts each of the mutant databases, which forms a significant component of the overall time needed to perform mutation analysis. In this paper, we propose to perform mutation analysis {\it virtually}, on a local model of the DBMS, rather than an actual running instance that incurs constant and costly interaction. Since different DBMSs interpret the SQL standard differently, and often have unique implementation ``quirks'', a model is required for each different DBMS. In this paper we utilize models for three popular and widely-used DBMSs: \HyperSQL, \Postgres and \SQLite. We empirically show how using virtual mutation instead of the \Original method can cut the costs of analysis by $51\%$ on average across all of the studied configurations. Thus, the contributions of this paper are:
 
-\noindent 1. Avoiding costly DBMS interactions, a new method for performing mutation analysis {\it virtually} using a
+\vspace{1mm} \noindent 1. Avoiding costly DBMS interactions, a new method for performing mutation analysis {\it virtually} using a
 local model of three popular and widely-used DBMSs: \HyperSQL, \mbox{\Postgres and \SQLite.}
 
-\vspace{1mm} \noindent 2. Demonstrating both the efficiency and the effectiveness of \vma, an empirical study
+\vspace{1mm} \noindent 2. Demonstrating both the efficiency and the effectiveness of \mbox{virtual} mutation analysis, an empirical study
 incorporating \numschemas relational database schemas and the three representative DBMSs.
 
 %% Introduce the next section.
