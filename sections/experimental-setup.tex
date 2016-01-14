@@ -1,4 +1,4 @@
-%!TEX root=ast2016.tex
+%!TEX root=../ast2016.tex
 
 \vspace{-.5em}
 
@@ -7,7 +7,8 @@
 
 % PURPOSE: Give the lead in to the research questions and then formally state each question
 
-To experimentally evaluate the presented \vma technique, we investigate three research questions, comparing it against the \Original approach to mutation analysis for relational database schemas, which uses an actual instance of a DBMS (and is hereafter simply referred to as the ``\Original'' approach):
+To experimentally evaluate the presented \vma technique, we investigate three research questions, comparing it against the \Original approach to mutation analysis for relational database schemas, which uses an actual instance of a DBMS (and is hereafter simply referred to as the ``\Original'' approach).
+% PSM changed the colon to a full stop because the next part currently starts on a new column and it looked odd
 
 \vspace{5pt}
 
@@ -44,7 +45,7 @@ To answer the third research question, we ran the \Original technique $30$ times
 
 % PURPOSE: State the execution environment and the tools used for the experiments
 
-We performed all of the experiments with our \SA tool \cite{Kapfhammer2013,McMinn2015,Wright2014}, compiled with the Java Development Kit 7 compiler and executed with the Linux version of the 64-bit Oracle Java 1.7 virtual machine.  Experiments were executed on an Ubuntu 14.04 workstation, with a 3.13.0-44 Linux 64-bit kernel, a quad-core 2.4GHz CPU and 12GB RAM. All input (i.e., the database schemas) and output (i.e., the result files) were stored on the workstation's local disk. We used the default configuration of \PostgreSQL version 9.3.5, \HyperSQL version 2.2.8 and \SQLite 3.8.2.  \HyperSQL and \SQLite were used with ``in-memory'' mode enabled.
+We implemented our virtual model into our \SA tool \cite{Kapfhammer2013,McMinn2015,Wright2014}, which we also used performed all of our experiments. \SA was compiled with the JDK 7 compiler and executed with the Linux version of the 64-bit Oracle Java 1.7 virtual machine.  Experiments were executed on an Ubuntu 14.04 workstation, with a 3.13.0-44 Linux 64-bit kernel, a quad-core 2.4GHz CPU and 12GB RAM. All input (i.e., the database schemas) and output (i.e., the result files) were stored on the workstation's local disk. We used the default configuration of \PostgreSQL version 9.3.5, \HyperSQL version 2.2.8 and \SQLite 3.8.2.  \HyperSQL and \SQLite were used with ``in-memory'' mode enabled.
 
 % PURPOSE: Describe the meaning of the box and whisker plots
 
