@@ -51,7 +51,8 @@ To answer the third research question, we ran the \Original technique $30$ times
 
 % PURPOSE: State the execution environment and the tools used for the experiments
 
-We implemented our virtual model into our \SA tool \cite{Kapfhammer2013,McMinn2015,Wright2014}, which we also used performed all of our experiments. \SA was compiled with the JDK 7 compiler and executed with the Linux version of the 64-bit Oracle Java 1.7 virtual machine.  Experiments were executed on an Ubuntu 14.04 workstation, with a 3.13.0-44 Linux 64-bit kernel, a quad-core 2.4GHz CPU and 12GB RAM. All input (i.e., the database schemas) and output (i.e., the result files) were stored on the workstation's local disk. We used the default configuration of \PostgreSQL version 9.3.5, \HyperSQL version 2.2.8 and \SQLite 3.8.2.  \HyperSQL and \SQLite were used with ``in-memory'' mode enabled.
+We implemented our virtual model into our \SA tool \cite{Kapfhammer2013,McMinn2015,Wright2014}, which we also used to
+perform all of the experiments. \SA was compiled with the JDK 7 compiler and executed with the Linux version of the 64-bit Oracle Java 1.7 virtual machine.  Experiments were executed on an Ubuntu 14.04 workstation, with a 3.13.0-44 Linux 64-bit kernel, a quad-core 2.4GHz CPU and 12GB RAM. All input (i.e., the database schemas) and output (i.e., the result files) were stored on the workstation's local disk. We used the default configuration of \PostgreSQL version 9.3.5, \HyperSQL version 2.2.8 and \SQLite 3.8.2.  \HyperSQL and \SQLite were used with ``in-memory'' mode enabled.
 
 % PURPOSE: Describe the meaning of the box and whisker plots
 
@@ -86,7 +87,7 @@ We employed a correlation statistic to determine how the mutation scores of the 
 % ---> So, ran multiple trials and did statistical analysis
 % ---> When calculated effect sizes, we also looked at thresholds
 
-\inlineheading{Threats to Validity} There are several threats to the validity of the empirical results presented in this paper. First, several of the techniques that we used (e.g., the test data generator in \SA and the mutant selection by the \tcm~method) employ randomness. Additionally, background processes running during experimentation may introduce small random differences in the timings for the mutation analysis methods. To control for these threats we ran 30 trials and used box and whisker plots and statistical tests to analyse the results. Following the advice of Neumann \etal~\cite{Neumann2015}, we disregarded all timings below $100$ ms --- as they would not be perceived by users of our tool --- to ensure that we did not misapply the Vargha-Delaney effect size.
+\inlineheading{Threats to Validity} There are several threats to the validity of the empirical results presented in this paper. First, several of the techniques that we used (e.g., the test data generator in \SA and the mutant selection by the \tcm~method) employ randomness. Additionally, background processes running during experimentation may introduce small random differences in the timings for the mutation analysis methods. To control for these threats we ran 30 trials and used box and whisker plots and statistical tests to analyse the results. Adhering to the advice of Neumann \etal~\cite{Neumann2015}, we disregarded all timings below $100$ ms --- as they would not be perceived by users of our tool --- to ensure that we did not misapply the Vargha-Delaney \mbox{effect size}.
 
 % -- Defects in the test data generator
 % -- Defects in the virtual mutation analysis
