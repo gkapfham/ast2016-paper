@@ -14,7 +14,7 @@ In this paper, we derive a model for the \HyperSQL, \Postgres, and \SQLite DBMSs
 \input{tables/schemas.tex}
 
 \inlineheading{Modeling the Integrity Constraints of a DBMS}
-McMinn et al. introduced {\it integrity constraint predicates} to model the integrity constraints that can be specified as part of a database schema for a DBMS~\cite{McMinn2015} . Integrity constraint predicates evaluate to {\it true} when a row of data in an \INSERT statement satisfies the constraint, and false when it does not.
+McMinn et al. introduced {\it integrity constraint predicates} to model the integrity constraints that can be specified as part of a relational database schema for a database management system~\cite{McMinn2015}. Integrity constraint predicates evaluate to {\it true} when a row of data in an \INSERT statement satisfies the constraint, and false when it does not.
 
 As per the relational model, originally due to Codd~\cite{Codd1970}, a database table consists of a set of rows with identical columns names. We write an individual row as $r = (cl_1:v_1, \dots, cl_{ncl}:v_{ncl})$ for a table with $ncl$ columns, where $cl_{1 \ldots ncl}$ are the column names and $v_{1 \ldots ncl}$ are the values for each column. As a shorthand, we use the notation $\select{r}{cl}$ to refer to the value of a column $cl$ for a row $r$.
 
