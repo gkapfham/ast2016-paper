@@ -34,9 +34,13 @@ In practice, each test case takes the form of a series of SQL \INSERT statements
 \end{center}
 \vspace{-.25em}
 
-Further \INSERT statements could then be used to test that the table {\it rejects} certain values as expected, for example using \NULL or out of range values for the \sql{LAT\_N} or \sql{LONG\_W} columns, or by attempting to use a value for \sql{ID} that has already been inserted into the table. Of course, each of these \INSERT statements will be rejected, due to violation of the table's \NOTNULL, \CHECK and \PKCs respectively.
-
+\begin{sloppypar}
+Further \INSERT statements could then be used to test that the table {\it rejects} certain values as expected, for example using \NULL or out of range values for the \sql{LAT\_N} or \sql{LONG\_W} columns, or by attempting to use a value for \sql{ID} that has already been inserted into the table. 
+%
+It will of course transpire that each of these \INSERTs~{\it will} be rejected, since the table has correctly defined \NOTNULL, \CHECK and \PKCs that cover each of these cases.
+%
 Whereas traditional program testing involves assertions over values outputted from a program, database schema testing involves checking that \INSERT statements were accepted or rejected as expected. If the acceptance-rejection pattern for a series of \INSERT statements differs from that which was expected, a specification error may exist in the definition of the schema.
+\end{sloppypar}
 
 \inlineheading{Mutation Analysis of Relational Database Schemas}
 Once a test suite has been created, its strength --- that is, its potential fault-finding capability --- can be evaluated using mutation analysis \cite{Jia2011}. Mutation analysis involves seeding small faults into the artifact under test to create {\it mutants} and then checking to find if the test suite behaves differently with the mutant compared with the original artifact. If a difference in behavior is found, the test suite is capable of distinguishing the faulty artifact from the original.
