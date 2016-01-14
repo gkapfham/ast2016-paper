@@ -23,7 +23,7 @@ Relational database schemas are an important artifact in a software application,
 
 In our previous work, we sought to define coverage criteria for the integrity constraints of a database schema \cite{McMinn2015}. These coverage criteria mandate the creation of test cases with the aim of demonstrating that the schema has been correctly specified for the purpose of admitting valid values into the database, while also rejecting \mbox{invalid} ones. Each test case is designed to exercise a specific integrity constraint defined for the schema, causing it to either be a) satisfied, by submitting rows of database values that are valid; or, b) violated, by submitting rows of values that are invalid.
 
-In practice, each test case takes the form of a series of SQL \INSERT statements that encode the rows of values with which the schema will be tested. For example, the following \INSERT statement could be used to check that the integrity constraints of the ``\sql{Station}'' table admits certain values as expected. Given an empty table, the values embodied in the statement should be correctly inserted into the table:
+In practice, each test case takes the form of a series of SQL \INSERT statements that encode the rows of values with which the schema will be tested. For instance, the following \INSERT statement could be used to check that the integrity constraints of the ``\sql{Station}'' table admits certain values as expected. Given an empty table, the values embodied in the statement should be correctly inserted into the table:
 
 \vspace{-.25em}
 \begin{center}
