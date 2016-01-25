@@ -35,7 +35,7 @@ values in $nr$ conform to the primary key of $tbl$ or not. For example, the pred
 \vspace{-.6em}
 \begin{center}
 \scalebox{0.95}{
-$\selectneqnull{nr}{\sql{id}} \smallwedge \forallinrel{er}{\sql{Station}}: \selectneq{nr}{er}{\sql{id}})$
+($\selectneqnull{nr}{\sql{id}}) \smallwedge (\forallinrel{er}{\sql{Station}}: \selectneq{nr}{er}{\sql{id}})$
 }
 \end{center}
 \vspace{-.6em}
