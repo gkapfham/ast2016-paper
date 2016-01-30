@@ -185,6 +185,17 @@ analyse_vargha_delaney_effect_size_thresholding(original_and_virtual_mutation_da
 
 The conclusion from this result is that virtual is definitely better than original.
 
+Finally, there is a better way to transform the data, which more closely follows the SSBSE paper. Basically, it "truncates"
+the 100s position of the numbers, with, for instance 1884 turning into 1800.
+
+```{r, echo=TRUE}
+original_and_virtual_mutation_data_transformed <-
+  transform_truncate_execution_times_for_precision(original_and_virtual_mutation_data, -2)
+analyse_vargha_delaney_effect_size(original_and_virtual_mutation_data_transformed) %>% str()
+```
+
+This result also suggests that the virtual technique is better than the original one.
+
 ## Determine How Frequently Virtual is Better Than Original
 
 ```{r, echo=TRUE}
