@@ -22,9 +22,9 @@ McMinn et al. introduced {\it integrity constraint predicates} to model the inte
 As per the relational model, originally due to Codd~\cite{Codd1970}, a database table consists of a set of rows with identical column names. We express an individual row as $r = (cl_1:v_1, \dots, cl_{ncl}:v_{ncl})$ for a table with $ncl$ columns, where $cl_{1 \ldots ncl}$ are the column names and $v_{1 \ldots ncl}$ are the values for each column. As a shorthand, we use the notation $\select{r}{cl}$ to refer to the value of a column $cl$ for a row $r$.
 
 \begin{sloppypar}
-\Figure{fig:integrity-constraint-functions} shows functions for obtaining predicates for primary keys. The function
-``get\_primary\_key\_constraint\_predicate'' gives a predicate for the standard DBMS implementation of a primary key,
-while ``get\_primary\_key\_constraint\_predicate\_for\_SQLite'' is an especially customized version for \SQLite. \SQLite
+\Figure{fig:integrity-constraint-functions} shows functions for acquiring predicates for primary keys;
+\mbox{``obtain\_primary\_key\_constraint\_predicate''} gives a predicate for the standard DBMS implementation of a primary key,
+while \mbox{``obtain\_primary\_key\_constraint\_predicate\_for\_SQLite''} provides an especially customized version for \SQLite. \SQLite
 differs from most other DBMSs in that \NULL is a legal entry for a primary key column. Both functions take the
 configuration of a primary key represented as a set of columns $CL$ for a table $tbl$ and a row of data values $nr$. The
 predicate returned by the function can then be used to decide, given the current state of the table $tbl$, whether the
@@ -62,6 +62,6 @@ Virtual mutation analysis therefore avoids the need to communicate with an actua
 
 One disadvantage of \vma is that a model of the operation of the integrity constraints is needed for the DBMS with which we wish to test schemas and perform mutation analysis. While integrity constraints tend to operate in broadly the same way across most DBMSs there is the potential for subtle variations due to differing interpretations of the SQL standard (as shown with the primary key example with \SQLite). So, while we have models that are accurate for \HyperSQL, \Postgres and \SQLite, which we use in this paper, new models may be required for \mbox{other DBMSs}.
 
-\inlineheading{Related Work} Although this paper is the first to present the idea of virtual mutation, there is a lot of prior work focused on improving the efficiency of mutation analysis; due to space constraints we briefly survey some of the most related approaches. For instance, Just \etal~introduced a compiler-integrated method to make mutation testing faster~\cite{Just2011}. Also, Tokumoto \etal~showed how various techniques, such as the use of virtual machines, can improved the efficiency of mutation testing~\cite{Tokumoto2016}. Finally, Tuya \etal~applied selective mutation to the mutation testing of SQL \SELECTs~\cite{Tuya2007}.
+\inlineheading{Related Work} Although this paper is the first to present the idea of virtual mutation, there is a lot of prior work focused on improving the efficiency of mutation analysis; due to space constraints we briefly survey some of the most related approaches. For instance, Just \etal~introduced a compiler-integrated method to make mutation testing faster~\cite{Just2011}. Also, Tokumoto \etal~showed how various techniques, such as the use of virtual machines, can improve the efficiency of mutation testing~\cite{Tokumoto2016}. Finally, Tuya \etal~applied selective mutation to the mutation testing of SQL \SELECTs~\cite{Tuya2007}.
 
 
