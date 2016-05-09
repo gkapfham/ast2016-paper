@@ -54,6 +54,7 @@ that can run for the same amount of time as the virtual one.
 
 ```{r, fig.width=5.7, fig.height=3.5, echo=TRUE}
 visualise_mutation_score_time_constrained(time_constrained_data_tidy)
+visualise_mutation_score_time_constrained_color(time_constrained_data_tidy)
 ```
 
 Analysis of the results in this graph:
