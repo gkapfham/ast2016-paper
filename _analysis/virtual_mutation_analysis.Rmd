@@ -231,7 +231,7 @@ original_and_virtual_mutation_data_mutant_savings = original_and_virtual_mutatio
 visualise_savings_and_mutants(original_and_virtual_mutation_data_mutant_savings)
 ```
 
-```{r, graphic_scatterplot_nummutants_percentage_color, fig.width=3, fig.height=3.25, echo=TRUE}
+```{r, graphic_scatterplot_nummutants_percentage_color, fig.width=5.7, fig.height=3.5, echo=TRUE}
 original_mutation_data = read_original_mutation_data_subset()
 original_and_virtual_mutation_data_mutant_savings = original_and_virtual_mutation_data %>%
   transform_mutation_time_savings(original_mutation_data)
