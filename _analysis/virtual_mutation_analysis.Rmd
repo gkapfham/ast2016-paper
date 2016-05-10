@@ -136,11 +136,11 @@ original_and_virtual_mutation_data <- create_original_and_virtual_data()
 
 ## Visualise the Mutation Analysis Time for Original and Virtual
 
-```{r, fig.width=5.7, fig.height=3.4, echo=TRUE}
+```{r, graphic_bwplot_schema_analysistime_org_vm, fig.width=5.7, fig.height=3.4, echo=TRUE}
 visualise_mutation_time_original_virtual(original_and_virtual_mutation_data)
 ```
 
-```{r, fig.width=5.7, fig.height=3.4, echo=TRUE}
+```{r, graphic_bwplot_schema_analysistime_org_vm_color, fig.width=5.7, fig.height=3.4, echo=TRUE}
 visualise_mutation_time_original_virtual_color(original_and_virtual_mutation_data)
 ```
 
