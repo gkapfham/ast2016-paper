@@ -140,6 +140,10 @@ original_and_virtual_mutation_data <- create_original_and_virtual_data()
 visualise_mutation_time_original_virtual(original_and_virtual_mutation_data)
 ```
 
+```{r, fig.width=5.7, fig.height=3.4, echo=TRUE}
+visualise_mutation_time_original_virtual_color(original_and_virtual_mutation_data)
+```
+
 Commentary on the results in this output:
 
 - Note that this data has been "log transformed" using a log-to-the-base-ten transformation
