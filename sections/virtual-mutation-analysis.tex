@@ -1,5 +1,5 @@
 % vim: ft=tex
-%!TEX root=ast2016.tex
+%!TEX root=../ast2016.tex
 
 % Display the figure that gives two examples of integrity constraint predicate functions
 \input{figures/integrity-constraint-predicates}
@@ -35,7 +35,7 @@ values in $nr$ conform to the primary key of $tbl$ or not. For example, the pred
 \vspace{-.6em}
 \begin{center}
 \scalebox{0.95}{
-($\selectneqnull{nr}{\sql{id}}) \smallwedge (\forallinrel{er}{\sql{Station}}: \selectneq{nr}{er}{\sql{id}})$
+$(\selectneqnull{nr}{\sql{ID}}) \smallwedge (\forallinrel{er}{\sql{Station}}: \selectneq{nr}{er}{\sql{ID}})$
 }
 \end{center}
 \vspace{-.6em}
@@ -63,7 +63,7 @@ Once predicates have been obtained for all integrity constraints pertaining to a
 
 % GMK NOTE: Stressing that a test suite has a minimal number of INSERTS and then revising the remaining content.
 
-It is worth noting that mutation analysis of schemas involves the repeated execution of tests normally containing a minimal number of \INSERTs. Yet, even when running these tests, virtual mutation analysis always avoids the need to communicate with an instance of a DBMS that hosts the mutant databases. This saves the cost of setting up the tables of each database for the original schema and each of the subsequent mutants (through SQL \sql{CREATE} \sql{TABLE}s), executing the \INSERT statements in the test suite against the database, and then, finally, restoring the state of the DBMS by removing the database tables (through SQL \sql{DROP} \sql{TABLE} statements).
+It is worth noting that mutation analysis of schemas involves the repeated execution of tests normally containing a minimal number of \INSERTs. Yet, when running these tests, virtual mutation analysis always avoids the need to communicate with an instance of a DBMS that hosts the mutant databases. This saves the cost of setting up the tables of each database for the original schema and each of the subsequent mutants (through SQL \sql{CREATE} \sql{TABLE}s), executing the \INSERT statements in the test suite against the database, and then, finally, restoring the state of the DBMS by removing the database tables (through SQL \sql{DROP} \sql{TABLE} statements).
 
 One disadvantage of \vma is that a model of the operation of the integrity constraints is needed for the DBMS with which we wish to test schemas and perform mutation analysis. While integrity constraints tend to operate in broadly the same way across most DBMSs there is the potential for subtle variations due to differing interpretations of the SQL standard (as shown with the primary key example with \SQLite). So, while we have models that are accurate for \HyperSQL, \Postgres and \SQLite, which we use in this paper, new models may be required for \mbox{other DBMSs}.
 
