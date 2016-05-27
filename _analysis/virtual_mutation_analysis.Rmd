@@ -9,10 +9,7 @@ output:
 
 # Installing the Virtual Mutation Package
 
-This code will load in the virtual mutation package from a local directory. I was not able to get it to work with an
-installation from Bitbucket because of permission errors. You will need to change the path so that it is correct for
-your file system. Note that ultimately, I plan to have this package available through a public GitHub repository. Then,
-in this case, it will be possible to use devtools to perform a standard installation without changing these lines.
+This code will install the virtualmutationanalysis package from GitHub using the `install_github` function.
 
 ```{r, echo=TRUE}
 options(scipen=10, width=200)
