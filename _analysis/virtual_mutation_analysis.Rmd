@@ -16,8 +16,7 @@ in this case, it will be possible to use devtools to perform a standard installa
 
 ```{r, echo=TRUE}
 options(scipen=10, width=200)
-mypath = "/home/gkapfham/working/research/source/analysis/databases/"
-devtools::install_local(paste(mypath, "virtualmutationanalysis", sep=""))
+devtools::install_github("gkapfham/virtualmutationanalysis")
 ```
 
 # Comparing "Time-Constrained" Original and Virtual Mutation
