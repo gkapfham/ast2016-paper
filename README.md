@@ -84,4 +84,5 @@ rmarkdown::render("virtual_mutation_analysis.Rmd")
 
 Now, you should be able to view the file called `virtual_mutation_analysis.pdf`. If you are unable to compile the
 analysis file with your development tools and your execution environment, then please open a new issue and we will
-attempt to resolve your concerns.
+attempt to resolve your concerns. We would also appreciate it if you can open an issue if you find a mistake in the way
+that we conducted the analysis of the results presented in the AST 2016 paper.
