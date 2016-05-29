@@ -31,7 +31,7 @@ Here is a reference for the paper:
 You can type the following command if you want to clone this repository:
 
 ```shell
-git clone https://github.com/gkapfham/sbst2016-paper.git
+git clone https://github.com/gkapfham/ast2016-paper.git
 ```
 
 ## Compiling the Paper
@@ -39,11 +39,11 @@ git clone https://github.com/gkapfham/sbst2016-paper.git
 If you want to compile the paper to a PDF, then you should type the following commands.
 
 ```shell
-cd sbst2016-paper
-pdflatex sbst2016.tex
-bibtex sbst2016.aux
-pdflatex sbst2016.tex
-pdflatex sbst2016.tex
+cd ast2016-paper
+pdflatex ast2016.tex
+bibtex ast2016.aux
+pdflatex ast2016.tex
+pdflatex ast2016.tex
 ```
 
 Please note that this has been tested on an Ubuntu 15.04 workstation running a very recent version of LaTeX that was
