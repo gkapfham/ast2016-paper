@@ -1,0 +1,3 @@
+[submodule "bibtex"]
+	path = bibtex
+	url = git@github.com:gkapfham/schemaanalyst-bibliography.git
