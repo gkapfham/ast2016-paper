@@ -53,4 +53,35 @@ execution environment, then please open a new issue and we will attempt to resol
 
 ## Replicating the Analyses
 
+If you want to compile (or, "knit") the `virtual_mutation_analysis.Rmd` file to a PDF, you first need to make sure that
+you have `pandoc` installed on your workstation. Next, you must install the `rmarkdown` library in your R development
+environment. To install both of these items, please follow instructions customized for your operating system and R
+development environment. For your reference, the R Markdown file compiles correctly when using the following version of `pandoc`:
 
+```shell
+pandoc 1.12.4.2
+Compiled with texmath 0.6.6.1, highlighting-kate 0.5.8.5.
+Syntax highlighting is supported for the following languages:
+    actionscript, ada, apache, asn1, asp, awk, bash, bibtex, boo, c, changelog,
+    clojure, cmake, coffee, coldfusion, commonlisp, cpp, cs, css, curry, d,
+    diff, djangotemplate, doxygen, doxygenlua, dtd, eiffel, email, erlang,
+    fortran, fsharp, gcc, gnuassembler, go, haskell, haxe, html, ini, isocpp,
+    java, javadoc, javascript, json, jsp, julia, latex, lex, literatecurry,
+    literatehaskell, lua, makefile, mandoc, markdown, matlab, maxima, metafont,
+    mips, modelines, modula2, modula3, monobasic, nasm, noweb, objectivec,
+    objectivecpp, ocaml, octave, pascal, perl, php, pike, postscript, prolog,
+    pure, python, r, relaxngcompact, restructuredtext, rhtml, roff, ruby, rust,
+    scala, scheme, sci, sed, sgml, sql, sqlmysql, sqlpostgresql, tcl, texinfo,
+```
+
+Once you have all of the dependencies correctly installed, you can compile the analyses by typing the following command
+in the command prompt of your R development environment:
+
+```R
+library(rmarkdown)
+rmarkdown::render("virtual_mutation_analysis.Rmd")
+```
+
+Now, you should be able to view the file called `virtual_mutation_analysis.pdf`. If you are unable to compile the
+analysis file with your development tools and your execution environment, then please open a new issue and we will
+attempt to resolve your concerns.
